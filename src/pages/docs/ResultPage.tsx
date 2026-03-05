@@ -130,7 +130,7 @@ export function ResultPage() {
 <Result status="loading" title="Processing" description="Setting up your workspace..." />`}
           leftAlign
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', width: '100%', maxWidth: 480 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'var(--synu-spacing-4)', width: '100%' }}>
             {(['success', 'error', 'warning', 'info', 'loading'] as ResultStatus[]).map((s) => (
               <Result
                 key={s}

@@ -198,6 +198,7 @@ export function VirtualizedListPage() {
           padless
         >
           <div style={{
+            width: '100%',
             border: '1px solid var(--synu-color-border)',
             borderRadius: 'var(--synu-radius-lg)',
             overflow: 'hidden',

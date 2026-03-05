@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CommandPalette, ButtonRoot, ButtonLabel } from '@synu/react';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
@@ -81,6 +81,17 @@ const KbdIcon = () => (
 export function CommandPalettePage() {
   const [open, setOpen] = useState(false);
   const [lastCommand, setLastCommand] = useState<string | null>(null);
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setOpen(true);
+      }
+    }
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
 
   function handleSelect(label: string) {
     setLastCommand(label);

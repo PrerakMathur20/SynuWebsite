@@ -88,11 +88,18 @@ export function TabsPage() {
                   value: 'overview',
                   label: 'Overview',
                   content: (
-                    <div style={{ padding: 'var(--synu-spacing-4)' }}>
-                      <p style={{ margin: 0, color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>
-                        Tabs organize content into selectable sections. Only one panel is visible at a time.
-                        This improves information density without overwhelming the user.
+                    <div style={{ padding: 'var(--synu-spacing-4)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-3)' }}>
+                      <p style={{ margin: 0, color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)', lineHeight: 1.6 }}>
+                        Tabs organize content into selectable sections with full WAI-ARIA compliance.
                       </p>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--synu-spacing-2)' }}>
+                        {[{ label: 'Variants', value: '2' }, { label: 'Orientations', value: '2' }, { label: 'Keyboard', value: '✓' }].map(({ label, value }) => (
+                          <div key={label} style={{ background: 'var(--synu-color-background)', border: '1px solid var(--synu-color-border)', borderRadius: 'var(--synu-radius-md)', padding: 'var(--synu-spacing-2)', textAlign: 'center' }}>
+                            <div style={{ fontSize: 'var(--synu-font-size-lg)', fontWeight: 700, color: 'var(--synu-color-primary)' }}>{value}</div>
+                            <div style={{ fontSize: 10, color: 'var(--synu-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{label}</div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   ),
                 },
@@ -100,13 +107,14 @@ export function TabsPage() {
                   value: 'api',
                   label: 'API',
                   content: (
-                    <div style={{ padding: 'var(--synu-spacing-4)' }}>
-                      <p style={{ margin: '0 0 8px', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>Key props:</p>
+                    <div style={{ padding: 'var(--synu-spacing-4)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-2)' }}>
+                      <p style={{ margin: '0 0 4px', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>Key props:</p>
                       <Stack direction="row" gap={2} wrap>
-                        {['tabs', 'variant', 'orientation', 'value', 'onChange'].map(p => (
+                        {['tabs', 'variant', 'orientation', 'value', 'onChange', 'defaultValue'].map(p => (
                           <code key={p} className="inline-code">{p}</code>
                         ))}
                       </Stack>
+                      <Badge variant="info" style={{ alignSelf: 'flex-start', marginTop: 4 }}>WAI-ARIA Tabs Pattern</Badge>
                     </div>
                   ),
                 },
@@ -114,11 +122,14 @@ export function TabsPage() {
                   value: 'examples',
                   label: 'Examples',
                   content: (
-                    <div style={{ padding: 'var(--synu-spacing-4)' }}>
-                      <p style={{ margin: 0, color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>
-                        Try: <code className="inline-code">variant="pills"</code> for a compact pill style,
-                        or <code className="inline-code">orientation="vertical"</code> for sidebar-style tabs.
-                      </p>
+                    <div style={{ padding: 'var(--synu-spacing-4)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-2)' }}>
+                      <p style={{ margin: '0 0 4px', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>Common patterns:</p>
+                      {[{ label: 'Pills variant', code: 'variant="pills"' }, { label: 'Vertical layout', code: 'orientation="vertical"' }, { label: 'With icons', code: 'icon={<Icon />}' }].map(({ label, code }) => (
+                        <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 'var(--synu-spacing-2)', fontSize: 'var(--synu-font-size-xs)' }}>
+                          <span style={{ color: 'var(--synu-text-secondary)' }}>{label}:</span>
+                          <code className="inline-code">{code}</code>
+                        </div>
+                      ))}
                     </div>
                   ),
                 },

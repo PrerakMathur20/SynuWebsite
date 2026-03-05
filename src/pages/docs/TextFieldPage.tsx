@@ -62,7 +62,7 @@ export function TextFieldPage() {
           }
           leftAlign
         >
-          <div style={{ width: '100%', maxWidth: 380 }}>
+          <div style={{ width: '100%', maxWidth: 380, margin: '0 auto' }}>
             <TextField
               label="Email address"
               placeholder="you@example.com"

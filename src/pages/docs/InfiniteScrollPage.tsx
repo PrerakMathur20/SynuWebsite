@@ -169,29 +169,35 @@ function handleLoadMore() {
 </InfiniteScroll>`}
           leftAlign
         >
-          <div
-            style={{
-              maxHeight: 400,
-              overflowY: 'auto',
-              border: '1px solid var(--synu-color-border)',
-              borderRadius: 'var(--synu-radius-lg)',
-              background: 'var(--synu-color-surface)',
-              width: '100%',
-            }}
-          >
-            <InfiniteScroll
-              hasMore={hasMore}
-              loading={loading}
-              onLoadMore={handleLoadMore}
-              loadingComponent={<LoadingSpinner />}
-              endMessage={<EndMessage total={items.length} />}
+          <div style={{ width: '100%' }}>
+            <div
+              style={{
+                maxHeight: 400,
+                overflowY: 'auto',
+                border: '1px solid var(--synu-color-border)',
+                borderRadius: 'var(--synu-radius-lg)',
+                background: 'var(--synu-color-surface)',
+              }}
             >
-              {itemElements}
-            </InfiniteScroll>
+              <InfiniteScroll
+                hasMore={hasMore}
+                loading={loading}
+                onLoadMore={handleLoadMore}
+                loadingComponent={<LoadingSpinner />}
+                endMessage={<EndMessage total={items.length} />}
+              >
+                {itemElements}
+              </InfiniteScroll>
+            </div>
+            <p style={{
+              margin: 'var(--synu-spacing-2) 0 0',
+              fontSize: 'var(--synu-font-size-xs)',
+              color: 'var(--synu-text-tertiary)',
+              textAlign: 'right',
+            }}>
+              {items.length} / 100 items loaded
+            </p>
           </div>
-          <p style={{ margin: '8px 0 0', fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-tertiary)' }}>
-            Showing {items.length} of 100 items
-          </p>
         </ComponentPreview>
       </div>
 

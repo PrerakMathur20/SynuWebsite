@@ -112,13 +112,135 @@ export function PlaygroundPage() {
     addSnack({ ...messages[variant], variant });
   };
 
-  // Generate live code snippet for button
+  // Live code snippets (update with state)
   const buttonCode = `<ButtonRoot
   variant="${btnVariant}"
   size="${btnSize}"${btnLoading ? '\n  loading' : ''}${btnDisabled ? '\n  disabled' : ''}${btnFullWidth ? '\n  fullWidth' : ''}
 >
 ${btnIcon ? '  <ButtonIcon><SaveIcon /></ButtonIcon>\n' : ''}  <ButtonLabel>Save changes</ButtonLabel>
 </ButtonRoot>`;
+
+  const formsCode = `<Stack gap={5}>
+  <TextField
+    label="Project name"
+    value="${textValue}"
+    error={${textError}}${textError ? `\n    helperText="Project name is required."` : ''}
+  />
+  <Select
+    label="Framework"
+    value="${selectValue}"
+    options={frameworks}
+  />
+  <Slider
+    label="Replicas"
+    value={${sliderValue}}
+    min={1} max={20}
+    showValue
+  />
+  <Checkbox
+    label="Enable auto-scaling"
+    checked={${checked}}
+  />
+  <Switch
+    label="Dark mode preview"
+    checked={${switchOn}}
+  />
+  <RadioGroup name="region" value="${radioValue}">
+    <Radio value="option-a" label="US East" />
+    <Radio value="option-b" label="EU West" />
+    <Radio value="option-c" label="AP South" />
+  </RadioGroup>
+</Stack>`;
+
+  const displayCode = `{/* Avatar — size: ${avatarSize} */}
+<Avatar name="Alex Kim" size="${avatarSize}" />
+
+{/* Badge — variant: ${badgeVariant}${badgeDot ? ', dot' : ''} */}
+<Badge variant="${badgeVariant}"${badgeDot ? ' dot' : ''}>Admin</Badge>
+
+{/* Rating — value: ${ratingValue}/5 */}
+<Rating value={${ratingValue}} onChange={setRatingValue} size="lg" />
+
+{/* Active chips: [${Array.from(activeChips).join(', ') || 'none'}] */}
+<Stack direction="row" gap={2} wrap>
+  {chips.map((chip) => (
+    <Chip key={chip} selected={activeChips.has(chip)}
+      onClick={() => toggleChip(chip)}>{chip}</Chip>
+  ))}
+</Stack>`;
+
+  const feedbackCode = `{/* Alert — variant: ${alertVariant} */}
+<Alert variant="${alertVariant}" title="${alertVariant.charAt(0).toUpperCase() + alertVariant.slice(1)}">
+  {/* ${alertVariant} message here */}
+</Alert>
+
+{/* Progress — ${progressValue}%, variant: ${progressVariant} */}
+<Progress
+  value={${progressValue}}
+  variant="${progressVariant}"
+  label="Upload"
+/>
+
+{/* Spinner */}
+<Spinner size="md" />
+
+{/* Snackbar — trigger via useSnackbar() */}
+const { add } = useSnackbar();
+add({ variant: 'success', title: 'Done!', message: '...' });`;
+
+  const overlaysCode = `{/* Tooltip — placement: ${tooltipPlacement} */}
+<Tooltip
+  content="This is a tooltip"
+  placement="${tooltipPlacement}"
+>
+  <ButtonRoot variant="outline">
+    <ButtonLabel>Hover or focus me</ButtonLabel>
+  </ButtonRoot>
+</Tooltip>
+
+{/* Accordion */}
+<Accordion type="single" collapsible items={[
+  { value: 'a1', trigger: 'What is Synu?', content: '...' },
+  { value: 'a2', trigger: 'Is it open source?', content: '...' },
+]} />
+
+{/* Tabs */}
+<Tabs tabs={[
+  { value: 'tab1', label: 'Overview', content: '...' },
+  { value: 'tab2', label: 'Settings', content: '...' },
+]} />`;
+
+  const inputsPlusCode = `{/* OTP Input${otpError ? ' — error state' : ''} */}
+<OtpInput
+  length={6}
+  value={otpValue}
+  onChange={setOtpValue}
+  error={${otpError}}
+  label="Verification code"
+/>
+
+{/* File Drop Zone */}
+<FileDropZone
+  label="Drop files here, or click to browse"
+  hint="PNG, JPG, PDF up to 5MB"
+  accept="image/*,.pdf"
+  multiple
+  maxSize={5 * 1024 * 1024}
+  onFiles={(files) => console.log(files)}
+/>
+
+{/* Badge Gallery — all variants */}
+{['default', 'primary', 'success', 'warning', 'error', 'info']
+  .map((v) => <Badge key={v} variant={v}>{v}</Badge>)}`;
+
+  const codeBySection: Record<Section, string> = {
+    buttons: buttonCode,
+    forms: formsCode,
+    display: displayCode,
+    feedback: feedbackCode,
+    overlays: overlaysCode,
+    'inputs+': inputsPlusCode,
+  };
 
   return (
     <div className="playground">
@@ -179,10 +301,6 @@ ${btnIcon ? '  <ButtonIcon><SaveIcon /></ButtonIcon>\n' : ''}  <ButtonLabel>Save
                 </Stack>
               </div>
 
-              {/* Live code preview */}
-              <div className="playground__code-preview">
-                <CodeBlock code={buttonCode} language="tsx" filename="Live code" theme="dark" />
-              </div>
             </div>
 
             <div className="playground__controls">
@@ -227,44 +345,46 @@ ${btnIcon ? '  <ButtonIcon><SaveIcon /></ButtonIcon>\n' : ''}  <ButtonLabel>Save
         {section === 'forms' && (
           <div className="playground__section">
             <div className="playground__preview">
-              <div className="playground__preview-canvas" style={{ flexDirection: 'column', alignItems: 'stretch', maxWidth: 440 }}>
-                <Stack gap={5}>
-                  <TextField
-                    label="Project name"
-                    placeholder="my-awesome-app"
-                    value={textValue}
-                    onChange={(e) => setTextValue(e.target.value)}
-                    error={textError}
-                    helperText={textError ? 'Project name is required.' : textValue.length > 0 ? `${textValue.length} chars` : 'Give your project a unique name.'}
-                  />
-                  <Select
-                    label="Framework"
-                    value={selectValue}
-                    onChange={setSelectValue}
-                    options={[
-                      { value: 'react', label: 'React' },
-                      { value: 'vue', label: 'Vue' },
-                      { value: 'svelte', label: 'Svelte' },
-                      { value: 'solid', label: 'SolidJS' },
-                      { value: 'angular', label: 'Angular' },
-                    ]}
-                  />
-                  <Slider label="Replicas" value={sliderValue} min={1} max={20} step={1} showValue onChange={setSliderValue} />
-                  <Stack gap={3}>
-                    <Checkbox
-                      label="Enable auto-scaling"
-                      description="Automatically adjust replicas based on load."
-                      checked={checked}
-                      onChange={setChecked}
+              <div className="playground__preview-canvas">
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+                  <Stack gap={5} style={{ width: '100%', maxWidth: 440 }}>
+                    <TextField
+                      label="Project name"
+                      placeholder="my-awesome-app"
+                      value={textValue}
+                      onChange={(e) => setTextValue(e.target.value)}
+                      error={textError}
+                      helperText={textError ? 'Project name is required.' : textValue.length > 0 ? `${textValue.length} chars` : 'Give your project a unique name.'}
                     />
-                    <Switch label="Dark mode preview" checked={switchOn} onChange={setSwitchOn} />
+                    <Select
+                      label="Framework"
+                      value={selectValue}
+                      onChange={setSelectValue}
+                      options={[
+                        { value: 'react', label: 'React' },
+                        { value: 'vue', label: 'Vue' },
+                        { value: 'svelte', label: 'Svelte' },
+                        { value: 'solid', label: 'SolidJS' },
+                        { value: 'angular', label: 'Angular' },
+                      ]}
+                    />
+                    <Slider label="Replicas" value={sliderValue} min={1} max={20} step={1} showValue onChange={setSliderValue} />
+                    <Stack gap={3}>
+                      <Checkbox
+                        label="Enable auto-scaling"
+                        description="Automatically adjust replicas based on load."
+                        checked={checked}
+                        onChange={setChecked}
+                      />
+                      <Switch label="Dark mode preview" checked={switchOn} onChange={setSwitchOn} />
+                    </Stack>
+                    <RadioGroup label="Region" name="pg-region" value={radioValue} onChange={setRadioValue}>
+                      <Radio value="option-a" label="US East" description="Lowest latency for US users." />
+                      <Radio value="option-b" label="EU West" description="GDPR compliant region." />
+                      <Radio value="option-c" label="AP South" description="Closest to Asia Pacific users." />
+                    </RadioGroup>
                   </Stack>
-                  <RadioGroup label="Region" name="pg-region" value={radioValue} onChange={setRadioValue}>
-                    <Radio value="option-a" label="US East" description="Lowest latency for US users." />
-                    <Radio value="option-b" label="EU West" description="GDPR compliant region." />
-                    <Radio value="option-c" label="AP South" description="Closest to Asia Pacific users." />
-                  </RadioGroup>
-                </Stack>
+                </div>
               </div>
             </div>
 
@@ -404,49 +524,51 @@ ${btnIcon ? '  <ButtonIcon><SaveIcon /></ButtonIcon>\n' : ''}  <ButtonLabel>Save
         {section === 'feedback' && (
           <div className="playground__section">
             <div className="playground__preview">
-              <div className="playground__preview-canvas" style={{ flexDirection: 'column', gap: 'var(--synu-spacing-5)', alignItems: 'stretch', maxWidth: 460 }}>
-                <Alert variant={alertVariant} title={alertVariant.charAt(0).toUpperCase() + alertVariant.slice(1)}>
-                  {alertVariant === 'info' && 'Your deployment is being processed. This may take a few moments.'}
-                  {alertVariant === 'success' && 'All 142 tests passed. Your build is ready to deploy.'}
-                  {alertVariant === 'warning' && 'API rate limit is at 80%. Consider upgrading your plan.'}
-                  {alertVariant === 'error' && 'Build failed. Check the error logs for more information.'}
-                </Alert>
+              <div className="playground__preview-canvas">
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--synu-spacing-5)', width: '100%', maxWidth: 460 }}>
+                  <Alert variant={alertVariant} title={alertVariant.charAt(0).toUpperCase() + alertVariant.slice(1)}>
+                    {alertVariant === 'info' && 'Your deployment is being processed. This may take a few moments.'}
+                    {alertVariant === 'success' && 'All 142 tests passed. Your build is ready to deploy.'}
+                    {alertVariant === 'warning' && 'API rate limit is at 80%. Consider upgrading your plan.'}
+                    {alertVariant === 'error' && 'Build failed. Check the error logs for more information.'}
+                  </Alert>
 
-                <Stack gap={3}>
-                  <Stack direction="row" justify="space-between" align="center">
-                    <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>Upload progress</span>
-                    <span style={{ fontSize: 'var(--synu-font-size-xs)', fontFamily: 'var(--synu-font-family-mono)', color: 'var(--synu-text-tertiary)' }}>{progressValue}%</span>
-                  </Stack>
-                  <Progress value={progressValue} variant={progressVariant} label="Upload" />
-                  <input
-                    type="range" min={0} max={100} value={progressValue}
-                    onChange={(e) => setProgressValue(Number(e.target.value))}
-                    style={{ width: '100%', accentColor: 'var(--synu-color-primary)', cursor: 'pointer' }}
-                  />
-                </Stack>
-
-                <Stack direction="row" gap={4} align="center" justify="center">
-                  {(['sm', 'md', 'lg', 'xl'] as const).map((s) => (
-                    <Stack key={s} gap={1} align="center">
-                      <Spinner size={s} />
-                      <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>{s}</span>
+                  <Stack gap={3} style={{ width: '100%' }}>
+                    <Stack direction="row" justify="space-between" align="center">
+                      <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>Upload progress</span>
+                      <span style={{ fontSize: 'var(--synu-font-size-xs)', fontFamily: 'var(--synu-font-family-mono)', color: 'var(--synu-text-tertiary)' }}>{progressValue}%</span>
                     </Stack>
-                  ))}
-                </Stack>
+                    <Progress value={progressValue} variant={progressVariant} label="Upload" />
+                    <input
+                      type="range" min={0} max={100} value={progressValue}
+                      onChange={(e) => setProgressValue(Number(e.target.value))}
+                      style={{ width: '100%', accentColor: 'var(--synu-color-primary)', cursor: 'pointer' }}
+                    />
+                  </Stack>
 
-                {/* Snackbar triggers */}
-                <Stack gap={2}>
-                  <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
-                    Snackbar
-                  </p>
-                  <Stack direction="row" gap={2} wrap>
-                    {(['default', 'success', 'error', 'warning'] as const).map((v) => (
-                      <ButtonRoot key={v} size="sm" variant={v === 'default' ? 'secondary' : v === 'error' ? 'destructive' : 'outline'} onClick={() => fireSnack(v)}>
-                        <ButtonLabel>{v}</ButtonLabel>
-                      </ButtonRoot>
+                  <Stack direction="row" gap={4} align="center" justify="center">
+                    {(['sm', 'md', 'lg', 'xl'] as const).map((s) => (
+                      <Stack key={s} gap={1} align="center">
+                        <Spinner size={s} />
+                        <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>{s}</span>
+                      </Stack>
                     ))}
                   </Stack>
-                </Stack>
+
+                  {/* Snackbar triggers */}
+                  <Stack gap={2} style={{ width: '100%' }}>
+                    <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
+                      Snackbar
+                    </p>
+                    <Stack direction="row" gap={2} wrap>
+                      {(['default', 'success', 'error', 'warning'] as const).map((v) => (
+                        <ButtonRoot key={v} size="sm" variant={v === 'default' ? 'secondary' : v === 'error' ? 'destructive' : 'outline'} onClick={() => fireSnack(v)}>
+                          <ButtonLabel>{v}</ButtonLabel>
+                        </ButtonRoot>
+                      ))}
+                    </Stack>
+                  </Stack>
+                </div>
               </div>
             </div>
 
@@ -577,83 +699,85 @@ ${btnIcon ? '  <ButtonIcon><SaveIcon /></ButtonIcon>\n' : ''}  <ButtonLabel>Save
         {section === 'inputs+' && (
           <div className="playground__section">
             <div className="playground__preview">
-              <div className="playground__preview-canvas" style={{ flexDirection: 'column', gap: 'var(--synu-spacing-8)', alignItems: 'stretch', maxWidth: 480 }}>
-                {/* OTP */}
-                <Stack gap={3}>
-                  <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    OTP Input
-                  </p>
-                  <OtpInput
-                    length={6}
-                    value={otpValue}
-                    onChange={setOtpValue}
-                    error={otpError}
-                    label="Verification code"
-                  />
-                  <Stack direction="row" gap={2}>
-                    <ButtonRoot
-                      size="sm"
-                      variant={otpValue.length === 6 ? 'primary' : 'outline'}
-                      onClick={() => {
-                        if (otpValue.length !== 6) { setOtpError(true); return; }
-                        setOtpError(false);
-                        addSnack({ title: 'Verified!', message: `Code "${otpValue}" accepted.`, variant: 'success' });
-                        setOtpValue('');
-                      }}
-                    >
-                      <ButtonLabel>Verify</ButtonLabel>
-                    </ButtonRoot>
-                    <ButtonRoot size="sm" variant="ghost" onClick={() => { setOtpValue(''); setOtpError(false); }}>
-                      <ButtonLabel>Clear</ButtonLabel>
-                    </ButtonRoot>
-                  </Stack>
-                  {otpError && (
-                    <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-color-error)' }}>
-                      Please enter all 6 digits.
+              <div className="playground__preview-canvas">
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--synu-spacing-8)', width: '100%', maxWidth: 480 }}>
+                  {/* OTP */}
+                  <Stack gap={3}>
+                    <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                      OTP Input
                     </p>
-                  )}
-                  {otpValue.length > 0 && (
-                    <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontFamily: 'var(--synu-font-family-mono)' }}>
-                      Current: {otpValue} ({otpValue.length}/6)
+                    <OtpInput
+                      length={6}
+                      value={otpValue}
+                      onChange={setOtpValue}
+                      error={otpError}
+                      label="Verification code"
+                    />
+                    <Stack direction="row" gap={2}>
+                      <ButtonRoot
+                        size="sm"
+                        variant={otpValue.length === 6 ? 'primary' : 'outline'}
+                        onClick={() => {
+                          if (otpValue.length !== 6) { setOtpError(true); return; }
+                          setOtpError(false);
+                          addSnack({ title: 'Verified!', message: `Code "${otpValue}" accepted.`, variant: 'success' });
+                          setOtpValue('');
+                        }}
+                      >
+                        <ButtonLabel>Verify</ButtonLabel>
+                      </ButtonRoot>
+                      <ButtonRoot size="sm" variant="ghost" onClick={() => { setOtpValue(''); setOtpError(false); }}>
+                        <ButtonLabel>Clear</ButtonLabel>
+                      </ButtonRoot>
+                    </Stack>
+                    {otpError && (
+                      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-color-error)' }}>
+                        Please enter all 6 digits.
+                      </p>
+                    )}
+                    {otpValue.length > 0 && (
+                      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontFamily: 'var(--synu-font-family-mono)' }}>
+                        Current: {otpValue} ({otpValue.length}/6)
+                      </p>
+                    )}
+                  </Stack>
+
+                  {/* File Drop Zone */}
+                  <Stack gap={3}>
+                    <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                      File Drop Zone
                     </p>
-                  )}
-                </Stack>
-
-                {/* File Drop Zone */}
-                <Stack gap={3}>
-                  <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    File Drop Zone
-                  </p>
-                  <FileDropZone
-                    label="Drop files here, or click to browse"
-                    hint="PNG, JPG, PDF up to 5MB"
-                    accept="image/*,.pdf"
-                    multiple
-                    maxSize={5 * 1024 * 1024}
-                    onFiles={(files) => addSnack({
-                      title: 'Files ready',
-                      message: `${files.length} file${files.length !== 1 ? 's' : ''} selected.`,
-                      variant: 'success',
-                    })}
-                  />
-                </Stack>
-
-                {/* Color-coded badges showcase */}
-                <Stack gap={3}>
-                  <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Badge Gallery
-                  </p>
-                  <Stack direction="row" gap={2} wrap>
-                    {['default', 'primary', 'secondary', 'success', 'warning', 'error', 'info'].map((v) => (
-                      <Badge key={v} variant={v as Parameters<typeof Badge>[0]['variant']}>{v}</Badge>
-                    ))}
+                    <FileDropZone
+                      label="Drop files here, or click to browse"
+                      hint="PNG, JPG, PDF up to 5MB"
+                      accept="image/*,.pdf"
+                      multiple
+                      maxSize={5 * 1024 * 1024}
+                      onFiles={(files) => addSnack({
+                        title: 'Files ready',
+                        message: `${files.length} file${files.length !== 1 ? 's' : ''} selected.`,
+                        variant: 'success',
+                      })}
+                    />
                   </Stack>
-                  <Stack direction="row" gap={2} wrap>
-                    {['default', 'primary', 'success', 'warning', 'error', 'info'].map((v) => (
-                      <Badge key={v} variant={v as Parameters<typeof Badge>[0]['variant']} dot>{v}</Badge>
-                    ))}
+
+                  {/* Color-coded badges showcase */}
+                  <Stack gap={3}>
+                    <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                      Badge Gallery
+                    </p>
+                    <Stack direction="row" gap={2} wrap>
+                      {['default', 'primary', 'secondary', 'success', 'warning', 'error', 'info'].map((v) => (
+                        <Badge key={v} variant={v as Parameters<typeof Badge>[0]['variant']}>{v}</Badge>
+                      ))}
+                    </Stack>
+                    <Stack direction="row" gap={2} wrap>
+                      {['default', 'primary', 'success', 'warning', 'error', 'info'].map((v) => (
+                        <Badge key={v} variant={v as Parameters<typeof Badge>[0]['variant']} dot>{v}</Badge>
+                      ))}
+                    </Stack>
                   </Stack>
-                </Stack>
+                </div>
               </div>
             </div>
 
@@ -679,6 +803,19 @@ ${btnIcon ? '  <ButtonIcon><SaveIcon /></ButtonIcon>\n' : ''}  <ButtonLabel>Save
           </div>
         )}
 
+      </div>
+
+      {/* Constant live code panel — always visible */}
+      <div className="playground__code-panel">
+        <div className="playground__code-panel-header">
+          <span className="playground__code-panel-label">Live code</span>
+          <span className="playground__code-panel-section">{sections.find((s) => s.id === section)?.label}</span>
+        </div>
+        <CodeBlock
+          code={codeBySection[section]}
+          language="tsx"
+          theme="dark"
+        />
       </div>
     </div>
   );

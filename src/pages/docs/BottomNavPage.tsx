@@ -51,6 +51,43 @@ const navItems = [
   { value: 'profile', label: 'Profile', icon: <PersonIcon /> },
 ];
 
+const contentScreens: Record<string, React.ReactNode> = {
+  home: (
+    <div style={{ padding: 'var(--synu-spacing-4)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-2)' }}>
+      {['New deployment successful', 'Usage limit at 80%', 'Team member joined'].map((msg, i) => (
+        <div key={i} style={{ padding: 'var(--synu-spacing-2) var(--synu-spacing-3)', background: 'var(--synu-color-surface)', borderRadius: 'var(--synu-radius-md)', fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-secondary)', border: '1px solid var(--synu-color-border)' }}>
+          {msg}
+        </div>
+      ))}
+    </div>
+  ),
+  search: (
+    <div style={{ padding: 'var(--synu-spacing-4)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-2)' }}>
+      <div style={{ background: 'var(--synu-color-surface)', border: '1px solid var(--synu-color-border)', borderRadius: 'var(--synu-radius-md)', padding: '6px 10px', fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>Search...</div>
+      {['Components', 'Tokens', 'Changelog'].map((r, i) => (
+        <div key={i} style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-secondary)', padding: '4px var(--synu-spacing-2)' }}>{r}</div>
+      ))}
+    </div>
+  ),
+  notifications: (
+    <div style={{ padding: 'var(--synu-spacing-4)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-2)' }}>
+      {[{ text: 'Build passed', time: '2m ago' }, { text: 'PR merged', time: '1h ago' }, { text: 'Alert resolved', time: '3h ago' }].map((n, i) => (
+        <div key={i} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 'var(--synu-font-size-xs)', padding: '4px 0' }}>
+          <span style={{ color: 'var(--synu-text-primary)' }}>{n.text}</span>
+          <span style={{ color: 'var(--synu-text-tertiary)' }}>{n.time}</span>
+        </div>
+      ))}
+    </div>
+  ),
+  profile: (
+    <div style={{ padding: 'var(--synu-spacing-4)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--synu-spacing-1)' }}>
+      <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'var(--synu-color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--synu-text-on-primary)', fontWeight: 700, fontSize: 'var(--synu-font-size-sm)' }}>A</div>
+      <span style={{ fontSize: 'var(--synu-font-size-xs)', fontWeight: 600, color: 'var(--synu-text-primary)' }}>Alex Kim</span>
+      <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>alex@example.com</span>
+    </div>
+  ),
+};
+
 export function BottomNavPage() {
   const [value, setValue] = useState('home');
 
@@ -106,15 +143,11 @@ export function BottomNavPage() {
             <div
               style={{
                 flex: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: 'var(--synu-spacing-4)',
+                overflow: 'hidden',
+                transition: 'opacity 0.2s ease',
               }}
             >
-              <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-tertiary)' }}>
-                Active: <strong style={{ color: 'var(--synu-text-primary)' }}>{value}</strong>
-              </span>
+              {contentScreens[value]}
             </div>
             <BottomNavigation
               items={navItems}

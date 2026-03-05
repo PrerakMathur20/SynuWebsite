@@ -22,9 +22,40 @@ function SnackbarDemo() {
     error: 'Something went wrong. Please retry.',
   };
 
+  const actionMessages: Record<typeof variant, { message: string; title: string; action: string }> = {
+    default: { message: 'Item was updated successfully.', title: 'Updated', action: 'View details' },
+    success: { message: 'File uploaded successfully.', title: 'Upload complete', action: 'View file' },
+    warning: { message: 'Action completed with warnings.', title: 'Check required', action: 'Review' },
+    error: { message: 'Action failed. Please try again.', title: 'Error occurred', action: 'Retry' },
+  };
+
   return (
     <div>
       <Stack gap={4}>
+        <Stack direction="row" gap={3}>
+          <ButtonRoot
+            variant="primary"
+            onClick={() => add({ message: messages[variant], variant, duration: 4000 })}
+          >
+            <ButtonLabel>Show Snackbar</ButtonLabel>
+          </ButtonRoot>
+          <ButtonRoot
+            variant="outline"
+            onClick={() => {
+              const a = actionMessages[variant];
+              add({
+                message: a.message,
+                variant,
+                title: a.title,
+                duration: 5000,
+                action: { label: a.action, onClick: () => {} },
+              });
+            }}
+          >
+            <ButtonLabel>With Action</ButtonLabel>
+          </ButtonRoot>
+        </Stack>
+
         <Stack direction="row" gap={3} wrap>
           <div>
             <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--synu-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Variant</div>
@@ -56,27 +87,6 @@ function SnackbarDemo() {
               ))}
             </Stack>
           </div>
-        </Stack>
-
-        <Stack direction="row" gap={3}>
-          <ButtonRoot
-            variant="primary"
-            onClick={() => add({ message: messages[variant], variant, duration: 4000 })}
-          >
-            <ButtonLabel>Show Snackbar</ButtonLabel>
-          </ButtonRoot>
-          <ButtonRoot
-            variant="outline"
-            onClick={() => add({
-              message: 'File uploaded successfully.',
-              variant: 'success',
-              title: 'Upload complete',
-              duration: 5000,
-              action: { label: 'View file', onClick: () => {} },
-            })}
-          >
-            <ButtonLabel>With Action</ButtonLabel>
-          </ButtonRoot>
         </Stack>
       </Stack>
 

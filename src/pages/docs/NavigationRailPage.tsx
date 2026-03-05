@@ -85,6 +85,59 @@ const LogoPlaceholder = () => (
   </div>
 );
 
+const railContentPanels: Record<string, React.ReactNode> = {
+  dashboard: (
+    <div style={{ padding: 'var(--synu-spacing-5)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-4)' }}>
+      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', fontWeight: 600, color: 'var(--synu-text-primary)' }}>Dashboard</p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'var(--synu-spacing-3)' }}>
+        {[{ label: 'Deployments', value: '142' }, { label: 'Uptime', value: '99.9%' }, { label: 'Errors', value: '3' }, { label: 'Users', value: '2.4k' }].map(({ label, value }) => (
+          <div key={label} style={{ background: 'var(--synu-color-background)', border: '1px solid var(--synu-color-border)', borderRadius: 'var(--synu-radius-md)', padding: 'var(--synu-spacing-3)' }}>
+            <div style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', marginBottom: 4 }}>{label}</div>
+            <div style={{ fontSize: 'var(--synu-font-size-lg)', fontWeight: 700, color: 'var(--synu-text-primary)' }}>{value}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  ),
+  projects: (
+    <div style={{ padding: 'var(--synu-spacing-5)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-2)' }}>
+      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', fontWeight: 600, color: 'var(--synu-text-primary)', marginBottom: 8 }}>Projects</p>
+      {['web-app', 'api-service', 'mobile-client', 'design-system'].map((name) => (
+        <div key={name} style={{ display: 'flex', alignItems: 'center', gap: 'var(--synu-spacing-2)', padding: '6px 0', fontSize: 'var(--synu-font-size-xs)', borderBottom: '1px solid var(--synu-color-border)' }}>
+          <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--synu-color-success)', flexShrink: 0 }} />
+          <span style={{ flex: 1, color: 'var(--synu-text-primary)', fontFamily: 'monospace' }}>{name}</span>
+          <span style={{ color: 'var(--synu-text-tertiary)' }}>Active</span>
+        </div>
+      ))}
+    </div>
+  ),
+  team: (
+    <div style={{ padding: 'var(--synu-spacing-5)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-4)' }}>
+      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', fontWeight: 600, color: 'var(--synu-text-primary)' }}>Team</p>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--synu-spacing-3)' }}>
+        {[{ name: 'Alex', role: 'Lead' }, { name: 'Blake', role: 'Dev' }, { name: 'Casey', role: 'Design' }, { name: 'Dana', role: 'QA' }].map(({ name, role }) => (
+          <div key={name} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+            <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'var(--synu-color-primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--synu-font-size-sm)', fontWeight: 700, color: 'var(--synu-color-primary)' }}>{name[0]}</div>
+            <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-primary)' }}>{name}</span>
+            <span style={{ fontSize: 10, color: 'var(--synu-text-tertiary)' }}>{role}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  ),
+  settings: (
+    <div style={{ padding: 'var(--synu-spacing-5)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-3)' }}>
+      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', fontWeight: 600, color: 'var(--synu-text-primary)' }}>Settings</p>
+      {['Notifications', 'Billing', 'API Keys', 'Team permissions'].map((item) => (
+        <div key={item} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 0', borderBottom: '1px solid var(--synu-color-border)', fontSize: 'var(--synu-font-size-xs)' }}>
+          <span style={{ color: 'var(--synu-text-primary)' }}>{item}</span>
+          <span style={{ color: 'var(--synu-color-primary)', cursor: 'pointer' }}>Edit →</span>
+        </div>
+      ))}
+    </div>
+  ),
+};
+
 export function NavigationRailPage() {
   const [value, setValue] = useState('dashboard');
   const [showHeader, setShowHeader] = useState(true);
@@ -164,15 +217,11 @@ export function NavigationRailPage() {
             <div
               style={{
                 flex: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
                 background: 'var(--synu-color-surface)',
+                overflow: 'auto',
               }}
             >
-              <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-tertiary)' }}>
-                Active: <strong style={{ color: 'var(--synu-text-primary)' }}>{value}</strong>
-              </span>
+              {railContentPanels[value]}
             </div>
           </div>
         </ComponentPreview>

@@ -54,7 +54,7 @@ export function CheckboxPage() {
           }
           leftAlign
         >
-          <div style={{ padding: 'var(--synu-spacing-4)' }}>
+          <div style={{ padding: 'var(--synu-spacing-4)', maxWidth: 420, margin: '0 auto', width: '100%' }}>
             <Checkbox
               label="Accept terms of service"
               description="Required to continue using the platform."

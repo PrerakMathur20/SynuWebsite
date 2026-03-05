@@ -57,7 +57,7 @@ export function SliderPage() {
           }
           leftAlign
         >
-          <div style={{ width: '100%', maxWidth: 400, padding: 'var(--synu-spacing-4)' }}>
+          <div style={{ width: '100%', maxWidth: 400, padding: 'var(--synu-spacing-4)', margin: '0 auto' }}>
             <Slider
               label="Quality"
               value={quality}

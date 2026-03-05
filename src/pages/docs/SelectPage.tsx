@@ -73,7 +73,7 @@ export function SelectPage() {
           }
           leftAlign
         >
-          <div style={{ width: '100%', maxWidth: 360 }}>
+          <div style={{ width: '100%', maxWidth: 360, margin: '0 auto' }}>
             <Select
               label="Framework"
               value={framework}
