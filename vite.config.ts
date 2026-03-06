@@ -1,14 +1,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { createRequire } from 'module';
+import { readFileSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-const _require = createRequire(import.meta.url);
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+function readVersion(filePath: string): string {
+  return JSON.parse(readFileSync(filePath, 'utf-8')).version;
+}
 
 function getTokisVersion(): string {
   // Local dev: read from sibling TokisLib
-  try { return _require('../TokisLib/packages/tokis/package.json').version; } catch {}
-  // CI / no TokisLib: read from installed @tokis/react in node_modules
-  try { return _require('@tokis/react/package.json').version; } catch {}
+  try { return readVersion(resolve(__dirname, '../TokisLib/packages/tokis/package.json')); } catch {}
+  // CI: read directly from node_modules (bypasses exports field restriction)
+  try { return readVersion(resolve(__dirname, 'node_modules/@tokis/react/package.json')); } catch {}
   return '0.0.0';
 }
 
