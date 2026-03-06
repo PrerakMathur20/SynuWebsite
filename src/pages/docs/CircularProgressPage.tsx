@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CircularProgress, Stack } from '@synu/react';
+import { CircularProgress, Stack } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -58,12 +58,12 @@ export function CircularProgressPage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <button
                     onClick={() => setProgress((p) => Math.max(0, p - 10))}
-                    style={{ padding: '4px 8px', cursor: 'pointer', borderRadius: 4, border: '1px solid var(--synu-color-border)', background: 'var(--synu-color-surface)', color: 'var(--synu-text-primary)' }}
+                    style={{ padding: '4px 8px', cursor: 'pointer', borderRadius: 4, border: '1px solid var(--tokis-color-border)', background: 'var(--tokis-color-surface)', color: 'var(--tokis-text-primary)' }}
                   >-10</button>
-                  <span style={{ minWidth: 48, textAlign: 'center', fontSize: 'var(--synu-font-size-sm)' }}>{progress}%</span>
+                  <span style={{ minWidth: 48, textAlign: 'center', fontSize: 'var(--tokis-font-size-sm)' }}>{progress}%</span>
                   <button
                     onClick={() => setProgress((p) => Math.min(100, p + 10))}
-                    style={{ padding: '4px 8px', cursor: 'pointer', borderRadius: 4, border: '1px solid var(--synu-color-border)', background: 'var(--synu-color-surface)', color: 'var(--synu-text-primary)' }}
+                    style={{ padding: '4px 8px', cursor: 'pointer', borderRadius: 4, border: '1px solid var(--tokis-color-border)', background: 'var(--tokis-color-surface)', color: 'var(--tokis-text-primary)' }}
                   >+10</button>
                 </div>
               )}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dropdown, ButtonRoot, ButtonLabel } from '@synu/react';
+import { Dropdown, ButtonRoot, ButtonLabel } from '@tokis/react';
 import { ComponentPreview, DemoControl } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -40,23 +40,23 @@ const menuItemStyle: React.CSSProperties = {
   alignItems: 'center',
   gap: 10,
   padding: '8px 12px',
-  fontSize: 'var(--synu-font-size-sm)',
-  color: 'var(--synu-text-primary)',
+  fontSize: 'var(--tokis-font-size-sm)',
+  color: 'var(--tokis-text-primary)',
   cursor: 'pointer',
-  borderRadius: 'var(--synu-radius-md)',
+  borderRadius: 'var(--tokis-radius-md)',
   transition: 'background 120ms',
   userSelect: 'none',
 };
 
 const separatorStyle: React.CSSProperties = {
   height: 1,
-  background: 'var(--synu-color-border)',
+  background: 'var(--tokis-color-border)',
   margin: '4px 0',
 };
 
 const destructiveItemStyle: React.CSSProperties = {
   ...menuItemStyle,
-  color: 'var(--synu-color-error)',
+  color: 'var(--tokis-color-error)',
 };
 
 export function DropdownPage() {
@@ -134,7 +134,7 @@ export function DropdownPage() {
               <div style={{ padding: 4, minWidth: 180 }}>
                 <div
                   style={menuItemStyle}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--synu-color-surface-hover)')}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--tokis-color-surface-hover)')}
                   onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                 >
                   <UserIcon />
@@ -142,7 +142,7 @@ export function DropdownPage() {
                 </div>
                 <div
                   style={menuItemStyle}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--synu-color-surface-hover)')}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--tokis-color-surface-hover)')}
                   onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                 >
                   <SettingsIcon />
@@ -151,7 +151,7 @@ export function DropdownPage() {
                 <div style={separatorStyle} />
                 <div
                   style={destructiveItemStyle}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--synu-color-surface-hover)')}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--tokis-color-surface-hover)')}
                   onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                 >
                   <SignOutIcon />
@@ -205,7 +205,7 @@ export function DropdownPage() {
               }
             >
               <div style={{ padding: '8px 4px', minWidth: 180 }}>
-                <p style={{ margin: '0 12px 6px', fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 'var(--synu-font-weight-medium)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <p style={{ margin: '0 12px 6px', fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', fontWeight: 'var(--tokis-font-weight-medium)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Status
                 </p>
                 {statuses.map(({ value, label }) => (
@@ -216,19 +216,19 @@ export function DropdownPage() {
                       alignItems: 'center',
                       gap: 10,
                       padding: '8px 12px',
-                      fontSize: 'var(--synu-font-size-sm)',
-                      color: 'var(--synu-text-primary)',
+                      fontSize: 'var(--tokis-font-size-sm)',
+                      color: 'var(--tokis-text-primary)',
                       cursor: 'pointer',
-                      borderRadius: 'var(--synu-radius-md)',
+                      borderRadius: 'var(--tokis-radius-md)',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--synu-color-surface-hover)')}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--tokis-color-surface-hover)')}
                     onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                   >
                     <input
                       type="checkbox"
                       checked={filterStatuses.includes(value)}
                       onChange={() => toggleStatus(value)}
-                      style={{ accentColor: 'var(--synu-color-primary)', width: 14, height: 14, flexShrink: 0 }}
+                      style={{ accentColor: 'var(--tokis-color-primary)', width: 14, height: 14, flexShrink: 0 }}
                     />
                     {label}
                   </label>
@@ -236,7 +236,7 @@ export function DropdownPage() {
               </div>
             </Dropdown>
             {filterStatuses.length > 0 && (
-              <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>
+              <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>
                 Active filters: {filterStatuses.join(', ')}
               </p>
             )}

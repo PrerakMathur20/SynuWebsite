@@ -3,7 +3,7 @@ import {
   TextField, Textarea, Checkbox, RadioGroup, Radio,
   Switch, Select, Slider,
   Stack,
-} from '@synu/react';
+} from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 import { CodeBlock } from '../../components/CodeBlock';
@@ -20,14 +20,14 @@ const textFieldProps: PropDef[] = [
 ];
 
 const SearchIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ color: 'var(--synu-text-tertiary)' }}>
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ color: 'var(--tokis-text-tertiary)' }}>
     <circle cx="6" cy="6" r="4" stroke="currentColor" strokeWidth="1.3" />
     <path d="M9 9l3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
   </svg>
 );
 
 const EyeIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ color: 'var(--synu-text-tertiary)' }}>
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ color: 'var(--tokis-text-tertiary)' }}>
     <path d="M1 7s2-4 6-4 6 4 6 4-2 4-6 4-6-4-6-4z" stroke="currentColor" strokeWidth="1.3" />
     <circle cx="7" cy="7" r="1.5" stroke="currentColor" strokeWidth="1.3" />
   </svg>
@@ -134,8 +134,8 @@ export function InputPage() {
             <TextField
               label="Amount"
               placeholder="0.00"
-              startAdornment={<span style={{ color: 'var(--synu-text-tertiary)', fontSize: 'var(--synu-font-size-sm)' }}>$</span>}
-              endAdornment={<span style={{ color: 'var(--synu-text-tertiary)', fontSize: 'var(--synu-font-size-sm)' }}>USD</span>}
+              startAdornment={<span style={{ color: 'var(--tokis-text-tertiary)', fontSize: 'var(--tokis-font-size-sm)' }}>$</span>}
+              endAdornment={<span style={{ color: 'var(--tokis-text-tertiary)', fontSize: 'var(--tokis-font-size-sm)' }}>USD</span>}
               type="number"
             />
             <TextField
@@ -222,7 +222,7 @@ export function InputPage() {
 </Stack>`}
           leftAlign
         >
-          <Stack gap={3} style={{ padding: 'var(--synu-spacing-4)' }}>
+          <Stack gap={3} style={{ padding: 'var(--tokis-spacing-4)' }}>
             <Checkbox
               checked={checked}
               onChange={(c) => setChecked(c)}
@@ -252,7 +252,7 @@ export function InputPage() {
 </RadioGroup>`}
           leftAlign
         >
-          <div style={{ padding: 'var(--synu-spacing-4)' }}>
+          <div style={{ padding: 'var(--tokis-spacing-4)' }}>
             <RadioGroup
               label="Notification preference"
               name="notifications"
@@ -278,7 +278,7 @@ export function InputPage() {
 </Stack>`}
           leftAlign
         >
-          <Stack gap={3} style={{ padding: 'var(--synu-spacing-4)' }}>
+          <Stack gap={3} style={{ padding: 'var(--tokis-spacing-4)' }}>
             <Switch label="Dark mode" checked={switchOn} onChange={setSwitchOn} />
             <Switch label="Analytics tracking" size="sm" defaultChecked />
             <Switch label="Disabled feature" disabled />
@@ -301,7 +301,7 @@ export function InputPage() {
 />`}
           leftAlign
         >
-          <div style={{ width: '100%', maxWidth: 400, padding: 'var(--synu-spacing-4)' }}>
+          <div style={{ width: '100%', maxWidth: 400, padding: 'var(--tokis-spacing-4)' }}>
             <Slider
               label="Quality"
               value={sliderValue}

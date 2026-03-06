@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Stack, Divider } from '@synu/react';
+import { Typography, Stack, Divider } from '@tokis/react';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 import { CodeBlock } from '../../components/CodeBlock';
@@ -21,7 +21,7 @@ export function TypographyPage() {
         <h1 className="doc-page__title">Typography</h1>
         <p className="doc-page__desc">
           A semantic typography system with 12 variants. Each variant maps to a semantic HTML element
-          and uses Synu's type scale — ensuring consistent rhythm throughout your UI.
+          and uses Tokis's type scale — ensuring consistent rhythm throughout your UI.
         </p>
       </header>
 
@@ -32,7 +32,7 @@ export function TypographyPage() {
           Headings and body text rendered at their default sizes.
         </p>
         <ComponentPreview
-          code={`import { Typography } from '@synu/react';
+          code={`import { Typography } from '@tokis/react';
 
 <Typography variant="h1">Heading 1</Typography>
 <Typography variant="h2">Heading 2</Typography>
@@ -46,7 +46,7 @@ export function TypographyPage() {
 <Typography variant="overline">OVERLINE — Section labels, eyebrows.</Typography>`}
           leftAlign
         >
-          <Stack gap={3} style={{ width: '100%', padding: 'var(--synu-spacing-4)' }}>
+          <Stack gap={3} style={{ width: '100%', padding: 'var(--tokis-spacing-4)' }}>
             <Typography variant="h1">Heading 1</Typography>
             <Typography variant="h2">Heading 2</Typography>
             <Typography variant="h3">Heading 3</Typography>
@@ -77,7 +77,7 @@ export function TypographyPage() {
 <Typography color="warning">Warning — caution states</Typography>`}
           leftAlign
         >
-          <Stack gap={2} style={{ padding: 'var(--synu-spacing-4)' }}>
+          <Stack gap={2} style={{ padding: 'var(--tokis-spacing-4)' }}>
             <Typography color="primary">Primary — main text color</Typography>
             <Typography color="secondary">Secondary — supporting text</Typography>
             <Typography color="tertiary">Tertiary — de-emphasized</Typography>
@@ -98,7 +98,7 @@ export function TypographyPage() {
 <Typography weight="bold">Bold 700 — strong emphasis</Typography>`}
           leftAlign
         >
-          <Stack gap={2} style={{ padding: 'var(--synu-spacing-4)' }}>
+          <Stack gap={2} style={{ padding: 'var(--tokis-spacing-4)' }}>
             <Typography weight="regular">Regular 400 — default body weight</Typography>
             <Typography weight="medium">Medium 500 — slightly emphasized</Typography>
             <Typography weight="semibold">Semibold 600 — labels and headings</Typography>
@@ -120,7 +120,7 @@ export function TypographyPage() {
 </p>`}
           leftAlign
         >
-          <div style={{ padding: 'var(--synu-spacing-4)' }}>
+          <div style={{ padding: 'var(--tokis-spacing-4)' }}>
             <Typography variant="body1">
               Use the <Typography variant="code" as="code">useTheme()</Typography> hook
               to access the current <Typography variant="code" as="code">mode</Typography>.

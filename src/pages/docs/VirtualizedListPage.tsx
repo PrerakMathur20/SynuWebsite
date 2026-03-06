@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { VirtualizedList } from '@synu/react';
+import { VirtualizedList } from '@tokis/react';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -42,10 +42,10 @@ const LAST_NAMES = [
 ];
 
 const departmentColors: Record<string, string> = {
-  Engineering: 'var(--synu-color-primary)',
-  Design: 'var(--synu-color-secondary)',
-  Product: 'var(--synu-color-success)',
-  Marketing: 'var(--synu-color-warning)',
+  Engineering: 'var(--tokis-color-primary)',
+  Design: 'var(--tokis-color-secondary)',
+  Product: 'var(--tokis-color-success)',
+  Marketing: 'var(--tokis-color-warning)',
   Sales: '#8b5cf6',
   Support: '#06b6d4',
   Finance: '#f59e0b',
@@ -77,18 +77,18 @@ export function VirtualizedListPage() {
 
   const renderItem = (item: UserItem, index: number) => {
     const initials = getInitials(item.name);
-    const color = departmentColors[item.department] ?? 'var(--synu-color-primary)';
+    const color = departmentColors[item.department] ?? 'var(--tokis-color-primary)';
     return (
       <div
         key={item.id}
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 'var(--synu-spacing-3)',
+          gap: 'var(--tokis-spacing-3)',
           height: 60,
-          padding: '0 var(--synu-spacing-4)',
-          borderBottom: '1px solid var(--synu-color-border)',
-          background: index % 2 === 0 ? 'transparent' : 'var(--synu-color-surface)',
+          padding: '0 var(--tokis-spacing-4)',
+          borderBottom: '1px solid var(--tokis-color-border)',
+          background: index % 2 === 0 ? 'transparent' : 'var(--tokis-color-surface)',
         }}
       >
         {/* Avatar circle */}
@@ -103,8 +103,8 @@ export function VirtualizedListPage() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: 'var(--synu-font-size-xs)',
-            fontWeight: 'var(--synu-font-weight-semibold)',
+            fontSize: 'var(--tokis-font-size-xs)',
+            fontWeight: 'var(--tokis-font-weight-semibold)',
             flexShrink: 0,
           }}
         >
@@ -114,8 +114,8 @@ export function VirtualizedListPage() {
         {/* Name + email */}
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{
-            fontWeight: 'var(--synu-font-weight-medium)',
-            fontSize: 'var(--synu-font-size-sm)',
+            fontWeight: 'var(--tokis-font-weight-medium)',
+            fontSize: 'var(--tokis-font-size-sm)',
             whiteSpace: 'nowrap',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
@@ -123,8 +123,8 @@ export function VirtualizedListPage() {
             {item.name}
           </div>
           <div style={{
-            fontSize: 'var(--synu-font-size-xs)',
-            color: 'var(--synu-text-secondary)',
+            fontSize: 'var(--tokis-font-size-xs)',
+            color: 'var(--tokis-text-secondary)',
             whiteSpace: 'nowrap',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
@@ -136,10 +136,10 @@ export function VirtualizedListPage() {
         {/* Department badge */}
         <span style={{
           flexShrink: 0,
-          fontSize: 'var(--synu-font-size-xs)',
-          fontWeight: 'var(--synu-font-weight-medium)',
+          fontSize: 'var(--tokis-font-size-xs)',
+          fontWeight: 'var(--tokis-font-weight-medium)',
           padding: '2px 8px',
-          borderRadius: 'var(--synu-radius-full)',
+          borderRadius: 'var(--tokis-radius-full)',
           background: `color-mix(in srgb, ${color} 15%, transparent)`,
           color,
           border: `1px solid color-mix(in srgb, ${color} 30%, transparent)`,
@@ -185,12 +185,12 @@ export function VirtualizedListPage() {
   overscan={3}
   renderItem={(item, index) => (
     <div key={item.id} style={{ height: 60, display: 'flex', alignItems: 'center', gap: 12 }}>
-      <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'var(--synu-color-primary)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'var(--tokis-color-primary)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {item.name.slice(0, 2).toUpperCase()}
       </div>
       <div>
         <div>{item.name}</div>
-        <div style={{ fontSize: '0.75rem', color: 'var(--synu-text-secondary)' }}>{item.email}</div>
+        <div style={{ fontSize: '0.75rem', color: 'var(--tokis-text-secondary)' }}>{item.email}</div>
       </div>
       <span style={{ marginLeft: 'auto' }}>{item.department}</span>
     </div>
@@ -200,25 +200,25 @@ export function VirtualizedListPage() {
         >
           <div style={{
             width: '100%',
-            border: '1px solid var(--synu-color-border)',
-            borderRadius: 'var(--synu-radius-lg)',
+            border: '1px solid var(--tokis-color-border)',
+            borderRadius: 'var(--tokis-radius-lg)',
             overflow: 'hidden',
           }}>
             {/* Header row */}
             <div style={{
               display: 'flex',
               alignItems: 'center',
-              gap: 'var(--synu-spacing-3)',
-              padding: '0 var(--synu-spacing-4)',
+              gap: 'var(--tokis-spacing-3)',
+              padding: '0 var(--tokis-spacing-4)',
               height: 44,
-              background: 'var(--synu-color-surface)',
-              borderBottom: '1px solid var(--synu-color-border)',
+              background: 'var(--tokis-color-surface)',
+              borderBottom: '1px solid var(--tokis-color-border)',
             }}>
               <div style={{ width: 36, flexShrink: 0 }} />
-              <div style={{ flex: 1, fontSize: 'var(--synu-font-size-xs)', fontWeight: 'var(--synu-font-weight-semibold)', color: 'var(--synu-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <div style={{ flex: 1, fontSize: 'var(--tokis-font-size-xs)', fontWeight: 'var(--tokis-font-weight-semibold)', color: 'var(--tokis-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Name / Email
               </div>
-              <div style={{ fontSize: 'var(--synu-font-size-xs)', fontWeight: 'var(--synu-font-weight-semibold)', color: 'var(--synu-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <div style={{ fontSize: 'var(--tokis-font-size-xs)', fontWeight: 'var(--tokis-font-weight-semibold)', color: 'var(--tokis-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Department
               </div>
             </div>
@@ -244,7 +244,7 @@ export function VirtualizedListPage() {
           <code className="inline-code">renderItem</code>. The total scrollable height is set via a
           spacer element so the scrollbar behaves correctly for the full dataset.
         </p>
-        <ul style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)', lineHeight: 2, paddingLeft: 'var(--synu-spacing-5)' }}>
+        <ul style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)', lineHeight: 2, paddingLeft: 'var(--tokis-spacing-5)' }}>
           <li>DOM nodes mounted at any time: ~(viewport height / itemHeight) + 2 × overscan</li>
           <li>No IntersectionObserver or requestAnimationFrame polling — pure scroll events</li>
           <li>All items must share the same fixed <code className="inline-code">itemHeight</code></li>

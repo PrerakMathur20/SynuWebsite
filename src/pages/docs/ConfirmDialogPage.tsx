@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ConfirmDialog, ButtonRoot, ButtonLabel, Stack } from '@synu/react';
+import { ConfirmDialog, ButtonRoot, ButtonLabel, Stack } from '@tokis/react';
 import { ComponentPreview, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -94,8 +94,8 @@ function handleConfirm() {
             {result && (
               <span
                 style={{
-                  fontSize: 'var(--synu-font-size-sm)',
-                  color: result === 'confirmed' ? 'var(--synu-color-success)' : 'var(--synu-text-secondary)',
+                  fontSize: 'var(--tokis-font-size-sm)',
+                  color: result === 'confirmed' ? 'var(--tokis-color-success)' : 'var(--tokis-text-secondary)',
                 }}
               >
                 {result === 'confirmed' ? 'Confirmed!' : 'Cancelled'}

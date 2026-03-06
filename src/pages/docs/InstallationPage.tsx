@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, ButtonRoot, ButtonLabel, Stack, Tabs } from '@synu/react';
+import { Alert, ButtonRoot, ButtonLabel, Stack, Tabs } from '@tokis/react';
 import { NavButton } from '../../components/NavButton';
 import { CodeBlock } from '../../components/CodeBlock';
 
@@ -10,7 +10,7 @@ export function InstallationPage() {
         <p className="doc-page__eyebrow">Getting Started</p>
         <h1 className="doc-page__title">Installation</h1>
         <p className="doc-page__desc">
-          Get Synu running in your React project in under two minutes.
+          Get Tokis running in your React project in under two minutes.
           Install the packages, import the CSS, and wrap your app.
         </p>
       </header>
@@ -19,7 +19,7 @@ export function InstallationPage() {
         <div className="gs-step__num" aria-hidden="true">1</div>
         <div className="gs-step__content">
           <h2 className="gs-step__title">Install packages</h2>
-          <p style={{ margin: '0 0 var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>
+          <p style={{ margin: '0 0 var(--tokis-spacing-4)', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>
             Install the React adapter and the default theme.
           </p>
           <Tabs
@@ -29,10 +29,10 @@ export function InstallationPage() {
                 value: 'npm',
                 label: 'npm',
                 content: (
-                  <div style={{ marginTop: 'var(--synu-spacing-3)' }}>
+                  <div style={{ marginTop: 'var(--tokis-spacing-3)' }}>
                     <CodeBlock
                       language="bash"
-                      code={`npm install @synu/react @synu/theme`}
+                      code={`npm install @tokis/react @tokis/theme`}
                     />
                   </div>
                 ),
@@ -41,10 +41,10 @@ export function InstallationPage() {
                 value: 'pnpm',
                 label: 'pnpm',
                 content: (
-                  <div style={{ marginTop: 'var(--synu-spacing-3)' }}>
+                  <div style={{ marginTop: 'var(--tokis-spacing-3)' }}>
                     <CodeBlock
                       language="bash"
-                      code={`pnpm add @synu/react @synu/theme`}
+                      code={`pnpm add @tokis/react @tokis/theme`}
                     />
                   </div>
                 ),
@@ -53,10 +53,10 @@ export function InstallationPage() {
                 value: 'yarn',
                 label: 'yarn',
                 content: (
-                  <div style={{ marginTop: 'var(--synu-spacing-3)' }}>
+                  <div style={{ marginTop: 'var(--tokis-spacing-3)' }}>
                     <CodeBlock
                       language="bash"
-                      code={`yarn add @synu/react @synu/theme`}
+                      code={`yarn add @tokis/react @tokis/theme`}
                     />
                   </div>
                 ),
@@ -70,18 +70,18 @@ export function InstallationPage() {
         <div className="gs-step__num" aria-hidden="true">2</div>
         <div className="gs-step__content">
           <h2 className="gs-step__title">Import the theme CSS</h2>
-          <p style={{ margin: '0 0 var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>
+          <p style={{ margin: '0 0 var(--tokis-spacing-4)', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>
             Import the full theme bundle at the root of your app. This includes the CSS reset,
             design tokens, and all component styles.
           </p>
           <CodeBlock
             language="tsx"
             filename="src/main.tsx"
-            code={`import '@synu/theme';  // Full bundle: reset + tokens + all components
+            code={`import '@tokis/theme';  // Full bundle: reset + tokens + all components
 
 // Or import selectively:
-import '@synu/theme/base';        // Reset + variables only
-import '@synu/theme/components';  // All component styles`}
+import '@tokis/theme/base';        // Reset + variables only
+import '@tokis/theme/components';  // All component styles`}
           />
         </div>
       </div>
@@ -90,7 +90,7 @@ import '@synu/theme/components';  // All component styles`}
         <div className="gs-step__num" aria-hidden="true">3</div>
         <div className="gs-step__content">
           <h2 className="gs-step__title">Wrap your app with ThemeProvider</h2>
-          <p style={{ margin: '0 0 var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>
+          <p style={{ margin: '0 0 var(--tokis-spacing-4)', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>
             The <code className="inline-code">ThemeProvider</code> manages the{' '}
             <code className="inline-code">data-theme</code> attribute on{' '}
             <code className="inline-code">document.documentElement</code> and
@@ -101,8 +101,8 @@ import '@synu/theme/components';  // All component styles`}
             filename="src/main.tsx"
             code={`import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { ThemeProvider } from '@synu/react';
-import '@synu/theme';
+import { ThemeProvider } from '@tokis/react';
+import '@tokis/theme';
 import App from './App';
 
 createRoot(document.getElementById('root')!).render(
@@ -120,7 +120,7 @@ createRoot(document.getElementById('root')!).render(
         <div className="gs-step__num" aria-hidden="true">4</div>
         <div className="gs-step__content">
           <h2 className="gs-step__title">Prevent flash of unstyled content</h2>
-          <p style={{ margin: '0 0 var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>
+          <p style={{ margin: '0 0 var(--tokis-spacing-4)', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>
             Add this inline script to your <code className="inline-code">index.html</code>{' '}
             <code className="inline-code">&lt;head&gt;</code> to apply the correct theme
             before the first paint, preventing any flash.
@@ -131,7 +131,7 @@ createRoot(document.getElementById('root')!).render(
             code={`<script>
   (function () {
     try {
-      var stored = localStorage.getItem('synu-theme');
+      var stored = localStorage.getItem('tokis-theme');
       var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       var theme = stored || (prefersDark ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', theme);
@@ -154,7 +154,7 @@ createRoot(document.getElementById('root')!).render(
   ButtonLabel,
   ButtonIcon,
   useTheme,
-} from '@synu/react';
+} from '@tokis/react';
 
 export function App() {
   const { mode, toggle } = useTheme();
@@ -174,10 +174,10 @@ export function App() {
       </div>
 
       <Alert variant="success" title="You're ready to build!">
-        Synu is set up. Explore components to see everything available.
+        Tokis is set up. Explore components to see everything available.
       </Alert>
 
-      <Stack direction="row" gap={3} style={{ marginTop: 'var(--synu-spacing-8)' }}>
+      <Stack direction="row" gap={3} style={{ marginTop: 'var(--tokis-spacing-8)' }}>
         <NavButton to="/docs/theming" variant="primary">
           <ButtonLabel>Theming →</ButtonLabel>
         </NavButton>

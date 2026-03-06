@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Chip, Stack } from '@synu/react';
+import { Chip, Stack } from '@tokis/react';
 import { ComponentPreview, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 

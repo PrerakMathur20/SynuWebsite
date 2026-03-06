@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Textarea, Stack } from '@synu/react';
+import { TextField, Textarea, Stack } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -16,7 +16,7 @@ const textFieldProps: PropDef[] = [
 ];
 
 const SearchIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ color: 'var(--synu-text-tertiary)' }}>
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ color: 'var(--tokis-text-tertiary)' }}>
     <circle cx="6" cy="6" r="4" stroke="currentColor" strokeWidth="1.3" />
     <path d="M9 9l3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
   </svg>
@@ -107,8 +107,8 @@ export function TextFieldPage() {
             <TextField
               label="Amount"
               placeholder="0.00"
-              startAdornment={<span style={{ color: 'var(--synu-text-tertiary)', fontSize: 'var(--synu-font-size-sm)' }}>$</span>}
-              endAdornment={<span style={{ color: 'var(--synu-text-tertiary)', fontSize: 'var(--synu-font-size-sm)' }}>USD</span>}
+              startAdornment={<span style={{ color: 'var(--tokis-text-tertiary)', fontSize: 'var(--tokis-font-size-sm)' }}>$</span>}
+              endAdornment={<span style={{ color: 'var(--tokis-text-tertiary)', fontSize: 'var(--tokis-font-size-sm)' }}>USD</span>}
               type="number"
             />
           </Stack>

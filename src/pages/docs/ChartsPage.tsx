@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BarChart, LineChart, PieChart, Sparkline } from '@synu/react';
+import { BarChart, LineChart, PieChart, Sparkline } from '@tokis/react';
 import { ComponentPreview, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -39,7 +39,7 @@ const pieChartProps: PropDef[] = [
 const sparklineProps: PropDef[] = [
   { name: 'data', type: 'number[]', required: true, description: 'Array of numeric values to plot.' },
   { name: 'type', type: "'line' | 'bar' | 'area'", default: "'line'", description: 'Visual style of the sparkline.' },
-  { name: 'color', type: 'string', default: "'var(--synu-color-primary)'", description: 'Stroke or fill color. Falls back to the theme primary color.' },
+  { name: 'color', type: 'string', default: "'var(--tokis-color-primary)'", description: 'Stroke or fill color. Falls back to the theme primary color.' },
   { name: 'width', type: 'number', default: '80', description: 'Width of the sparkline in pixels.' },
   { name: 'height', type: 'number', default: '24', description: 'Height of the sparkline in pixels.' },
   { name: 'className', type: 'string', description: 'Additional CSS class applied to the sparkline.' },
@@ -59,15 +59,15 @@ const lineDatasets = [
   {
     label: 'Daily Active Users',
     data: [1840, 2210, 1990, 2540, 2980, 2650, 3100],
-    color: 'var(--synu-color-primary)',
+    color: 'var(--tokis-color-primary)',
   },
 ];
 
 const pieData = [
-  { label: 'Direct', value: 40, color: 'var(--synu-color-primary)' },
+  { label: 'Direct', value: 40, color: 'var(--tokis-color-primary)' },
   { label: 'Organic', value: 30, color: '#7c3aed' },
-  { label: 'Referral', value: 20, color: 'var(--synu-color-success)' },
-  { label: 'Social', value: 10, color: 'var(--synu-color-warning)' },
+  { label: 'Referral', value: 20, color: 'var(--tokis-color-success)' },
+  { label: 'Social', value: 10, color: 'var(--tokis-color-warning)' },
 ];
 
 const sparkLineData = [4, 7, 3, 9, 6, 11, 8, 14, 10, 13];
@@ -141,7 +141,7 @@ export function ChartsPage() {
     {
       label: 'Daily Active Users',
       data: [1840, 2210, 1990, 2540, 2980, 2650, 3100],
-      color: 'var(--synu-color-primary)',
+      color: 'var(--tokis-color-primary)',
     },
   ]}
   smooth
@@ -160,7 +160,7 @@ export function ChartsPage() {
       <div className="doc-section">
         <h2 className="doc-section__title">Props — LineChart</h2>
         <PropsTable props={lineChartProps} />
-        <p className="doc-section__desc" style={{ marginTop: 'var(--synu-spacing-4)' }}>
+        <p className="doc-section__desc" style={{ marginTop: 'var(--tokis-spacing-4)' }}>
           Each entry in <code className="inline-code">datasets</code> accepts the following additional fields:
         </p>
         <PropsTable props={lineDatasetProps} />
@@ -176,10 +176,10 @@ export function ChartsPage() {
         <ComponentPreview
           code={`<PieChart
   data={[
-    { label: 'Direct',  value: 40, color: 'var(--synu-color-primary)' },
+    { label: 'Direct',  value: 40, color: 'var(--tokis-color-primary)' },
     { label: 'Organic', value: 30, color: '#7c3aed' },
-    { label: 'Referral',value: 20, color: 'var(--synu-color-success)' },
-    { label: 'Social',  value: 10, color: 'var(--synu-color-warning)' },
+    { label: 'Referral',value: 20, color: 'var(--tokis-color-success)' },
+    { label: 'Social',  value: 10, color: 'var(--tokis-color-warning)' },
   ]}${donut ? '\n  donut' : ''}
 />`}
           controls={
@@ -214,11 +214,11 @@ export function ChartsPage() {
 <Sparkline data={[6, 9, 5, 11, 8, 13, 10, 15, 12, 14]} type="area" width={120} height={40} />
 
 {/* bar with negative values */}
-<Sparkline data={[3, -2, 5, -4, 7, -1, 4, -3, 6, -5]} type="bar" color="var(--synu-color-error)" width={120} height={40} />`}
+<Sparkline data={[3, -2, 5, -4, 7, -1, 4, -3, 6, -5]} type="bar" color="var(--tokis-color-error)" width={120} height={40} />`}
         >
           <div style={{
             display: 'flex',
-            gap: 'var(--synu-spacing-4)',
+            gap: 'var(--tokis-spacing-4)',
             flexWrap: 'wrap',
             justifyContent: 'center',
           }}>
@@ -227,18 +227,18 @@ export function ChartsPage() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: 'var(--synu-spacing-2)',
-              padding: 'var(--synu-spacing-4)',
-              background: 'var(--synu-color-surface)',
-              border: '1px solid var(--synu-color-border)',
-              borderRadius: 'var(--synu-radius-lg)',
+              gap: 'var(--tokis-spacing-2)',
+              padding: 'var(--tokis-spacing-4)',
+              background: 'var(--tokis-color-surface)',
+              border: '1px solid var(--tokis-color-border)',
+              borderRadius: 'var(--tokis-radius-lg)',
               minWidth: 160,
             }}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--synu-spacing-1)' }}>
-                <span style={{ fontSize: 'var(--synu-font-size-2xl)', fontWeight: 'var(--synu-font-weight-bold)' }}>13.2k</span>
-                <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-color-success)' }}>+18%</span>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--tokis-spacing-1)' }}>
+                <span style={{ fontSize: 'var(--tokis-font-size-2xl)', fontWeight: 'var(--tokis-font-weight-bold)' }}>13.2k</span>
+                <span style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-color-success)' }}>+18%</span>
               </div>
-              <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>Page Views</span>
+              <span style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>Page Views</span>
               <Sparkline data={sparkLineData} type="line" width={120} height={40} />
             </div>
 
@@ -247,18 +247,18 @@ export function ChartsPage() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: 'var(--synu-spacing-2)',
-              padding: 'var(--synu-spacing-4)',
-              background: 'var(--synu-color-surface)',
-              border: '1px solid var(--synu-color-border)',
-              borderRadius: 'var(--synu-radius-lg)',
+              gap: 'var(--tokis-spacing-2)',
+              padding: 'var(--tokis-spacing-4)',
+              background: 'var(--tokis-color-surface)',
+              border: '1px solid var(--tokis-color-border)',
+              borderRadius: 'var(--tokis-radius-lg)',
               minWidth: 160,
             }}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--synu-spacing-1)' }}>
-                <span style={{ fontSize: 'var(--synu-font-size-2xl)', fontWeight: 'var(--synu-font-weight-bold)' }}>4,891</span>
-                <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-color-success)' }}>+7%</span>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--tokis-spacing-1)' }}>
+                <span style={{ fontSize: 'var(--tokis-font-size-2xl)', fontWeight: 'var(--tokis-font-weight-bold)' }}>4,891</span>
+                <span style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-color-success)' }}>+7%</span>
               </div>
-              <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>Sign-ups</span>
+              <span style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>Sign-ups</span>
               <Sparkline data={sparkBarData} type="bar" width={120} height={40} />
             </div>
 
@@ -267,18 +267,18 @@ export function ChartsPage() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: 'var(--synu-spacing-2)',
-              padding: 'var(--synu-spacing-4)',
-              background: 'var(--synu-color-surface)',
-              border: '1px solid var(--synu-color-border)',
-              borderRadius: 'var(--synu-radius-lg)',
+              gap: 'var(--tokis-spacing-2)',
+              padding: 'var(--tokis-spacing-4)',
+              background: 'var(--tokis-color-surface)',
+              border: '1px solid var(--tokis-color-border)',
+              borderRadius: 'var(--tokis-radius-lg)',
               minWidth: 160,
             }}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--synu-spacing-1)' }}>
-                <span style={{ fontSize: 'var(--synu-font-size-2xl)', fontWeight: 'var(--synu-font-weight-bold)' }}>$92.4k</span>
-                <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-color-success)' }}>+24%</span>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--tokis-spacing-1)' }}>
+                <span style={{ fontSize: 'var(--tokis-font-size-2xl)', fontWeight: 'var(--tokis-font-weight-bold)' }}>$92.4k</span>
+                <span style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-color-success)' }}>+24%</span>
               </div>
-              <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>Revenue</span>
+              <span style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>Revenue</span>
               <Sparkline data={sparkAreaData} type="area" width={120} height={40} />
             </div>
 
@@ -287,22 +287,22 @@ export function ChartsPage() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: 'var(--synu-spacing-2)',
-              padding: 'var(--synu-spacing-4)',
-              background: 'var(--synu-color-surface)',
-              border: '1px solid var(--synu-color-border)',
-              borderRadius: 'var(--synu-radius-lg)',
+              gap: 'var(--tokis-spacing-2)',
+              padding: 'var(--tokis-spacing-4)',
+              background: 'var(--tokis-color-surface)',
+              border: '1px solid var(--tokis-color-border)',
+              borderRadius: 'var(--tokis-radius-lg)',
               minWidth: 160,
             }}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--synu-spacing-1)' }}>
-                <span style={{ fontSize: 'var(--synu-font-size-2xl)', fontWeight: 'var(--synu-font-weight-bold)' }}>+3.1</span>
-                <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-color-error)' }}>-12%</span>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--tokis-spacing-1)' }}>
+                <span style={{ fontSize: 'var(--tokis-font-size-2xl)', fontWeight: 'var(--tokis-font-weight-bold)' }}>+3.1</span>
+                <span style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-color-error)' }}>-12%</span>
               </div>
-              <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>Net Score</span>
+              <span style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>Net Score</span>
               <Sparkline
                 data={sparkNegData}
                 type="bar"
-                color="var(--synu-color-error)"
+                color="var(--tokis-color-error)"
                 width={120}
                 height={40}
               />

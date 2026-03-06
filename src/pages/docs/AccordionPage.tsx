@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion, Stack, Badge } from '@synu/react';
+import { Accordion, Stack, Badge } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -18,9 +18,9 @@ const faqItems = [
     value: 'zero-runtime',
     trigger: 'What does "zero runtime styling" mean?',
     content: (
-      <p style={{ margin: 0, color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)', lineHeight: 1.6 }}>
+      <p style={{ margin: 0, color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)', lineHeight: 1.6 }}>
         Zero runtime styling means that all CSS is pre-compiled during the build step — not generated in JavaScript at runtime.
-        Unlike libraries that use CSS-in-JS (emotion, styled-components), Synu's styles are static CSS that ships once.
+        Unlike libraries that use CSS-in-JS (emotion, styled-components), Tokis's styles are static CSS that ships once.
         This eliminates style recalculation costs and makes your app faster to paint.
       </p>
     ),
@@ -30,7 +30,7 @@ const faqItems = [
     trigger: 'How does the token system work?',
     content: (
       <div>
-        <p style={{ margin: '0 0 12px', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)', lineHeight: 1.6 }}>
+        <p style={{ margin: '0 0 12px', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)', lineHeight: 1.6 }}>
           Every design value — color, spacing, radius, shadow, motion — is a CSS custom property.
           Light and dark themes swap these variables using the <code style={{ fontFamily: 'monospace', fontSize: '0.8em' }}>[data-theme="dark"]</code> selector.
         </p>
@@ -46,9 +46,9 @@ const faqItems = [
   },
   {
     value: 'accessible',
-    trigger: 'Is Synu accessible out of the box?',
+    trigger: 'Is Tokis accessible out of the box?',
     content: (
-      <p style={{ margin: 0, color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)', lineHeight: 1.6 }}>
+      <p style={{ margin: 0, color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)', lineHeight: 1.6 }}>
         Yes. Every interactive component follows WAI-ARIA patterns. Accordions implement the ARIA Accordion Pattern
         with proper roles (button, region), aria-expanded, aria-controls, and aria-labelledby.
         Keyboard navigation uses Space/Enter to toggle, Tab to move between items.
@@ -59,7 +59,7 @@ const faqItems = [
     value: 'rtl',
     trigger: 'Is RTL supported?',
     content: (
-      <p style={{ margin: 0, color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)', lineHeight: 1.6 }}>
+      <p style={{ margin: 0, color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)', lineHeight: 1.6 }}>
         RTL support is planned for the stable release. CSS logical properties are used where possible
         to minimize the delta between LTR and RTL layouts.
       </p>
@@ -160,9 +160,9 @@ export function AccordionPage() {
               type="multiple"
               defaultValue={['a', 'c']}
               items={[
-                { value: 'a', trigger: 'Panel A', content: <p style={{ margin: 0, color: 'var(--synu-text-secondary)' }}>Content for panel A. Multiple panels can be open at once.</p> },
-                { value: 'b', trigger: 'Panel B (closed by default)', content: <p style={{ margin: 0, color: 'var(--synu-text-secondary)' }}>Content for panel B.</p> },
-                { value: 'c', trigger: 'Panel C', content: <p style={{ margin: 0, color: 'var(--synu-text-secondary)' }}>Content for panel C. Both A and C are open by default.</p> },
+                { value: 'a', trigger: 'Panel A', content: <p style={{ margin: 0, color: 'var(--tokis-text-secondary)' }}>Content for panel A. Multiple panels can be open at once.</p> },
+                { value: 'b', trigger: 'Panel B (closed by default)', content: <p style={{ margin: 0, color: 'var(--tokis-text-secondary)' }}>Content for panel B.</p> },
+                { value: 'c', trigger: 'Panel C', content: <p style={{ margin: 0, color: 'var(--tokis-text-secondary)' }}>Content for panel C. Both A and C are open by default.</p> },
               ]}
             />
           </div>
@@ -185,9 +185,9 @@ export function AccordionPage() {
               type="single"
               collapsible
               items={[
-                { value: '1', trigger: 'Is the API stable?', content: <p style={{ margin: 0, color: 'var(--synu-text-secondary)' }}>The library is in v0.1.0 beta. Minor breaking changes may occur before v1.0.</p> },
-                { value: '2', trigger: 'Does it work with Next.js?', content: <p style={{ margin: 0, color: 'var(--synu-text-secondary)' }}>Yes. CSS imports and ThemeProvider work with both App Router and Pages Router.</p> },
-                { value: '3', trigger: 'Is server-side rendering supported?', content: <p style={{ margin: 0, color: 'var(--synu-text-secondary)' }}>Yes. All components are SSR-safe. Use InitColorSchemeScript to prevent theme flash.</p> },
+                { value: '1', trigger: 'Is the API stable?', content: <p style={{ margin: 0, color: 'var(--tokis-text-secondary)' }}>The library is in v0.1.0 beta. Minor breaking changes may occur before v1.0.</p> },
+                { value: '2', trigger: 'Does it work with Next.js?', content: <p style={{ margin: 0, color: 'var(--tokis-text-secondary)' }}>Yes. CSS imports and ThemeProvider work with both App Router and Pages Router.</p> },
+                { value: '3', trigger: 'Is server-side rendering supported?', content: <p style={{ margin: 0, color: 'var(--tokis-text-secondary)' }}>Yes. All components are SSR-safe. Use InitColorSchemeScript to prevent theme flash.</p> },
               ]}
             />
           </div>
@@ -207,7 +207,7 @@ export function AccordionPage() {
           <div style={{ width: '100%', maxWidth: 480 }}>
             <Accordion
               items={[
-                { value: 'active', trigger: 'Available feature', content: <p style={{ margin: 0, color: 'var(--synu-text-secondary)' }}>This panel is fully interactive.</p> },
+                { value: 'active', trigger: 'Available feature', content: <p style={{ margin: 0, color: 'var(--tokis-text-secondary)' }}>This panel is fully interactive.</p> },
                 { value: 'disabled', trigger: 'Disabled feature (coming soon)', content: 'This panel is disabled.', disabled: true },
               ]}
             />

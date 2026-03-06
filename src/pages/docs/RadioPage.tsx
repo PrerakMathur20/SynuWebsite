@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Radio, RadioGroup, Stack } from '@synu/react';
+import { Radio, RadioGroup, Stack } from '@tokis/react';
 import { ComponentPreview, DemoControl } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -61,7 +61,7 @@ export function RadioPage() {
           }
           leftAlign
         >
-          <div style={{ padding: 'var(--synu-spacing-4)', maxWidth: 420, margin: '0 auto', width: '100%' }}>
+          <div style={{ padding: 'var(--tokis-spacing-4)', maxWidth: 420, margin: '0 auto', width: '100%' }}>
             <RadioGroup
               label="Notification preference"
               name="notifications"
@@ -98,7 +98,7 @@ export function RadioPage() {
 </RadioGroup>`}
           leftAlign
         >
-          <div style={{ padding: 'var(--synu-spacing-4)', maxWidth: 400 }}>
+          <div style={{ padding: 'var(--tokis-spacing-4)', maxWidth: 400 }}>
             <RadioGroup name="plan" value={plan} onChange={setPlan}>
               <Stack gap={3}>
                 {[
@@ -110,11 +110,11 @@ export function RadioPage() {
                     key={id}
                     style={{
                       display: 'flex',
-                      gap: 'var(--synu-spacing-3)',
-                      padding: 'var(--synu-spacing-3)',
-                      border: `1px solid ${plan === id ? 'var(--synu-color-primary)' : 'var(--synu-color-border)'}`,
-                      borderRadius: 'var(--synu-radius-lg)',
-                      background: plan === id ? 'var(--synu-color-primary-subtle)' : 'transparent',
+                      gap: 'var(--tokis-spacing-3)',
+                      padding: 'var(--tokis-spacing-3)',
+                      border: `1px solid ${plan === id ? 'var(--tokis-color-primary)' : 'var(--tokis-color-border)'}`,
+                      borderRadius: 'var(--tokis-radius-lg)',
+                      background: plan === id ? 'var(--tokis-color-primary-subtle)' : 'transparent',
                       cursor: 'pointer',
                       transition: 'all 150ms',
                     }}
@@ -123,10 +123,10 @@ export function RadioPage() {
                     <Radio value={id} checked={plan === id} onChange={setPlan} />
                     <div>
                       <div style={{ display: 'flex', gap: 8, alignItems: 'baseline' }}>
-                        <strong style={{ fontSize: 'var(--synu-font-size-sm)' }}>{name}</strong>
-                        <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-secondary)' }}>{price}</span>
+                        <strong style={{ fontSize: 'var(--tokis-font-size-sm)' }}>{name}</strong>
+                        <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-secondary)' }}>{price}</span>
                       </div>
-                      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>{desc}</p>
+                      <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>{desc}</p>
                     </div>
                   </div>
                 ))}
@@ -147,7 +147,7 @@ export function RadioPage() {
 </RadioGroup>`}
           leftAlign
         >
-          <div style={{ padding: 'var(--synu-spacing-4)' }}>
+          <div style={{ padding: 'var(--tokis-spacing-4)' }}>
             <RadioGroup name="states" defaultValue="selected">
               <Radio value="default" label="Default" />
               <Radio value="selected" label="Selected" />

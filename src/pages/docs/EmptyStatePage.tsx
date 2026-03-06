@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EmptyState, ButtonRoot, ButtonLabel } from '@synu/react';
+import { EmptyState, ButtonRoot, ButtonLabel } from '@tokis/react';
 import { ComponentPreview, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 

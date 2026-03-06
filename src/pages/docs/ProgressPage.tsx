@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Progress, Spinner, Skeleton, Stack } from '@synu/react';
+import { Progress, Spinner, Skeleton, Stack } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 import { CodeBlock } from '../../components/CodeBlock';
@@ -37,8 +37,8 @@ function AnimatedDemo() {
     <Stack gap={4} style={{ width: '100%', maxWidth: 480 }}>
       <Stack gap={2}>
         <Stack direction="row" justify="space-between" align="center">
-          <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>Upload progress</span>
-          <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontFamily: 'var(--synu-font-family-mono)' }}>{value}%</span>
+          <span style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>Upload progress</span>
+          <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', fontFamily: 'var(--tokis-font-family-mono)' }}>{value}%</span>
         </Stack>
         <Progress value={value} label="Upload progress" />
       </Stack>
@@ -47,11 +47,11 @@ function AnimatedDemo() {
         style={{
           alignSelf: 'flex-start',
           padding: '6px 14px',
-          fontSize: 'var(--synu-font-size-sm)',
-          borderRadius: 'var(--synu-radius-md)',
-          border: '1px solid var(--synu-color-border)',
+          fontSize: 'var(--tokis-font-size-sm)',
+          borderRadius: 'var(--tokis-radius-md)',
+          border: '1px solid var(--tokis-color-border)',
           background: 'transparent',
-          color: 'var(--synu-text-primary)',
+          color: 'var(--tokis-text-primary)',
           cursor: 'pointer',
           fontFamily: 'inherit',
         }}
@@ -132,7 +132,7 @@ export function ProgressPage() {
           <div className="comp-preview__tabs">
             <span className="comp-preview__tab comp-preview__tab--active">Preview</span>
           </div>
-          <div className="comp-preview__demo" style={{ alignItems: 'flex-start', padding: 'var(--synu-spacing-8)' }}>
+          <div className="comp-preview__demo" style={{ alignItems: 'flex-start', padding: 'var(--tokis-spacing-8)' }}>
             <AnimatedDemo />
           </div>
         </div>
@@ -192,13 +192,13 @@ export function ProgressPage() {
           Use <code className="inline-code">variant="white"</code> on dark or colored backgrounds.
         </p>
         <ComponentPreview
-          code={`<div style={{ background: 'var(--synu-color-primary)', padding: 24, borderRadius: 12, display: 'flex', gap: 16 }}>
+          code={`<div style={{ background: 'var(--tokis-color-primary)', padding: 24, borderRadius: 12, display: 'flex', gap: 16 }}>
   <Spinner size="sm" variant="white" />
   <Spinner size="md" variant="white" />
   <Spinner size="lg" variant="white" />
 </div>`}
         >
-          <div style={{ background: 'var(--synu-color-primary)', padding: 24, borderRadius: 'var(--synu-radius-lg)', display: 'flex', gap: 16, alignItems: 'center' }}>
+          <div style={{ background: 'var(--tokis-color-primary)', padding: 24, borderRadius: 'var(--tokis-radius-lg)', display: 'flex', gap: 16, alignItems: 'center' }}>
             <Spinner size="sm" variant="white" />
             <Spinner size="md" variant="white" />
             <Spinner size="lg" variant="white" />
@@ -246,7 +246,7 @@ export function ProgressPage() {
         <h2 className="doc-section__title">Usage</h2>
         <CodeBlock
           language="tsx"
-          code={`import { Progress, Spinner, Skeleton } from '@synu/react';
+          code={`import { Progress, Spinner, Skeleton } from '@tokis/react';
 
 // Determinate progress
 <Progress value={progress} variant="success" showValue label="Uploading" />

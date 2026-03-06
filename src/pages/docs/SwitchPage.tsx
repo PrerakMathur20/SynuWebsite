@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Switch, Stack } from '@synu/react';
+import { Switch, Stack } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -59,7 +59,7 @@ export function SwitchPage() {
           }
           leftAlign
         >
-          <div style={{ padding: 'var(--synu-spacing-4)', maxWidth: 420, margin: '0 auto', width: '100%' }}>
+          <div style={{ padding: 'var(--tokis-spacing-4)', maxWidth: 420, margin: '0 auto', width: '100%' }}>
             <Switch
               label="Dark mode"
               checked={on}
@@ -93,7 +93,7 @@ export function SwitchPage() {
 </Stack>`}
           leftAlign
         >
-          <Stack gap={4} style={{ padding: 'var(--synu-spacing-4)', maxWidth: 400 }}>
+          <Stack gap={4} style={{ padding: 'var(--tokis-spacing-4)', maxWidth: 400 }}>
             <Switch
               label="Push notifications"
               description="Receive alerts for new activity and mentions."
@@ -134,7 +134,7 @@ export function SwitchPage() {
 </Stack>`}
           leftAlign
         >
-          <Stack gap={3} style={{ padding: 'var(--synu-spacing-4)' }}>
+          <Stack gap={3} style={{ padding: 'var(--tokis-spacing-4)' }}>
             <Switch label="Off (default)" />
             <Switch label="On" defaultChecked />
             <Switch label="Small" size="sm" defaultChecked />

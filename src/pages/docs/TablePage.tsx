@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Table, TableHead, TableBody, TableRow, TableHeaderCell, TableCell, Badge, Avatar, Stack, ButtonRoot, ButtonLabel } from '@synu/react';
+import { Table, TableHead, TableBody, TableRow, TableHeaderCell, TableCell, Badge, Avatar, Stack, ButtonRoot, ButtonLabel } from '@tokis/react';
 import { ComponentPreview, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -11,11 +11,11 @@ const tableProps: PropDef[] = [
 ];
 
 const users = [
-  { id: 1, name: 'Jordan Lee', email: 'jordan@synu.dev', role: 'Admin', status: 'Active', joined: 'Jan 12, 2025' },
-  { id: 2, name: 'Alex Kim', email: 'alex@synu.dev', role: 'Editor', status: 'Active', joined: 'Feb 3, 2025' },
-  { id: 3, name: 'Sam Park', email: 'sam@synu.dev', role: 'Viewer', status: 'Pending', joined: 'Feb 28, 2025' },
-  { id: 4, name: 'Casey Morgan', email: 'casey@synu.dev', role: 'Editor', status: 'Inactive', joined: 'Mar 1, 2025' },
-  { id: 5, name: 'Riley Chen', email: 'riley@synu.dev', role: 'Admin', status: 'Active', joined: 'Mar 4, 2025' },
+  { id: 1, name: 'Jordan Lee', email: 'jordan@tokis.dev', role: 'Admin', status: 'Active', joined: 'Jan 12, 2025' },
+  { id: 2, name: 'Alex Kim', email: 'alex@tokis.dev', role: 'Editor', status: 'Active', joined: 'Feb 3, 2025' },
+  { id: 3, name: 'Sam Park', email: 'sam@tokis.dev', role: 'Viewer', status: 'Pending', joined: 'Feb 28, 2025' },
+  { id: 4, name: 'Casey Morgan', email: 'casey@tokis.dev', role: 'Editor', status: 'Inactive', joined: 'Mar 1, 2025' },
+  { id: 5, name: 'Riley Chen', email: 'riley@tokis.dev', role: 'Admin', status: 'Active', joined: 'Mar 4, 2025' },
 ];
 
 const statusVariant = (s: string): 'success' | 'warning' | 'default' =>
@@ -54,7 +54,7 @@ export function TablePage() {
         <h1 className="doc-page__title">Table</h1>
         <p className="doc-page__desc">
           A semantic data table with striped rows, sortable columns, and scrollable container support.
-          Composes with any Synu components for rich cell content.
+          Composes with any Tokis components for rich cell content.
         </p>
       </header>
 
@@ -135,10 +135,10 @@ export function TablePage() {
                   <TableCell>
                     <Stack direction="row" gap={2} align="center">
                       <Avatar name={user.name} size="sm" />
-                      <span style={{ fontWeight: 'var(--synu-font-weight-medium)' }}>{user.name}</span>
+                      <span style={{ fontWeight: 'var(--tokis-font-weight-medium)' }}>{user.name}</span>
                     </Stack>
                   </TableCell>
-                  <TableCell style={{ color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>
+                  <TableCell style={{ color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>
                     {user.email}
                   </TableCell>
                   <TableCell>
@@ -149,7 +149,7 @@ export function TablePage() {
                       {user.status}
                     </Badge>
                   </TableCell>
-                  <TableCell style={{ color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>
+                  <TableCell style={{ color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>
                     {user.joined}
                   </TableCell>
                   <TableCell>
@@ -157,7 +157,7 @@ export function TablePage() {
                       <ButtonRoot size="sm" variant="ghost">
                         <ButtonLabel>Edit</ButtonLabel>
                       </ButtonRoot>
-                      <ButtonRoot size="sm" variant="ghost" style={{ color: 'var(--synu-color-error)' }}>
+                      <ButtonRoot size="sm" variant="ghost" style={{ color: 'var(--tokis-color-error)' }}>
                         <ButtonLabel>Delete</ButtonLabel>
                       </ButtonRoot>
                     </Stack>
@@ -183,7 +183,7 @@ export function TablePage() {
   </TableHead>
   <TableBody>
     <TableRow>
-      <TableCell>--synu-color-primary</TableCell>
+      <TableCell>--tokis-color-primary</TableCell>
       <TableCell>#0066ff</TableCell>
       <TableCell>#3b82f6</TableCell>
     </TableRow>
@@ -202,16 +202,16 @@ export function TablePage() {
             </TableHead>
             <TableBody>
               {[
-                ['--synu-color-primary', '#0066ff', '#3b82f6'],
-                ['--synu-color-background', '#ffffff', '#0f172a'],
-                ['--synu-color-surface', '#f8f9fa', '#1e293b'],
-                ['--synu-text-primary', '#0f172a', '#f1f5f9'],
-                ['--synu-color-border', '#e2e8f0', '#334155'],
+                ['--tokis-color-primary', '#0066ff', '#3b82f6'],
+                ['--tokis-color-background', '#ffffff', '#0f172a'],
+                ['--tokis-color-surface', '#f8f9fa', '#1e293b'],
+                ['--tokis-text-primary', '#0f172a', '#f1f5f9'],
+                ['--tokis-color-border', '#e2e8f0', '#334155'],
               ].map(([token, light, dark]) => (
                 <TableRow key={token}>
                   <TableCell><code className="inline-code" style={{ fontSize: '0.75rem' }}>{token}</code></TableCell>
-                  <TableCell style={{ fontFamily: 'monospace', fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>{light}</TableCell>
-                  <TableCell style={{ fontFamily: 'monospace', fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>{dark}</TableCell>
+                  <TableCell style={{ fontFamily: 'monospace', fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>{light}</TableCell>
+                  <TableCell style={{ fontFamily: 'monospace', fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>{dark}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

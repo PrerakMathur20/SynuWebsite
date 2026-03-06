@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ButtonRoot, ButtonLabel, ButtonIcon, Stack } from '@synu/react';
+import { ButtonRoot, ButtonLabel, ButtonIcon, Stack } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 import { CodeBlock } from '../../components/CodeBlock';
@@ -52,7 +52,7 @@ export function ButtonPage() {
       <div className="doc-section">
         <h2 className="doc-section__title">Interactive Playground</h2>
         <ComponentPreview
-          code={`import { ButtonRoot, ButtonLabel } from '@synu/react';
+          code={`import { ButtonRoot, ButtonLabel } from '@tokis/react';
 
 <ButtonRoot
   variant="${variant}"
@@ -148,7 +148,7 @@ export function ButtonPage() {
           Use <code className="inline-code">iconOnly</code> for square icon buttons with an accessible label.
         </p>
         <ComponentPreview
-          code={`import { ButtonRoot, ButtonIcon, ButtonLabel } from '@synu/react';
+          code={`import { ButtonRoot, ButtonIcon, ButtonLabel } from '@tokis/react';
 
 <Stack direction="row" gap={3} wrap>
   {/* Leading icon */}
@@ -223,7 +223,7 @@ export function ButtonPage() {
         <CodeBlock
           language="tsx"
           code={`import { Link } from 'react-router-dom';
-import { ButtonRoot, ButtonLabel } from '@synu/react';
+import { ButtonRoot, ButtonLabel } from '@tokis/react';
 
 // Renders as a React Router link — keyboard, focus, ARIA all preserved
 <ButtonRoot as={Link} to="/dashboard" variant="primary">

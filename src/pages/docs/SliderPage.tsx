@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Slider, Stack } from '@synu/react';
+import { Slider, Stack } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -57,7 +57,7 @@ export function SliderPage() {
           }
           leftAlign
         >
-          <div style={{ width: '100%', maxWidth: 400, padding: 'var(--synu-spacing-4)', margin: '0 auto' }}>
+          <div style={{ width: '100%', maxWidth: 400, padding: 'var(--tokis-spacing-4)', margin: '0 auto' }}>
             <Slider
               label="Quality"
               value={quality}
@@ -86,7 +86,7 @@ export function SliderPage() {
 </Stack>`}
           leftAlign
         >
-          <Stack gap={6} style={{ width: '100%', maxWidth: 400, padding: 'var(--synu-spacing-4)' }}>
+          <Stack gap={6} style={{ width: '100%', maxWidth: 400, padding: 'var(--tokis-spacing-4)' }}>
             <Slider label="Volume" value={volume} onChange={setVolume} showValue min={0} max={100} />
             <Slider label="Bass" min={-12} max={12} step={1} defaultValue={0} showValue marks />
             <Slider label="Zoom" min={50} max={200} step={10} value={zoom} onChange={setZoom} showValue />
@@ -114,7 +114,7 @@ export function SliderPage() {
 />`}
           leftAlign
         >
-          <div style={{ width: '100%', maxWidth: 400, padding: 'var(--synu-spacing-4) var(--synu-spacing-4) var(--synu-spacing-8)' }}>
+          <div style={{ width: '100%', maxWidth: 400, padding: 'var(--tokis-spacing-4) var(--tokis-spacing-4) var(--tokis-spacing-8)' }}>
             <Slider
               label="Plan tier"
               min={0}
@@ -137,12 +137,12 @@ export function SliderPage() {
         <p className="doc-section__desc">
           The slider thumb is focusable. Use these keys to adjust the value:
         </p>
-        <ul style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)', lineHeight: 2 }}>
-          <li><kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--synu-color-surface)', border: '1px solid var(--synu-color-border)', borderRadius: 4 }}>←</kbd> / <kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--synu-color-surface)', border: '1px solid var(--synu-color-border)', borderRadius: 4 }}>↓</kbd> — decrease by step</li>
-          <li><kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--synu-color-surface)', border: '1px solid var(--synu-color-border)', borderRadius: 4 }}>→</kbd> / <kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--synu-color-surface)', border: '1px solid var(--synu-color-border)', borderRadius: 4 }}>↑</kbd> — increase by step</li>
-          <li><kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--synu-color-surface)', border: '1px solid var(--synu-color-border)', borderRadius: 4 }}>Home</kbd> — jump to minimum</li>
-          <li><kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--synu-color-surface)', border: '1px solid var(--synu-color-border)', borderRadius: 4 }}>End</kbd> — jump to maximum</li>
-          <li><kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--synu-color-surface)', border: '1px solid var(--synu-color-border)', borderRadius: 4 }}>Page Up/Down</kbd> — jump by 10 × step</li>
+        <ul style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)', lineHeight: 2 }}>
+          <li><kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--tokis-color-surface)', border: '1px solid var(--tokis-color-border)', borderRadius: 4 }}>←</kbd> / <kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--tokis-color-surface)', border: '1px solid var(--tokis-color-border)', borderRadius: 4 }}>↓</kbd> — decrease by step</li>
+          <li><kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--tokis-color-surface)', border: '1px solid var(--tokis-color-border)', borderRadius: 4 }}>→</kbd> / <kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--tokis-color-surface)', border: '1px solid var(--tokis-color-border)', borderRadius: 4 }}>↑</kbd> — increase by step</li>
+          <li><kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--tokis-color-surface)', border: '1px solid var(--tokis-color-border)', borderRadius: 4 }}>Home</kbd> — jump to minimum</li>
+          <li><kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--tokis-color-surface)', border: '1px solid var(--tokis-color-border)', borderRadius: 4 }}>End</kbd> — jump to maximum</li>
+          <li><kbd style={{ fontFamily: 'monospace', padding: '1px 6px', background: 'var(--tokis-color-surface)', border: '1px solid var(--tokis-color-border)', borderRadius: 4 }}>Page Up/Down</kbd> — jump by 10 × step</li>
         </ul>
       </div>
 

@@ -1,5 +1,6 @@
 {
-  "name": "synu-website",
+  "name": "tokis-website",
+  "description": "Tokis Only Knows Its Styles — Documentation and playground website",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -9,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@synu/react": "file:../SynuLib/packages/react",
-    "@synu/theme": "file:../SynuLib/packages/theme",
+    "@tokis/react": "file:../TokisLib/packages/react",
+    "@tokis/theme": "file:../TokisLib/packages/theme",
     "highlight.js": "^11.10.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

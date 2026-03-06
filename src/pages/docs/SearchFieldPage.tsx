@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SearchField } from '@synu/react';
+import { SearchField } from '@tokis/react';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -77,14 +77,14 @@ function handleSearch(query) {
               placeholder="Search components, docs…"
             />
             {loading && (
-              <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-tertiary)' }}>
+              <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-tertiary)' }}>
                 Searching...
               </p>
             )}
             {!loading && lastSearched && (
-              <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>
+              <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>
                 Showing results for{' '}
-                <strong style={{ color: 'var(--synu-text-primary)' }}>"{lastSearched}"</strong>
+                <strong style={{ color: 'var(--tokis-text-primary)' }}>"{lastSearched}"</strong>
               </p>
             )}
           </div>

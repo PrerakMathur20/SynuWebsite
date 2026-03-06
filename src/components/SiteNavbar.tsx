@@ -1,6 +1,7 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { useTheme, Tooltip } from '@synu/react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useTheme, Tooltip } from '@tokis/react';
+import { DocsSearchModal, DocsSearchButton } from './DocsSearch';
 
 const SunIcon = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -21,76 +22,171 @@ const GithubIcon = () => (
   </svg>
 );
 
+const HamburgerIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+    <path d="M2 4h14M2 9h14M2 14h14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+  </svg>
+);
+
+const CloseIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+    <path d="M3 3l12 12M15 3L3 15" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+  </svg>
+);
+
+const NAV_LINKS = [
+  { to: '/about', label: 'About' },
+  { to: '/docs/installation', label: 'Installation' },
+  { to: '/docs/introduction', label: 'Docs' },
+  { to: '/playground', label: 'Playground' },
+  { to: '/faq', label: 'FAQ' },
+];
+
 export function SiteNavbar() {
   const { mode, toggle } = useTheme();
+  const location = useLocation();
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+  const isInDocs = location.pathname.startsWith('/docs');
+
+  const openSearch = useCallback(() => setSearchOpen(true), []);
+  const closeSearch = useCallback(() => setSearchOpen(false), []);
+
+  // Close mobile menu on route change
+  useEffect(() => { setMobileOpen(false); }, [location.pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
+  // cmd+K — docs only
+  useEffect(() => {
+    if (!isInDocs) return;
+    const handler = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setSearchOpen((o) => !o);
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [isInDocs]);
 
   return (
-    <header className="site-navbar" role="banner">
-      <div className="site-navbar__inner">
-        <Link to="/" className="site-navbar__logo" aria-label="Synu Home">
-          <div className="site-navbar__logo-mark" aria-hidden="true">S</div>
-          Synu
-        </Link>
+    <>
+      <header className="site-navbar" role="banner">
+        <div className="site-navbar__inner">
+          {/* Logo */}
+          <Link to="/" className="site-navbar__logo" aria-label="Tokis Home">
+            <div className="site-navbar__logo-mark" aria-hidden="true">T</div>
+            Tokis
+          </Link>
 
-        <nav className="site-navbar__nav" aria-label="Main navigation">
-          <NavLink
-            to="/docs/installation"
-            className={({ isActive }) =>
-              `site-navbar__link${isActive ? ' site-navbar__link--active' : ''}`
-            }
-          >
-            Installation
-          </NavLink>
-          <NavLink
-            to="/docs/introduction"
-            className={({ isActive }) =>
-              `site-navbar__link${isActive ? ' site-navbar__link--active' : ''}`
-            }
-          >
-            Docs
-          </NavLink>
-          <NavLink
-            to="/playground"
-            className={({ isActive }) =>
-              `site-navbar__link${isActive ? ' site-navbar__link--active' : ''}`
-            }
-          >
-            Playground
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `site-navbar__link${isActive ? ' site-navbar__link--active' : ''}`
-            }
-          >
-            About
-          </NavLink>
+          {/* Desktop nav */}
+          <nav className="site-navbar__nav" aria-label="Main navigation">
+            {NAV_LINKS.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) =>
+                  `site-navbar__link${isActive ? ' site-navbar__link--active' : ''}`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+          </nav>
+
+          {/* Actions */}
+          <div className="site-navbar__actions">
+            {isInDocs && <DocsSearchButton onClick={openSearch} />}
+
+            <Tooltip content={`v${__APP_VERSION__}`} placement="bottom">
+              <span className="site-navbar__version">v{__APP_VERSION__}</span>
+            </Tooltip>
+
+            <a
+              href="https://github.com/tokisdesign/tokis"
+              className="site-theme-toggle"
+              aria-label="View on GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GithubIcon />
+            </a>
+
+            <button
+              className="site-theme-toggle"
+              onClick={toggle}
+              aria-label={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
+            >
+              {mode === 'light' ? <MoonIcon /> : <SunIcon />}
+            </button>
+
+            {/* Hamburger — mobile only */}
+            <button
+              className="site-navbar__hamburger"
+              onClick={() => setMobileOpen((o) => !o)}
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav"
+            >
+              {mobileOpen ? <CloseIcon /> : <HamburgerIcon />}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile nav overlay */}
+      {mobileOpen && (
+        <div
+          className="mobile-nav-backdrop"
+          aria-hidden="true"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
+      <div
+        id="mobile-nav"
+        ref={mobileMenuRef}
+        className={`mobile-nav${mobileOpen ? ' mobile-nav--open' : ''}`}
+        aria-label="Mobile navigation"
+      >
+        <nav className="mobile-nav__links">
+          {NAV_LINKS.map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              className={({ isActive }) =>
+                `mobile-nav__link${isActive ? ' mobile-nav__link--active' : ''}`
+              }
+            >
+              {label}
+            </NavLink>
+          ))}
         </nav>
 
-        <div className="site-navbar__actions">
-          <Tooltip content="Change Log — v0.1.0 initial release" placement="bottom">
-            <span className="site-navbar__version">v0.1.0</span>
-          </Tooltip>
-
+        <div className="mobile-nav__footer">
+          <button className="mobile-nav__theme-btn" onClick={toggle}>
+            {mode === 'light' ? <MoonIcon /> : <SunIcon />}
+            <span>{mode === 'light' ? 'Dark mode' : 'Light mode'}</span>
+          </button>
           <a
-            href="https://github.com/synudesign/synu"
-            className="site-theme-toggle"
-            aria-label="View on GitHub"
+            href="https://github.com/tokisdesign/tokis"
+            className="mobile-nav__github"
             target="_blank"
             rel="noopener noreferrer"
           >
             <GithubIcon />
+            <span>GitHub</span>
           </a>
-
-          <button
-            className="site-theme-toggle"
-            onClick={toggle}
-            aria-label={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
-          >
-            {mode === 'light' ? <MoonIcon /> : <SunIcon />}
-          </button>
         </div>
       </div>
-    </header>
+
+      <DocsSearchModal open={searchOpen} onClose={closeSearch} />
+    </>
   );
 }

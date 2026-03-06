@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Checkbox, Stack } from '@synu/react';
+import { Checkbox, Stack } from '@tokis/react';
 import { ComponentPreview, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -54,7 +54,7 @@ export function CheckboxPage() {
           }
           leftAlign
         >
-          <div style={{ padding: 'var(--synu-spacing-4)', maxWidth: 420, margin: '0 auto', width: '100%' }}>
+          <div style={{ padding: 'var(--tokis-spacing-4)', maxWidth: 420, margin: '0 auto', width: '100%' }}>
             <Checkbox
               label="Accept terms of service"
               description="Required to continue using the platform."
@@ -79,7 +79,7 @@ export function CheckboxPage() {
 </Stack>`}
           leftAlign
         >
-          <Stack gap={3} style={{ padding: 'var(--synu-spacing-4)' }}>
+          <Stack gap={3} style={{ padding: 'var(--tokis-spacing-4)' }}>
             <Checkbox label="Unchecked" />
             <Checkbox label="Checked" defaultChecked />
             <Checkbox label="Indeterminate" indeterminate />
@@ -106,7 +106,7 @@ export function CheckboxPage() {
 </Stack>`}
           leftAlign
         >
-          <Stack gap={4} style={{ padding: 'var(--synu-spacing-4)', maxWidth: 380 }}>
+          <Stack gap={4} style={{ padding: 'var(--tokis-spacing-4)', maxWidth: 380 }}>
             <Checkbox
               label="Marketing emails"
               description="Receive weekly product updates and tips."
@@ -145,7 +145,7 @@ export function CheckboxPage() {
 </Stack>`}
           leftAlign
         >
-          <Stack gap={2} style={{ padding: 'var(--synu-spacing-4)' }}>
+          <Stack gap={2} style={{ padding: 'var(--tokis-spacing-4)' }}>
             <Checkbox
               label="Select all features"
               checked={isAllSelected}

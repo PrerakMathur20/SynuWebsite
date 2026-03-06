@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { InfiniteScroll } from '@synu/react';
+import { InfiniteScroll } from '@tokis/react';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -42,7 +42,7 @@ function makeItems(from: number, count: number): Item[] {
 const INITIAL_ITEMS = makeItems(1, 20);
 
 const LoadingSpinner = () => (
-  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '16px 0', color: 'var(--synu-text-tertiary)', fontSize: 'var(--synu-font-size-sm)' }}>
+  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '16px 0', color: 'var(--tokis-text-tertiary)', fontSize: 'var(--tokis-font-size-sm)' }}>
     <svg
       width="16" height="16" viewBox="0 0 16 16" fill="none"
       style={{ animation: 'spin 1s linear infinite' }}
@@ -56,7 +56,7 @@ const LoadingSpinner = () => (
 );
 
 const EndMessage = ({ total }: { total: number }) => (
-  <div style={{ textAlign: 'center', padding: '16px 0', color: 'var(--synu-text-tertiary)', fontSize: 'var(--synu-font-size-sm)', borderTop: '1px solid var(--synu-color-border)' }}>
+  <div style={{ textAlign: 'center', padding: '16px 0', color: 'var(--tokis-text-tertiary)', fontSize: 'var(--tokis-font-size-sm)', borderTop: '1px solid var(--tokis-color-border)' }}>
     All {total} items loaded
   </div>
 );
@@ -91,7 +91,7 @@ export function InfiniteScrollPage() {
             alignItems: 'center',
             gap: 12,
             padding: '10px 16px',
-            borderBottom: '1px solid var(--synu-color-border)',
+            borderBottom: '1px solid var(--tokis-color-border)',
           }}
         >
           <div
@@ -104,22 +104,22 @@ export function InfiniteScrollPage() {
               alignItems: 'center',
               justifyContent: 'center',
               color: '#fff',
-              fontSize: 'var(--synu-font-size-xs)',
-              fontWeight: 'var(--synu-font-weight-bold)',
+              fontSize: 'var(--tokis-font-size-xs)',
+              fontWeight: 'var(--tokis-font-weight-bold)',
               flexShrink: 0,
             }}
           >
             {item.initials}
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontWeight: 'var(--synu-font-weight-medium)', fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-primary)' }}>
+            <div style={{ fontWeight: 'var(--tokis-font-weight-medium)', fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-primary)' }}>
               {item.name}
             </div>
-            <div style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>
+            <div style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>
               {item.role}
             </div>
           </div>
-          <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>#{item.id}</span>
+          <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>#{item.id}</span>
         </div>
       )),
     [items],
@@ -174,9 +174,9 @@ function handleLoadMore() {
               style={{
                 maxHeight: 400,
                 overflowY: 'auto',
-                border: '1px solid var(--synu-color-border)',
-                borderRadius: 'var(--synu-radius-lg)',
-                background: 'var(--synu-color-surface)',
+                border: '1px solid var(--tokis-color-border)',
+                borderRadius: 'var(--tokis-radius-lg)',
+                background: 'var(--tokis-color-surface)',
               }}
             >
               <InfiniteScroll
@@ -190,9 +190,9 @@ function handleLoadMore() {
               </InfiniteScroll>
             </div>
             <p style={{
-              margin: 'var(--synu-spacing-2) 0 0',
-              fontSize: 'var(--synu-font-size-xs)',
-              color: 'var(--synu-text-tertiary)',
+              margin: 'var(--tokis-spacing-2) 0 0',
+              fontSize: 'var(--tokis-font-size-xs)',
+              color: 'var(--tokis-text-tertiary)',
               textAlign: 'right',
             }}>
               {items.length} / 100 items loaded

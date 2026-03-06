@@ -6,12 +6,14 @@ export interface NavItem {
 
 export interface NavSection {
   section: string;
+  sectionPath?: string;
   items: NavItem[];
 }
 
 export const navigation: NavSection[] = [
   {
     section: 'Getting Started',
+    sectionPath: '/docs/getting-started',
     items: [
       { label: 'Introduction', path: '/docs/introduction' },
       { label: 'Installation', path: '/docs/installation' },
@@ -20,6 +22,7 @@ export const navigation: NavSection[] = [
   },
   {
     section: 'Foundations',
+    sectionPath: '/docs/foundations',
     items: [
       { label: 'Typography', path: '/docs/typography' },
       { label: 'Layout', path: '/docs/layout' },
@@ -27,6 +30,7 @@ export const navigation: NavSection[] = [
   },
   {
     section: 'Components',
+    sectionPath: '/docs/components',
     items: [
       { label: 'Button', path: '/docs/button' },
       { label: 'Avatar', path: '/docs/avatar' },
@@ -37,6 +41,7 @@ export const navigation: NavSection[] = [
   },
   {
     section: 'Forms',
+    sectionPath: '/docs/forms',
     items: [
       { label: 'TextField', path: '/docs/input' },
       { label: 'Checkbox', path: '/docs/checkbox' },
@@ -50,6 +55,7 @@ export const navigation: NavSection[] = [
   },
   {
     section: 'Feedback',
+    sectionPath: '/docs/feedback',
     items: [
       { label: 'Alert', path: '/docs/alert' },
       { label: 'Progress', path: '/docs/progress' },
@@ -59,6 +65,7 @@ export const navigation: NavSection[] = [
   },
   {
     section: 'Navigation',
+    sectionPath: '/docs/nav-overview',
     items: [
       { label: 'Breadcrumbs', path: '/docs/breadcrumbs' },
       { label: 'Tabs', path: '/docs/tabs' },
@@ -71,6 +78,7 @@ export const navigation: NavSection[] = [
   },
   {
     section: 'Overlay',
+    sectionPath: '/docs/overlay',
     items: [
       { label: 'Dialog', path: '/docs/dialog' },
       { label: 'Confirm Dialog', path: '/docs/confirm-dialog' },
@@ -85,6 +93,7 @@ export const navigation: NavSection[] = [
   },
   {
     section: 'Data Display',
+    sectionPath: '/docs/data-display',
     items: [
       { label: 'Accordion', path: '/docs/accordion' },
       { label: 'Table', path: '/docs/table' },
@@ -98,12 +107,14 @@ export const navigation: NavSection[] = [
   },
   {
     section: 'Charts',
+    sectionPath: '/docs/charts',
     items: [
       { label: 'Charts', path: '/docs/charts' },
     ],
   },
   {
     section: 'Performance',
+    sectionPath: '/docs/performance',
     items: [
       { label: 'Virtualized List', path: '/docs/virtual-list' },
       { label: 'Infinite Scroll', path: '/docs/infinite-scroll' },

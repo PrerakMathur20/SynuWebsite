@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Avatar, AvatarGroup, Stack } from '@synu/react';
+import { Avatar, AvatarGroup, Stack } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 

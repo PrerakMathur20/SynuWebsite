@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSnackbar, SnackbarContainer, ButtonRoot, ButtonLabel, Stack } from '@synu/react';
+import { useSnackbar, SnackbarContainer, ButtonRoot, ButtonLabel, Stack } from '@tokis/react';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 import { CodeBlock } from '../../components/CodeBlock';
@@ -58,7 +58,7 @@ function SnackbarDemo() {
 
         <Stack direction="row" gap={3} wrap>
           <div>
-            <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--synu-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Variant</div>
+            <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--tokis-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Variant</div>
             <Stack direction="row" gap={1}>
               {(['default', 'success', 'warning', 'error'] as const).map((v) => (
                 <button
@@ -73,7 +73,7 @@ function SnackbarDemo() {
             </Stack>
           </div>
           <div>
-            <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--synu-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Position</div>
+            <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--tokis-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Position</div>
             <Stack direction="row" gap={1} wrap>
               {(['bottom-right', 'bottom-center', 'top-right', 'top-center'] as const).map((p) => (
                 <button
@@ -132,7 +132,7 @@ export function SnackbarPage() {
         </p>
         <CodeBlock
           language="tsx"
-          code={`import { useSnackbar, SnackbarContainer } from '@synu/react';
+          code={`import { useSnackbar, SnackbarContainer } from '@tokis/react';
 
 // App root
 function App() {

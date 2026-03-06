@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tabs, Badge, Stack, Alert } from '@synu/react';
+import { Tabs, Badge, Stack, Alert } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -88,15 +88,15 @@ export function TabsPage() {
                   value: 'overview',
                   label: 'Overview',
                   content: (
-                    <div style={{ padding: 'var(--synu-spacing-4)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-3)' }}>
-                      <p style={{ margin: 0, color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)', lineHeight: 1.6 }}>
+                    <div style={{ padding: 'var(--tokis-spacing-4)', display: 'flex', flexDirection: 'column', gap: 'var(--tokis-spacing-3)' }}>
+                      <p style={{ margin: 0, color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)', lineHeight: 1.6 }}>
                         Tabs organize content into selectable sections with full WAI-ARIA compliance.
                       </p>
-                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--synu-spacing-2)' }}>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--tokis-spacing-2)' }}>
                         {[{ label: 'Variants', value: '2' }, { label: 'Orientations', value: '2' }, { label: 'Keyboard', value: '✓' }].map(({ label, value }) => (
-                          <div key={label} style={{ background: 'var(--synu-color-background)', border: '1px solid var(--synu-color-border)', borderRadius: 'var(--synu-radius-md)', padding: 'var(--synu-spacing-2)', textAlign: 'center' }}>
-                            <div style={{ fontSize: 'var(--synu-font-size-lg)', fontWeight: 700, color: 'var(--synu-color-primary)' }}>{value}</div>
-                            <div style={{ fontSize: 10, color: 'var(--synu-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{label}</div>
+                          <div key={label} style={{ background: 'var(--tokis-color-background)', border: '1px solid var(--tokis-color-border)', borderRadius: 'var(--tokis-radius-md)', padding: 'var(--tokis-spacing-2)', textAlign: 'center' }}>
+                            <div style={{ fontSize: 'var(--tokis-font-size-lg)', fontWeight: 700, color: 'var(--tokis-color-primary)' }}>{value}</div>
+                            <div style={{ fontSize: 10, color: 'var(--tokis-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{label}</div>
                           </div>
                         ))}
                       </div>
@@ -107,8 +107,8 @@ export function TabsPage() {
                   value: 'api',
                   label: 'API',
                   content: (
-                    <div style={{ padding: 'var(--synu-spacing-4)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-2)' }}>
-                      <p style={{ margin: '0 0 4px', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>Key props:</p>
+                    <div style={{ padding: 'var(--tokis-spacing-4)', display: 'flex', flexDirection: 'column', gap: 'var(--tokis-spacing-2)' }}>
+                      <p style={{ margin: '0 0 4px', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>Key props:</p>
                       <Stack direction="row" gap={2} wrap>
                         {['tabs', 'variant', 'orientation', 'value', 'onChange', 'defaultValue'].map(p => (
                           <code key={p} className="inline-code">{p}</code>
@@ -122,11 +122,11 @@ export function TabsPage() {
                   value: 'examples',
                   label: 'Examples',
                   content: (
-                    <div style={{ padding: 'var(--synu-spacing-4)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-2)' }}>
-                      <p style={{ margin: '0 0 4px', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>Common patterns:</p>
+                    <div style={{ padding: 'var(--tokis-spacing-4)', display: 'flex', flexDirection: 'column', gap: 'var(--tokis-spacing-2)' }}>
+                      <p style={{ margin: '0 0 4px', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>Common patterns:</p>
                       {[{ label: 'Pills variant', code: 'variant="pills"' }, { label: 'Vertical layout', code: 'orientation="vertical"' }, { label: 'With icons', code: 'icon={<Icon />}' }].map(({ label, code }) => (
-                        <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 'var(--synu-spacing-2)', fontSize: 'var(--synu-font-size-xs)' }}>
-                          <span style={{ color: 'var(--synu-text-secondary)' }}>{label}:</span>
+                        <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 'var(--tokis-spacing-2)', fontSize: 'var(--tokis-font-size-xs)' }}>
+                          <span style={{ color: 'var(--tokis-text-secondary)' }}>{label}:</span>
                           <code className="inline-code">{code}</code>
                         </div>
                       ))}
@@ -159,9 +159,9 @@ export function TabsPage() {
             <Tabs
               defaultValue="code"
               tabs={[
-                { value: 'code', label: 'Code', icon: <CodeIcon />, content: <div style={{ padding: 'var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>Code editor panel content.</div> },
-                { value: 'docs', label: 'Docs', icon: <DocIcon />, content: <div style={{ padding: 'var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>Documentation panel content.</div> },
-                { value: 'settings', label: 'Settings', icon: <SettingsIcon />, content: <div style={{ padding: 'var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>Settings panel content.</div> },
+                { value: 'code', label: 'Code', icon: <CodeIcon />, content: <div style={{ padding: 'var(--tokis-spacing-4)', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>Code editor panel content.</div> },
+                { value: 'docs', label: 'Docs', icon: <DocIcon />, content: <div style={{ padding: 'var(--tokis-spacing-4)', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>Documentation panel content.</div> },
+                { value: 'settings', label: 'Settings', icon: <SettingsIcon />, content: <div style={{ padding: 'var(--tokis-spacing-4)', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>Settings panel content.</div> },
               ]}
             />
           </div>
@@ -192,10 +192,10 @@ export function TabsPage() {
               variant="pills"
               defaultValue="all"
               tabs={[
-                { value: 'all', label: 'All', content: <div style={{ padding: 'var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>Showing all 48 items.</div> },
-                { value: 'active', label: 'Active', content: <div style={{ padding: 'var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>Showing 31 active items.</div> },
-                { value: 'paused', label: 'Paused', content: <div style={{ padding: 'var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>Showing 12 paused items.</div> },
-                { value: 'archived', label: 'Archived', content: <div style={{ padding: 'var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>Showing 5 archived items.</div> },
+                { value: 'all', label: 'All', content: <div style={{ padding: 'var(--tokis-spacing-4)', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>Showing all 48 items.</div> },
+                { value: 'active', label: 'Active', content: <div style={{ padding: 'var(--tokis-spacing-4)', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>Showing 31 active items.</div> },
+                { value: 'paused', label: 'Paused', content: <div style={{ padding: 'var(--tokis-spacing-4)', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>Showing 12 paused items.</div> },
+                { value: 'archived', label: 'Archived', content: <div style={{ padding: 'var(--tokis-spacing-4)', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>Showing 5 archived items.</div> },
               ]}
             />
           </div>
@@ -216,7 +216,7 @@ export function TabsPage() {
             <Tabs
               defaultValue="active"
               tabs={[
-                { value: 'active', label: 'Active tab', content: <div style={{ padding: 'var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>This tab is accessible and interactive.</div> },
+                { value: 'active', label: 'Active tab', content: <div style={{ padding: 'var(--tokis-spacing-4)', color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>This tab is accessible and interactive.</div> },
                 { value: 'disabled', label: 'Disabled (Pro)', content: <div>...</div>, disabled: true },
               ]}
             />

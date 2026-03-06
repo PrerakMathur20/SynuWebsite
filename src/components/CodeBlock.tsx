@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { CodeBlock as SynuCodeBlock } from '@synu/react';
+import { CodeBlock as TokisCodeBlock } from '@tokis/react';
 
 // Lazy-load highlight.js languages
 let hljs: typeof import('highlight.js').default | null = null;
@@ -72,7 +72,7 @@ export function CodeBlock({
   }, [code, language]);
 
   return (
-    <SynuCodeBlock
+    <TokisCodeBlock
       code={code.trim()}
       language={language}
       filename={filename}

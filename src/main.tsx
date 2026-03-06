@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import '@synu/theme';
+import '@tokis/theme';
 import './styles/site.css';
 import App from './App';
 

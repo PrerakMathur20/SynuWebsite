@@ -4,7 +4,7 @@ import {
   ButtonRoot, ButtonLabel,
   Badge, Avatar, Alert, Switch,
   Stack, Chip, Progress, Spinner, Rating,
-} from '@synu/react';
+} from '@tokis/react';
 import { NavButton } from '../components/NavButton';
 
 /* ── Animated counter ─────────────────────────────────── */
@@ -91,8 +91,8 @@ function HeroShowcase() {
   Badge, Alert, Progress,
   Switch, Chip, Avatar,
   Spinner, Rating,
-} from '@synu/react';
-import '@synu/theme/dist/index.css';
+} from '@tokis/react';
+import '@tokis/theme/dist/index.css';
 
 // Every variant — same predictable API
 <ButtonRoot variant="primary" size="lg">
@@ -199,8 +199,8 @@ import '@synu/theme/dist/index.css';
               ] as { l: string; v: number; c: 'default' | 'success' | 'warning' }[]).map(m => (
                 <Stack key={m.l} gap={1}>
                   <Stack direction="row" justify="space-between">
-                    <span style={{ fontSize: 11, color: 'var(--synu-text-secondary)' }}>{m.l}</span>
-                    <span style={{ fontSize: 11, color: 'var(--synu-text-tertiary)' }}>{m.v}%</span>
+                    <span style={{ fontSize: 11, color: 'var(--tokis-text-secondary)' }}>{m.l}</span>
+                    <span style={{ fontSize: 11, color: 'var(--tokis-text-tertiary)' }}>{m.v}%</span>
                   </Stack>
                   <Progress value={m.v} variant={m.c} />
                 </Stack>
@@ -212,11 +212,11 @@ import '@synu/theme/dist/index.css';
             <div className="lpv3-hsc__group-label">Social / Misc</div>
             <Stack direction="row" gap={4} align="center">
               <Stack gap={1}>
-                <span style={{ fontSize: 10, color: 'var(--synu-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Rating</span>
+                <span style={{ fontSize: 10, color: 'var(--tokis-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Rating</span>
                 <Rating value={4.5} readOnly size="sm" />
               </Stack>
               <Stack gap={1}>
-                <span style={{ fontSize: 10, color: 'var(--synu-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Team</span>
+                <span style={{ fontSize: 10, color: 'var(--tokis-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Team</span>
                 <Stack direction="row" gap={0}>
                   {[1, 2, 3, 4].map(i => (
                     <div key={i} style={{ marginLeft: i > 1 ? -8 : 0 }}>
@@ -226,10 +226,10 @@ import '@synu/theme/dist/index.css';
                 </Stack>
               </Stack>
               <Stack gap={1}>
-                <span style={{ fontSize: 10, color: 'var(--synu-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Status</span>
+                <span style={{ fontSize: 10, color: 'var(--tokis-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Status</span>
                 <Stack direction="row" gap={1} align="center">
                   <Spinner size="sm" />
-                  <span style={{ fontSize: 11, color: 'var(--synu-text-secondary)' }}>Syncing</span>
+                  <span style={{ fontSize: 11, color: 'var(--tokis-text-secondary)' }}>Syncing</span>
                 </Stack>
               </Stack>
             </Stack>
@@ -273,15 +273,15 @@ function Demo0() {
         {([{ l: 'Storage', v: 73, c: 'default' }, { l: 'CPU', v: 41, c: 'success' }, { l: 'Memory', v: 88, c: 'warning' }] as { l: string; v: number; c: 'default' | 'success' | 'warning' }[]).map(m => (
           <Stack key={m.l} gap={1}>
             <Stack direction="row" justify="space-between">
-              <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-secondary)' }}>{m.l}</span>
-              <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>{m.v}%</span>
+              <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-secondary)' }}>{m.l}</span>
+              <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>{m.v}%</span>
             </Stack>
             <Progress value={m.v} variant={m.c} />
           </Stack>
         ))}
       </Stack>
       <Alert variant="success" title="Deploy successful">
-        <span style={{ fontSize: 'var(--synu-font-size-xs)' }}>Edge network live in 3 regions.</span>
+        <span style={{ fontSize: 'var(--tokis-font-size-xs)' }}>Edge network live in 3 regions.</span>
       </Alert>
     </Stack>
   );
@@ -289,32 +289,32 @@ function Demo0() {
 
 function Demo1() {
   const bars = [
-    { label: '@synu/react', size: '18kb', pct: 18, color: '#7c3aed' },
+    { label: '@tokis/react', size: '18kb', pct: 18, color: '#7c3aed' },
     { label: 'material-ui', size: '94kb', pct: 94, color: '#ef4444' },
     { label: 'chakra-ui',   size: '72kb', pct: 72, color: '#f97316' },
     { label: 'mantine',     size: '58kb', pct: 58, color: '#eab308' },
   ];
   return (
     <Stack gap={4}>
-      <span style={{ fontSize: 11, color: 'var(--synu-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'var(--site-font-mono)' }}>
+      <span style={{ fontSize: 11, color: 'var(--tokis-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'var(--site-font-mono)' }}>
         Bundle size comparison (gzipped)
       </span>
       {bars.map(b => (
         <Stack key={b.label} gap={1}>
           <Stack direction="row" justify="space-between">
-            <span style={{ fontSize: 13, fontFamily: 'var(--site-font-mono)', color: 'var(--synu-text-primary)' }}>{b.label}</span>
+            <span style={{ fontSize: 13, fontFamily: 'var(--site-font-mono)', color: 'var(--tokis-text-primary)' }}>{b.label}</span>
             <span style={{ fontSize: 13, fontFamily: 'var(--site-font-mono)', color: b.color, fontWeight: 600 }}>{b.size}</span>
           </Stack>
-          <div style={{ height: 6, borderRadius: 3, background: 'var(--synu-color-surface)', overflow: 'hidden' }}>
+          <div style={{ height: 6, borderRadius: 3, background: 'var(--tokis-color-surface)', overflow: 'hidden' }}>
             <div style={{ height: '100%', width: `${b.pct}%`, background: b.color, borderRadius: 3, transition: 'width 1.2s ease 0.2s' }} />
           </div>
         </Stack>
       ))}
-      <Stack direction="row" gap={6} style={{ paddingTop: 'var(--synu-spacing-2)' }}>
+      <Stack direction="row" gap={6} style={{ paddingTop: 'var(--tokis-spacing-2)' }}>
         {[{ v: '5×', l: 'smaller', c: '#7c3aed' }, { v: '0ms', l: 'hydration', c: '#059669' }, { v: '∞', l: 'themes', c: '#0284c7' }].map(s => (
           <Stack key={s.l} gap={0} align="center">
             <span style={{ fontSize: 28, fontWeight: 800, color: s.c, lineHeight: 1, fontFamily: 'var(--site-font-display)' }}>{s.v}</span>
-            <span style={{ fontSize: 11, color: 'var(--synu-text-tertiary)' }}>{s.l}</span>
+            <span style={{ fontSize: 11, color: 'var(--tokis-text-tertiary)' }}>{s.l}</span>
           </Stack>
         ))}
       </Stack>
@@ -324,23 +324,23 @@ function Demo1() {
 
 function Demo2() {
   const tokens = [
-    { token: '--synu-color-primary', value: '#7c3aed', swatch: '#7c3aed' },
-    { token: '--synu-color-bg',      value: '#ffffff', swatch: '#ffffff' },
-    { token: '--synu-color-surface', value: '#f9fafb', swatch: '#f9fafb' },
-    { token: '--synu-text-primary',  value: '#09090b', swatch: '#09090b' },
-    { token: '--synu-radius-md',     value: '8px',     swatch: null },
-    { token: '--synu-spacing-4',     value: '16px',    swatch: null },
+    { token: '--tokis-color-primary', value: '#7c3aed', swatch: '#7c3aed' },
+    { token: '--tokis-color-bg',      value: '#ffffff', swatch: '#ffffff' },
+    { token: '--tokis-color-surface', value: '#f9fafb', swatch: '#f9fafb' },
+    { token: '--tokis-text-primary',  value: '#09090b', swatch: '#09090b' },
+    { token: '--tokis-radius-md',     value: '8px',     swatch: null },
+    { token: '--tokis-spacing-4',     value: '16px',    swatch: null },
   ];
   return (
     <Stack gap={2}>
-      <div style={{ fontSize: 11, fontFamily: 'var(--site-font-mono)', color: 'var(--synu-text-tertiary)', marginBottom: 4 }}>
+      <div style={{ fontSize: 11, fontFamily: 'var(--site-font-mono)', color: 'var(--tokis-text-tertiary)', marginBottom: 4 }}>
         variables.css — 120+ design tokens
       </div>
       {tokens.map(t => (
-        <div key={t.token} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '7px 10px', background: 'var(--synu-color-surface)', borderRadius: 6, border: '1px solid var(--synu-color-border)' }}>
-          <div style={{ width: 16, height: 16, borderRadius: 3, background: t.swatch ?? 'var(--synu-color-surface-hover)', border: '1px solid var(--synu-color-border)', flexShrink: 0 }} />
-          <span style={{ flex: 1, fontSize: 11, fontFamily: 'var(--site-font-mono)', color: 'var(--synu-color-primary)' }}>{t.token}</span>
-          <span style={{ fontSize: 11, fontFamily: 'var(--site-font-mono)', color: 'var(--synu-text-secondary)' }}>{t.value}</span>
+        <div key={t.token} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '7px 10px', background: 'var(--tokis-color-surface)', borderRadius: 6, border: '1px solid var(--tokis-color-border)' }}>
+          <div style={{ width: 16, height: 16, borderRadius: 3, background: t.swatch ?? 'var(--tokis-color-surface-hover)', border: '1px solid var(--tokis-color-border)', flexShrink: 0 }} />
+          <span style={{ flex: 1, fontSize: 11, fontFamily: 'var(--site-font-mono)', color: 'var(--tokis-color-primary)' }}>{t.token}</span>
+          <span style={{ fontSize: 11, fontFamily: 'var(--site-font-mono)', color: 'var(--tokis-text-secondary)' }}>{t.value}</span>
         </div>
       ))}
     </Stack>
@@ -569,7 +569,7 @@ export function Landing() {
   }, []);
 
   const codeLines = [
-    "import { ButtonRoot, ButtonLabel } from '@synu/react';",
+    "import { ButtonRoot, ButtonLabel } from '@tokis/react';",
     '',
     '// Compound components — no prop explosion',
     '<ButtonRoot variant="primary" size="lg">',
@@ -612,6 +612,8 @@ export function Landing() {
               <span className="lpv3-hero__title-plain">Design systems,</span>
               <span className="lpv3-hero__title-grad">reimagined.</span>
             </h1>
+
+            <p className="lpv3-hero__acronym">Tokis Only Knows Its Styles</p>
 
             <p className="lpv3-hero__sub">
               A performance-first UI library for React teams who refuse to compromise.
@@ -677,7 +679,7 @@ export function Landing() {
       <section className="lpv3-features">
         <div className="lpv3-features-inner">
         <div className="lpv3-features__head">
-          <span className="lpv3-eyebrow">Why Synu?</span>
+          <span className="lpv3-eyebrow">Why Tokis?</span>
           <h2 className="lpv3-section-title">
             Built for teams that{' '}
             <span className="lpv3-grad">give a damn.</span>
@@ -731,7 +733,7 @@ export function Landing() {
               Compound component APIs that are predictable, flexible, and refactor-friendly.
               No prop explosion — just clean composition.
             </p>
-            <Stack direction="row" gap={3} style={{ marginTop: 'var(--synu-spacing-6)' }}>
+            <Stack direction="row" gap={3} style={{ marginTop: 'var(--tokis-spacing-6)' }}>
               <NavButton to="/docs/button" variant="primary"><ButtonLabel>Explore →</ButtonLabel></NavButton>
               <NavButton to="/docs/installation" variant="ghost"><ButtonLabel>Install in 30s</ButtonLabel></NavButton>
             </Stack>
@@ -768,7 +770,7 @@ export function Landing() {
             one install command.
           </p>
           <div className="lpv3-cta__install">
-            <code>npm install @synu/react @synu/theme</code>
+            <code>npm install @tokis/react @tokis/theme</code>
           </div>
           <Stack direction="row" gap={3} justify="center" wrap>
             <NavButton to="/docs/introduction" size="lg" variant="primary">
@@ -786,7 +788,7 @@ export function Landing() {
         <div className="site-footer__inner">
           <div className="site-footer__brand">
             <div className="site-navbar__logo-mark" aria-hidden="true">Sy</div>
-            <span className="site-footer__copy">© 2026 Synu — MIT License</span>
+            <span className="site-footer__copy">© 2026 Tokis — MIT License</span>
           </div>
           <nav className="site-footer__links" aria-label="Footer navigation">
             <a href="#" className="site-footer__link">GitHub</a>

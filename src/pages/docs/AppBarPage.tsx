@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Stack } from '@synu/react';
+import { AppBar, Stack } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -33,7 +33,7 @@ const iconButtonStyle: React.CSSProperties = {
   width: 36,
   height: 36,
   border: 'none',
-  borderRadius: 'var(--synu-radius-md)',
+  borderRadius: 'var(--tokis-radius-md)',
   background: 'transparent',
   color: 'inherit',
   cursor: 'pointer',
@@ -46,12 +46,12 @@ const AvatarPlaceholder = () => (
       width: 32,
       height: 32,
       borderRadius: '50%',
-      background: 'var(--synu-color-primary)',
+      background: 'var(--tokis-color-primary)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: 'var(--synu-text-on-primary)',
-      fontSize: 'var(--synu-font-size-xs)',
+      color: 'var(--tokis-text-on-primary)',
+      fontSize: 'var(--tokis-font-size-xs)',
       fontWeight: 600,
       flexShrink: 0,
     }}
@@ -121,8 +121,8 @@ export function AppBarPage() {
           <div
             style={{
               width: '100%',
-              border: '1px solid var(--synu-color-border)',
-              borderRadius: 'var(--synu-radius-lg)',
+              border: '1px solid var(--tokis-color-border)',
+              borderRadius: 'var(--tokis-radius-lg)',
               overflow: 'hidden',
             }}
           >
@@ -150,10 +150,10 @@ export function AppBarPage() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: 'var(--synu-color-surface)',
+                background: 'var(--tokis-color-surface)',
               }}
             >
-              <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-tertiary)' }}>
+              <span style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-tertiary)' }}>
                 Page content
               </span>
             </div>
@@ -181,8 +181,8 @@ export function AppBarPage() {
               <div
                 key={v}
                 style={{
-                  border: '1px solid var(--synu-color-border)',
-                  borderRadius: 'var(--synu-radius-md)',
+                  border: '1px solid var(--tokis-color-border)',
+                  borderRadius: 'var(--tokis-radius-md)',
                   overflow: 'hidden',
                 }}
               >
@@ -230,8 +230,8 @@ export function AppBarPage() {
               <div
                 key={e}
                 style={{
-                  border: '1px solid var(--synu-color-border)',
-                  borderRadius: 'var(--synu-radius-md)',
+                  border: '1px solid var(--tokis-color-border)',
+                  borderRadius: 'var(--tokis-radius-md)',
                   overflow: 'hidden',
                 }}
               >

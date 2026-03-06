@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CommandPalette, ButtonRoot, ButtonLabel } from '@synu/react';
+import { CommandPalette, ButtonRoot, ButtonLabel } from '@tokis/react';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -230,13 +230,13 @@ useEffect(() => {
                     <kbd
                       key={k}
                       style={{
-                        fontFamily: 'var(--synu-font-family-mono)',
-                        fontSize: 'var(--synu-font-size-xs)',
-                        background: 'var(--synu-color-surface)',
-                        border: '1px solid var(--synu-color-border)',
-                        borderRadius: 'var(--synu-radius-sm)',
+                        fontFamily: 'var(--tokis-font-family-mono)',
+                        fontSize: 'var(--tokis-font-size-xs)',
+                        background: 'var(--tokis-color-surface)',
+                        border: '1px solid var(--tokis-color-border)',
+                        borderRadius: 'var(--tokis-radius-sm)',
                         padding: '1px 5px',
-                        color: 'var(--synu-text-secondary)',
+                        color: 'var(--tokis-text-secondary)',
                       }}
                     >
                       {k}
@@ -247,9 +247,9 @@ useEffect(() => {
             </ButtonRoot>
 
             {lastCommand && (
-              <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>
+              <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>
                 Last command:{' '}
-                <strong style={{ color: 'var(--synu-text-primary)' }}>{lastCommand}</strong>
+                <strong style={{ color: 'var(--tokis-text-primary)' }}>{lastCommand}</strong>
               </p>
             )}
 
@@ -266,7 +266,7 @@ useEffect(() => {
       {/* Keyboard navigation */}
       <div className="doc-section">
         <h2 className="doc-section__title">Keyboard Navigation</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--synu-spacing-4)', fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--tokis-spacing-4)', fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>
           {[
             ['⌘K / Ctrl+K', 'Open the palette'],
             ['Type', 'Filter commands'],
@@ -277,15 +277,15 @@ useEffect(() => {
           ].map(([key, desc]) => (
             <div key={key} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
               <code style={{
-                fontFamily: 'var(--synu-font-family-mono)',
-                fontSize: 'var(--synu-font-size-xs)',
-                background: 'var(--synu-color-surface)',
-                border: '1px solid var(--synu-color-border)',
-                borderRadius: 'var(--synu-radius-sm)',
+                fontFamily: 'var(--tokis-font-family-mono)',
+                fontSize: 'var(--tokis-font-size-xs)',
+                background: 'var(--tokis-color-surface)',
+                border: '1px solid var(--tokis-color-border)',
+                borderRadius: 'var(--tokis-radius-sm)',
                 padding: '2px 6px',
                 whiteSpace: 'nowrap',
                 flexShrink: 0,
-                color: 'var(--synu-text-primary)',
+                color: 'var(--tokis-text-primary)',
               }}>
                 {key}
               </code>

@@ -7,7 +7,7 @@ import {
   Stack,
   Divider,
   Progress,
-} from '@synu/react';
+} from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -69,7 +69,7 @@ export function CardPage() {
               <CardDescription>Last deployed 2 hours ago</CardDescription>
             </CardHeader>
             <CardBody>
-              <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>
+              <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>
                 Your production deployment is healthy and serving 98% of requests.
               </p>
             </CardBody>
@@ -115,7 +115,7 @@ export function CardPage() {
       <div className="doc-section">
         <h2 className="doc-section__title">Composition Patterns</h2>
         <p className="doc-section__desc">
-          Cards are building blocks. Compose them with any Synu components.
+          Cards are building blocks. Compose them with any Tokis components.
         </p>
         <ComponentPreview
           code={`{/* User profile card */}
@@ -125,7 +125,7 @@ export function CardPage() {
       <Avatar name="Jordan Lee" size="lg" />
       <div>
         <CardTitle>Jordan Lee</CardTitle>
-        <CardDescription>Senior Engineer · Synu</CardDescription>
+        <CardDescription>Senior Engineer · Tokis</CardDescription>
       </div>
       <Badge variant="success" dot style={{ marginLeft: 'auto' }}>Online</Badge>
     </Stack>
@@ -147,19 +147,19 @@ export function CardPage() {
                 <Avatar name="Jordan Lee" size="lg" />
                 <div>
                   <CardTitle>Jordan Lee</CardTitle>
-                  <CardDescription>Senior Engineer · Synu</CardDescription>
+                  <CardDescription>Senior Engineer · Tokis</CardDescription>
                 </div>
                 <Badge variant="success" dot style={{ marginLeft: 'auto' }}>Online</Badge>
               </Stack>
             </CardHeader>
             <CardBody>
-              <p style={{ margin: '0 0 var(--synu-spacing-3)', fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>
+              <p style={{ margin: '0 0 var(--tokis-spacing-3)', fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>
                 Building performance-first design systems. Open source contributor.
               </p>
               <Progress value={85} label="Profile complete" showValue />
             </CardBody>
             <Divider />
-            <CardFooter style={{ gap: 'var(--synu-spacing-2)', justifyContent: 'flex-end' }}>
+            <CardFooter style={{ gap: 'var(--tokis-spacing-2)', justifyContent: 'flex-end' }}>
               <ButtonRoot size="sm" variant="outline"><ButtonLabel>Message</ButtonLabel></ButtonRoot>
               <ButtonRoot size="sm" variant="primary"><ButtonLabel>Follow</ButtonLabel></ButtonRoot>
             </CardFooter>
@@ -175,7 +175,7 @@ export function CardPage() {
   {metrics.map(({ label, value, change, variant }) => (
     <Card key={label} style={{ flex: 1, minWidth: 160 }}>
       <CardBody>
-        <p style={{ color: 'var(--synu-text-secondary)', fontSize: 12 }}>{label}</p>
+        <p style={{ color: 'var(--tokis-text-secondary)', fontSize: 12 }}>{label}</p>
         <p style={{ fontSize: 28, fontWeight: 700, margin: '4px 0' }}>{value}</p>
         <Badge variant={variant}>{change}</Badge>
       </CardBody>
@@ -192,7 +192,7 @@ export function CardPage() {
             ].map(({ label, value, change, variant }) => (
               <Card key={label} style={{ flex: 1, minWidth: 140 }}>
                 <CardBody>
-                  <p style={{ color: 'var(--synu-text-secondary)', fontSize: 11, margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{label}</p>
+                  <p style={{ color: 'var(--tokis-text-secondary)', fontSize: 11, margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{label}</p>
                   <p style={{ fontSize: '1.75rem', fontWeight: 700, margin: '0 0 8px', letterSpacing: '-0.03em' }}>{value}</p>
                   <Badge variant={variant}>{change}</Badge>
                 </CardBody>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavigationRail, Stack } from '@synu/react';
+import { NavigationRail, Stack } from '@tokis/react';
 import { ComponentPreview, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -70,14 +70,14 @@ const LogoPlaceholder = () => (
     style={{
       width: 36,
       height: 36,
-      borderRadius: 'var(--synu-radius-md)',
-      background: 'var(--synu-color-primary)',
+      borderRadius: 'var(--tokis-radius-md)',
+      background: 'var(--tokis-color-primary)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: 'var(--synu-text-on-primary)',
+      color: 'var(--tokis-text-on-primary)',
       fontWeight: 700,
-      fontSize: 'var(--synu-font-size-sm)',
+      fontSize: 'var(--tokis-font-size-sm)',
       letterSpacing: '-0.02em',
     }}
   >
@@ -87,51 +87,51 @@ const LogoPlaceholder = () => (
 
 const railContentPanels: Record<string, React.ReactNode> = {
   dashboard: (
-    <div style={{ padding: 'var(--synu-spacing-5)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-4)' }}>
-      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', fontWeight: 600, color: 'var(--synu-text-primary)' }}>Dashboard</p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'var(--synu-spacing-3)' }}>
+    <div style={{ padding: 'var(--tokis-spacing-5)', display: 'flex', flexDirection: 'column', gap: 'var(--tokis-spacing-4)' }}>
+      <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', fontWeight: 600, color: 'var(--tokis-text-primary)' }}>Dashboard</p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'var(--tokis-spacing-3)' }}>
         {[{ label: 'Deployments', value: '142' }, { label: 'Uptime', value: '99.9%' }, { label: 'Errors', value: '3' }, { label: 'Users', value: '2.4k' }].map(({ label, value }) => (
-          <div key={label} style={{ background: 'var(--synu-color-background)', border: '1px solid var(--synu-color-border)', borderRadius: 'var(--synu-radius-md)', padding: 'var(--synu-spacing-3)' }}>
-            <div style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', marginBottom: 4 }}>{label}</div>
-            <div style={{ fontSize: 'var(--synu-font-size-lg)', fontWeight: 700, color: 'var(--synu-text-primary)' }}>{value}</div>
+          <div key={label} style={{ background: 'var(--tokis-color-background)', border: '1px solid var(--tokis-color-border)', borderRadius: 'var(--tokis-radius-md)', padding: 'var(--tokis-spacing-3)' }}>
+            <div style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', marginBottom: 4 }}>{label}</div>
+            <div style={{ fontSize: 'var(--tokis-font-size-lg)', fontWeight: 700, color: 'var(--tokis-text-primary)' }}>{value}</div>
           </div>
         ))}
       </div>
     </div>
   ),
   projects: (
-    <div style={{ padding: 'var(--synu-spacing-5)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-2)' }}>
-      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', fontWeight: 600, color: 'var(--synu-text-primary)', marginBottom: 8 }}>Projects</p>
+    <div style={{ padding: 'var(--tokis-spacing-5)', display: 'flex', flexDirection: 'column', gap: 'var(--tokis-spacing-2)' }}>
+      <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', fontWeight: 600, color: 'var(--tokis-text-primary)', marginBottom: 8 }}>Projects</p>
       {['web-app', 'api-service', 'mobile-client', 'design-system'].map((name) => (
-        <div key={name} style={{ display: 'flex', alignItems: 'center', gap: 'var(--synu-spacing-2)', padding: '6px 0', fontSize: 'var(--synu-font-size-xs)', borderBottom: '1px solid var(--synu-color-border)' }}>
-          <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--synu-color-success)', flexShrink: 0 }} />
-          <span style={{ flex: 1, color: 'var(--synu-text-primary)', fontFamily: 'monospace' }}>{name}</span>
-          <span style={{ color: 'var(--synu-text-tertiary)' }}>Active</span>
+        <div key={name} style={{ display: 'flex', alignItems: 'center', gap: 'var(--tokis-spacing-2)', padding: '6px 0', fontSize: 'var(--tokis-font-size-xs)', borderBottom: '1px solid var(--tokis-color-border)' }}>
+          <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--tokis-color-success)', flexShrink: 0 }} />
+          <span style={{ flex: 1, color: 'var(--tokis-text-primary)', fontFamily: 'monospace' }}>{name}</span>
+          <span style={{ color: 'var(--tokis-text-tertiary)' }}>Active</span>
         </div>
       ))}
     </div>
   ),
   team: (
-    <div style={{ padding: 'var(--synu-spacing-5)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-4)' }}>
-      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', fontWeight: 600, color: 'var(--synu-text-primary)' }}>Team</p>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--synu-spacing-3)' }}>
+    <div style={{ padding: 'var(--tokis-spacing-5)', display: 'flex', flexDirection: 'column', gap: 'var(--tokis-spacing-4)' }}>
+      <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', fontWeight: 600, color: 'var(--tokis-text-primary)' }}>Team</p>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--tokis-spacing-3)' }}>
         {[{ name: 'Alex', role: 'Lead' }, { name: 'Blake', role: 'Dev' }, { name: 'Casey', role: 'Design' }, { name: 'Dana', role: 'QA' }].map(({ name, role }) => (
           <div key={name} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
-            <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'var(--synu-color-primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--synu-font-size-sm)', fontWeight: 700, color: 'var(--synu-color-primary)' }}>{name[0]}</div>
-            <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-primary)' }}>{name}</span>
-            <span style={{ fontSize: 10, color: 'var(--synu-text-tertiary)' }}>{role}</span>
+            <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'var(--tokis-color-primary-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--tokis-font-size-sm)', fontWeight: 700, color: 'var(--tokis-color-primary)' }}>{name[0]}</div>
+            <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-primary)' }}>{name}</span>
+            <span style={{ fontSize: 10, color: 'var(--tokis-text-tertiary)' }}>{role}</span>
           </div>
         ))}
       </div>
     </div>
   ),
   settings: (
-    <div style={{ padding: 'var(--synu-spacing-5)', display: 'flex', flexDirection: 'column', gap: 'var(--synu-spacing-3)' }}>
-      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', fontWeight: 600, color: 'var(--synu-text-primary)' }}>Settings</p>
+    <div style={{ padding: 'var(--tokis-spacing-5)', display: 'flex', flexDirection: 'column', gap: 'var(--tokis-spacing-3)' }}>
+      <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', fontWeight: 600, color: 'var(--tokis-text-primary)' }}>Settings</p>
       {['Notifications', 'Billing', 'API Keys', 'Team permissions'].map((item) => (
-        <div key={item} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 0', borderBottom: '1px solid var(--synu-color-border)', fontSize: 'var(--synu-font-size-xs)' }}>
-          <span style={{ color: 'var(--synu-text-primary)' }}>{item}</span>
-          <span style={{ color: 'var(--synu-color-primary)', cursor: 'pointer' }}>Edit →</span>
+        <div key={item} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 0', borderBottom: '1px solid var(--tokis-color-border)', fontSize: 'var(--tokis-font-size-xs)' }}>
+          <span style={{ color: 'var(--tokis-text-primary)' }}>{item}</span>
+          <span style={{ color: 'var(--tokis-color-primary)', cursor: 'pointer' }}>Edit →</span>
         </div>
       ))}
     </div>
@@ -180,8 +180,8 @@ export function NavigationRailPage() {
           <div
             style={{
               height: 400,
-              border: '1px solid var(--synu-color-border)',
-              borderRadius: 'var(--synu-radius-lg)',
+              border: '1px solid var(--tokis-color-border)',
+              borderRadius: 'var(--tokis-radius-lg)',
               overflow: 'hidden',
               display: 'flex',
             }}
@@ -202,10 +202,10 @@ export function NavigationRailPage() {
                       justifyContent: 'center',
                       width: 36,
                       height: 36,
-                      border: '1px solid var(--synu-color-border)',
-                      borderRadius: 'var(--synu-radius-md)',
+                      border: '1px solid var(--tokis-color-border)',
+                      borderRadius: 'var(--tokis-radius-md)',
                       background: 'transparent',
-                      color: 'var(--synu-text-secondary)',
+                      color: 'var(--tokis-text-secondary)',
                       cursor: 'pointer',
                     }}
                   >
@@ -217,7 +217,7 @@ export function NavigationRailPage() {
             <div
               style={{
                 flex: 1,
-                background: 'var(--synu-color-surface)',
+                background: 'var(--tokis-color-surface)',
                 overflow: 'auto',
               }}
             >
@@ -241,7 +241,7 @@ export function NavigationRailPage() {
   value={value}
   onChange={setValue}
   header={
-    <div style={{ width: 36, height: 36, borderRadius: 8, background: 'var(--synu-color-primary)' }}>
+    <div style={{ width: 36, height: 36, borderRadius: 8, background: 'var(--tokis-color-primary)' }}>
       S
     </div>
   }
@@ -257,8 +257,8 @@ export function NavigationRailPage() {
             style={{
               height: 400,
               width: 72,
-              border: '1px solid var(--synu-color-border)',
-              borderRadius: 'var(--synu-radius-lg)',
+              border: '1px solid var(--tokis-color-border)',
+              borderRadius: 'var(--tokis-radius-lg)',
               overflow: 'hidden',
             }}
           >
@@ -277,10 +277,10 @@ export function NavigationRailPage() {
                     justifyContent: 'center',
                     width: 36,
                     height: 36,
-                    border: '1px solid var(--synu-color-border)',
-                    borderRadius: 'var(--synu-radius-md)',
+                    border: '1px solid var(--tokis-color-border)',
+                    borderRadius: 'var(--tokis-radius-md)',
                     background: 'transparent',
-                    color: 'var(--synu-text-secondary)',
+                    color: 'var(--tokis-text-secondary)',
                     cursor: 'pointer',
                   }}
                 >

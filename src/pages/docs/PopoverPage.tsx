@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Popover, ButtonRoot, ButtonLabel, Stack, Badge, Avatar } from '@synu/react';
+import { Popover, ButtonRoot, ButtonLabel, Stack, Badge, Avatar } from '@tokis/react';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -80,7 +80,7 @@ export function PopoverPage() {
               title="Quick actions"
               content={
                 <Stack gap={3}>
-                  <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>
+                  <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>
                     Choose an action to perform on the selected items.
                   </p>
                   <Stack direction="row" gap={2}>
@@ -122,7 +122,7 @@ export function PopoverPage() {
               title="Preferences"
               content={
                 <Stack gap={3}>
-                  <div style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>
+                  <div style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>
                     Customize your workspace preferences.
                   </div>
                   <Stack gap={2}>
@@ -131,7 +131,7 @@ export function PopoverPage() {
                         key={pref}
                         style={{
                           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                          fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-primary)',
+                          fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-primary)',
                         }}
                       >
                         <span>{pref}</span>
@@ -155,10 +155,10 @@ export function PopoverPage() {
                   <Stack direction="row" gap={3} align="center">
                     <Avatar name="Jordan Lee" size="md" />
                     <Stack gap={0}>
-                      <div style={{ fontWeight: 'var(--synu-font-weight-semibold)', fontSize: 'var(--synu-font-size-sm)' }}>
+                      <div style={{ fontWeight: 'var(--tokis-font-weight-semibold)', fontSize: 'var(--tokis-font-size-sm)' }}>
                         Jordan Lee
                       </div>
-                      <div style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>
+                      <div style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>
                         jordan@example.com
                       </div>
                     </Stack>

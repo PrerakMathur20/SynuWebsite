@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HoverCard, Stack } from '@synu/react';
+import { HoverCard, Stack } from '@tokis/react';
 import { ComponentPreview, DemoControl } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -40,7 +40,7 @@ export function HoverCardPage() {
   placement="${placement}"
   openDelay={${openDelay}}
   trigger={
-    <a href="#" style={{ color: 'var(--synu-color-primary)', fontWeight: 600 }}>
+    <a href="#" style={{ color: 'var(--tokis-color-primary)', fontWeight: 600 }}>
       @sarah_chen
     </a>
   }
@@ -79,7 +79,7 @@ export function HoverCardPage() {
           }
         >
           <div style={{ padding: 60 }}>
-            <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>
+            <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>
               Mentioned{' '}
               <HoverCard
                 placement={placement}
@@ -89,8 +89,8 @@ export function HoverCardPage() {
                     href="#"
                     onClick={(e) => e.preventDefault()}
                     style={{
-                      color: 'var(--synu-color-primary)',
-                      fontWeight: 'var(--synu-font-weight-semibold)',
+                      color: 'var(--tokis-color-primary)',
+                      fontWeight: 'var(--tokis-font-weight-semibold)',
                       textDecoration: 'none',
                       cursor: 'pointer',
                     }}
@@ -106,33 +106,33 @@ export function HoverCardPage() {
                           width: 44,
                           height: 44,
                           borderRadius: '50%',
-                          background: 'linear-gradient(135deg, var(--synu-color-primary), #8b5cf6)',
+                          background: 'linear-gradient(135deg, var(--tokis-color-primary), #8b5cf6)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           color: '#fff',
-                          fontWeight: 'var(--synu-font-weight-bold)',
-                          fontSize: 'var(--synu-font-size-md)',
+                          fontWeight: 'var(--tokis-font-weight-bold)',
+                          fontSize: 'var(--tokis-font-size-md)',
                           flexShrink: 0,
                         }}
                       >
                         SC
                       </div>
                       <div style={{ minWidth: 0 }}>
-                        <div style={{ fontWeight: 'var(--synu-font-weight-semibold)', fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-primary)' }}>
+                        <div style={{ fontWeight: 'var(--tokis-font-weight-semibold)', fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-primary)' }}>
                           Sarah Chen
                         </div>
-                        <div style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>
+                        <div style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>
                           @sarah_chen
                         </div>
                       </div>
                     </div>
-                    <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)', lineHeight: 1.5 }}>
+                    <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)', lineHeight: 1.5 }}>
                       Product designer &amp; open-source contributor. Building beautiful UIs one pixel at a time.
                     </p>
-                    <div style={{ display: 'flex', gap: 20, fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>
-                      <span><strong style={{ color: 'var(--synu-text-primary)', fontWeight: 'var(--synu-font-weight-semibold)' }}>1.2k</strong>{' '}Followers</span>
-                      <span><strong style={{ color: 'var(--synu-text-primary)', fontWeight: 'var(--synu-font-weight-semibold)' }}>348</strong>{' '}Following</span>
+                    <div style={{ display: 'flex', gap: 20, fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>
+                      <span><strong style={{ color: 'var(--tokis-text-primary)', fontWeight: 'var(--tokis-font-weight-semibold)' }}>1.2k</strong>{' '}Followers</span>
+                      <span><strong style={{ color: 'var(--tokis-text-primary)', fontWeight: 'var(--tokis-font-weight-semibold)' }}>348</strong>{' '}Following</span>
                     </div>
                   </div>
                 }

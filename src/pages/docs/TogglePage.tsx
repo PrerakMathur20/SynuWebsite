@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ToggleButton, ToggleGroup } from '@synu/react';
+import { ToggleButton, ToggleGroup } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -103,20 +103,20 @@ const [underline, setUnderline] = useState(false);
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
             <div style={{ display: 'flex', gap: 4 }}>
               <ToggleButton pressed={bold} onChange={setBold} aria-label="Bold">
-                <strong style={{ fontSize: 'var(--synu-font-size-sm)', fontFamily: 'var(--synu-font-family-sans)' }}>B</strong>
+                <strong style={{ fontSize: 'var(--tokis-font-size-sm)', fontFamily: 'var(--tokis-font-family-sans)' }}>B</strong>
               </ToggleButton>
               <ToggleButton pressed={italic} onChange={setItalic} aria-label="Italic">
-                <em style={{ fontSize: 'var(--synu-font-size-sm)', fontFamily: 'Georgia, serif' }}>I</em>
+                <em style={{ fontSize: 'var(--tokis-font-size-sm)', fontFamily: 'Georgia, serif' }}>I</em>
               </ToggleButton>
               <ToggleButton pressed={underline} onChange={setUnderline} aria-label="Underline">
-                <span style={{ fontSize: 'var(--synu-font-size-sm)', textDecoration: 'underline', fontFamily: 'var(--synu-font-family-sans)' }}>U</span>
+                <span style={{ fontSize: 'var(--tokis-font-size-sm)', textDecoration: 'underline', fontFamily: 'var(--tokis-font-family-sans)' }}>U</span>
               </ToggleButton>
             </div>
             <p
               style={{
                 margin: 0,
-                fontSize: 'var(--synu-font-size-sm)',
-                color: 'var(--synu-text-primary)',
+                fontSize: 'var(--tokis-font-size-sm)',
+                color: 'var(--tokis-text-primary)',
                 fontWeight: bold ? 700 : 400,
                 fontStyle: italic ? 'italic' : 'normal',
                 textDecoration: underline ? 'underline' : 'none',
@@ -190,7 +190,7 @@ const [underline, setUnderline] = useState(false);
                 size={multipleSize}
               />
             )}
-            <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>
+            <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>
               {multipleEnabled
                 ? `Selected: ${multipleAlignment.length > 0 ? multipleAlignment.join(', ') : 'none'}`
                 : `Selected: ${alignment}`}

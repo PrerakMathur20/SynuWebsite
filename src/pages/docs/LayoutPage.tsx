@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Stack, Grid, Container, Box } from '@synu/react';
+import { Stack, Grid, Container, Box } from '@tokis/react';
 import { ComponentPreview, DemoControl } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -12,14 +12,14 @@ const stackProps: PropDef[] = [
   { name: 'as', type: 'React.ElementType', default: "'div'", description: 'Polymorphic element.' },
 ];
 
-const Cell = ({ label, color = 'var(--synu-color-primary-subtle)' }: { label: string; color?: string }) => (
+const Cell = ({ label, color = 'var(--tokis-color-primary-subtle)' }: { label: string; color?: string }) => (
   <div style={{
     padding: '8px 12px',
     background: color,
-    border: '1px solid var(--synu-color-primary)',
-    borderRadius: 'var(--synu-radius-sm)',
-    fontSize: 'var(--synu-font-size-xs)',
-    color: 'var(--synu-color-primary)',
+    border: '1px solid var(--tokis-color-primary)',
+    borderRadius: 'var(--tokis-radius-sm)',
+    fontSize: 'var(--tokis-font-size-xs)',
+    color: 'var(--tokis-color-primary)',
     fontWeight: '500',
     textAlign: 'center',
     fontFamily: 'monospace',
@@ -117,15 +117,15 @@ export function LayoutPage() {
         >
           <Stack gap={6} style={{ width: '100%', maxWidth: 420 }}>
             <div>
-              <p style={{ fontSize: 11, color: 'var(--synu-text-tertiary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>space-between</p>
-              <Stack direction="row" justify="space-between" align="center" style={{ border: '1px dashed var(--synu-color-border)', padding: 12, borderRadius: 'var(--synu-radius-md)' }}>
+              <p style={{ fontSize: 11, color: 'var(--tokis-text-tertiary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>space-between</p>
+              <Stack direction="row" justify="space-between" align="center" style={{ border: '1px dashed var(--tokis-color-border)', padding: 12, borderRadius: 'var(--tokis-radius-md)' }}>
                 <Cell label="Left" />
                 <Cell label="Right" />
               </Stack>
             </div>
             <div>
-              <p style={{ fontSize: 11, color: 'var(--synu-text-tertiary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>centered column</p>
-              <Stack align="center" gap={2} style={{ border: '1px dashed var(--synu-color-border)', padding: 12, borderRadius: 'var(--synu-radius-md)' }}>
+              <p style={{ fontSize: 11, color: 'var(--tokis-text-tertiary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>centered column</p>
+              <Stack align="center" gap={2} style={{ border: '1px dashed var(--tokis-color-border)', padding: 12, borderRadius: 'var(--tokis-radius-md)' }}>
                 <Cell label="Item 1" />
                 <Cell label="Item 2" />
                 <Cell label="Item 3" />
@@ -214,9 +214,9 @@ export function LayoutPage() {
           leftAlign
         >
           <div style={{ width: '100%' }}>
-            <div style={{ border: '2px dashed var(--synu-color-border)', borderRadius: 'var(--synu-radius-md)', padding: '12px' }}>
-              <div style={{ background: 'var(--synu-color-primary-subtle)', border: '1px solid var(--synu-color-primary)', borderRadius: 4, padding: '8px 16px', maxWidth: 300, margin: '0 auto', textAlign: 'center' }}>
-                <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-color-primary)' }}>Container (max-width centered)</span>
+            <div style={{ border: '2px dashed var(--tokis-color-border)', borderRadius: 'var(--tokis-radius-md)', padding: '12px' }}>
+              <div style={{ background: 'var(--tokis-color-primary-subtle)', border: '1px solid var(--tokis-color-primary)', borderRadius: 4, padding: '8px 16px', maxWidth: 300, margin: '0 auto', textAlign: 'center' }}>
+                <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-color-primary)' }}>Container (max-width centered)</span>
               </div>
             </div>
           </div>

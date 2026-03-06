@@ -17,7 +17,7 @@ import {
   FileDropZone,
   Accordion,
   CodeBlock,
-} from '@synu/react';
+} from '@tokis/react';
 
 // ─── Icons ───────────────────────────────────────────────────
 
@@ -200,7 +200,7 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
 
 {/* Accordion */}
 <Accordion type="single" collapsible items={[
-  { value: 'a1', trigger: 'What is Synu?', content: '...' },
+  { value: 'a1', trigger: 'What is Tokis?', content: '...' },
   { value: 'a2', trigger: 'Is it open source?', content: '...' },
 ]} />
 
@@ -249,7 +249,7 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
       <header className="playground__header">
         <h1 className="playground__title">Component Playground</h1>
         <p className="playground__subtitle">
-          Live, interactive demos of every Synu component. Tweak props and see changes instantly.
+          Live, interactive demos of every Tokis component. Tweak props and see changes instantly.
         </p>
       </header>
 
@@ -286,8 +286,8 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
                   </ButtonRoot>
 
                   {/* All variants at once */}
-                  <div style={{ borderTop: '1px solid var(--synu-color-border)', paddingTop: 'var(--synu-spacing-4)', width: '100%' }}>
-                    <p style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', textAlign: 'center', margin: '0 0 var(--synu-spacing-3)' }}>
+                  <div style={{ borderTop: '1px solid var(--tokis-color-border)', paddingTop: 'var(--tokis-spacing-4)', width: '100%' }}>
+                    <p style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', textAlign: 'center', margin: '0 0 var(--tokis-spacing-3)' }}>
                       All variants at current size
                     </p>
                     <Stack direction="row" gap={2} wrap justify="center">
@@ -401,23 +401,23 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
                 <input
                   type="range" min={1} max={20} value={sliderValue}
                   onChange={(e) => setSliderValue(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: 'var(--synu-color-primary)' }}
+                  style={{ width: '100%', accentColor: 'var(--tokis-color-primary)' }}
                 />
               </div>
 
               <div className="playground__control-group">
                 <label className="playground__control-label">Live values</label>
                 <div style={{
-                  fontSize: 'var(--synu-font-size-xs)', fontFamily: 'var(--synu-font-family-mono)',
-                  background: 'var(--synu-color-background)', border: '1px solid var(--synu-color-border)',
-                  borderRadius: 'var(--synu-radius-md)', padding: 'var(--synu-spacing-3)', lineHeight: 2,
+                  fontSize: 'var(--tokis-font-size-xs)', fontFamily: 'var(--tokis-font-family-mono)',
+                  background: 'var(--tokis-color-background)', border: '1px solid var(--tokis-color-border)',
+                  borderRadius: 'var(--tokis-radius-md)', padding: 'var(--tokis-spacing-3)', lineHeight: 2,
                 }}>
-                  <div><span style={{ color: 'var(--synu-text-tertiary)' }}>name:</span> {textValue || '—'}</div>
-                  <div><span style={{ color: 'var(--synu-text-tertiary)' }}>framework:</span> {selectValue}</div>
-                  <div><span style={{ color: 'var(--synu-text-tertiary)' }}>replicas:</span> {sliderValue}</div>
-                  <div><span style={{ color: 'var(--synu-text-tertiary)' }}>auto-scale:</span> {checked ? 'true' : 'false'}</div>
-                  <div><span style={{ color: 'var(--synu-text-tertiary)' }}>dark preview:</span> {switchOn ? 'true' : 'false'}</div>
-                  <div><span style={{ color: 'var(--synu-text-tertiary)' }}>region:</span> {radioValue}</div>
+                  <div><span style={{ color: 'var(--tokis-text-tertiary)' }}>name:</span> {textValue || '—'}</div>
+                  <div><span style={{ color: 'var(--tokis-text-tertiary)' }}>framework:</span> {selectValue}</div>
+                  <div><span style={{ color: 'var(--tokis-text-tertiary)' }}>replicas:</span> {sliderValue}</div>
+                  <div><span style={{ color: 'var(--tokis-text-tertiary)' }}>auto-scale:</span> {checked ? 'true' : 'false'}</div>
+                  <div><span style={{ color: 'var(--tokis-text-tertiary)' }}>dark preview:</span> {switchOn ? 'true' : 'false'}</div>
+                  <div><span style={{ color: 'var(--tokis-text-tertiary)' }}>region:</span> {radioValue}</div>
                 </div>
               </div>
             </div>
@@ -428,12 +428,12 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
         {section === 'display' && (
           <div className="playground__section">
             <div className="playground__preview">
-              <div className="playground__preview-canvas" style={{ flexDirection: 'column', gap: 'var(--synu-spacing-6)' }}>
+              <div className="playground__preview-canvas" style={{ flexDirection: 'column', gap: 'var(--tokis-spacing-6)' }}>
                 {/* Avatar */}
                 <Stack direction="row" gap={4} align="center">
                   <Avatar name="Alex Kim" size={avatarSize} />
                   <Stack gap={1}>
-                    <span style={{ fontWeight: 'var(--synu-font-weight-semibold)', fontSize: 'var(--synu-font-size-sm)' }}>Alex Kim</span>
+                    <span style={{ fontWeight: 'var(--tokis-font-weight-semibold)', fontSize: 'var(--tokis-font-size-sm)' }}>Alex Kim</span>
                     <Stack direction="row" gap={1}>
                       <Badge variant={badgeVariant} dot={badgeDot}>Admin</Badge>
                       <Badge variant="success" dot>Online</Badge>
@@ -461,7 +461,7 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
 
                 {/* Rating */}
                 <Stack gap={1}>
-                  <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 'var(--synu-font-weight-medium)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', fontWeight: 'var(--tokis-font-weight-medium)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Rating
                   </span>
                   <Stack direction="row" gap={3} align="center">
@@ -506,13 +506,13 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
                 <input
                   type="range" min={0} max={5} step={1} value={ratingValue}
                   onChange={(e) => setRatingValue(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: 'var(--synu-color-warning)' }}
+                  style={{ width: '100%', accentColor: 'var(--tokis-color-warning)' }}
                 />
               </div>
 
               <div className="playground__control-group">
                 <label className="playground__control-label">Selected chips</label>
-                <div style={{ fontSize: 'var(--synu-font-size-xs)', fontFamily: 'var(--synu-font-family-mono)', color: 'var(--synu-text-secondary)' }}>
+                <div style={{ fontSize: 'var(--tokis-font-size-xs)', fontFamily: 'var(--tokis-font-family-mono)', color: 'var(--tokis-text-secondary)' }}>
                   [{Array.from(activeChips).join(', ')}]
                 </div>
               </div>
@@ -525,7 +525,7 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
           <div className="playground__section">
             <div className="playground__preview">
               <div className="playground__preview-canvas">
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--synu-spacing-5)', width: '100%', maxWidth: 460 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--tokis-spacing-5)', width: '100%', maxWidth: 460 }}>
                   <Alert variant={alertVariant} title={alertVariant.charAt(0).toUpperCase() + alertVariant.slice(1)}>
                     {alertVariant === 'info' && 'Your deployment is being processed. This may take a few moments.'}
                     {alertVariant === 'success' && 'All 142 tests passed. Your build is ready to deploy.'}
@@ -535,14 +535,14 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
 
                   <Stack gap={3} style={{ width: '100%' }}>
                     <Stack direction="row" justify="space-between" align="center">
-                      <span style={{ fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>Upload progress</span>
-                      <span style={{ fontSize: 'var(--synu-font-size-xs)', fontFamily: 'var(--synu-font-family-mono)', color: 'var(--synu-text-tertiary)' }}>{progressValue}%</span>
+                      <span style={{ fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>Upload progress</span>
+                      <span style={{ fontSize: 'var(--tokis-font-size-xs)', fontFamily: 'var(--tokis-font-family-mono)', color: 'var(--tokis-text-tertiary)' }}>{progressValue}%</span>
                     </Stack>
                     <Progress value={progressValue} variant={progressVariant} label="Upload" />
                     <input
                       type="range" min={0} max={100} value={progressValue}
                       onChange={(e) => setProgressValue(Number(e.target.value))}
-                      style={{ width: '100%', accentColor: 'var(--synu-color-primary)', cursor: 'pointer' }}
+                      style={{ width: '100%', accentColor: 'var(--tokis-color-primary)', cursor: 'pointer' }}
                     />
                   </Stack>
 
@@ -550,14 +550,14 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
                     {(['sm', 'md', 'lg', 'xl'] as const).map((s) => (
                       <Stack key={s} gap={1} align="center">
                         <Spinner size={s} />
-                        <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>{s}</span>
+                        <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>{s}</span>
                       </Stack>
                     ))}
                   </Stack>
 
                   {/* Snackbar triggers */}
                   <Stack gap={2} style={{ width: '100%' }}>
-                    <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
+                    <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
                       Snackbar
                     </p>
                     <Stack direction="row" gap={2} wrap>
@@ -602,7 +602,7 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
                 <input
                   type="range" min={0} max={100} value={progressValue}
                   onChange={(e) => setProgressValue(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: 'var(--synu-color-primary)' }}
+                  style={{ width: '100%', accentColor: 'var(--tokis-color-primary)' }}
                 />
               </div>
             </div>
@@ -613,10 +613,10 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
         {section === 'overlays' && (
           <div className="playground__section">
             <div className="playground__preview">
-              <div className="playground__preview-canvas" style={{ flexDirection: 'column', gap: 'var(--synu-spacing-8)' }}>
+              <div className="playground__preview-canvas" style={{ flexDirection: 'column', gap: 'var(--tokis-spacing-8)' }}>
                 {/* Tooltip */}
                 <Stack gap={2} align="center">
-                  <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Tooltip — {tooltipPlacement}
                   </p>
                   <div style={{ padding: 30 }}>
@@ -630,7 +630,7 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
 
                 {/* Accordion */}
                 <Stack gap={2} style={{ width: '100%', maxWidth: 420 }}>
-                  <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Accordion
                   </p>
                   <Accordion
@@ -639,18 +639,18 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
                     items={[
                       {
                         value: 'a1',
-                        trigger: 'What is Synu?',
-                        content: <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)', lineHeight: 1.6 }}>Synu is a performance-first, token-native design system for React. Zero runtime styling, fully accessible.</p>,
+                        trigger: 'What is Tokis?',
+                        content: <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)', lineHeight: 1.6 }}>Tokis is a performance-first, token-native design system for React. Zero runtime styling, fully accessible.</p>,
                       },
                       {
                         value: 'a2',
                         trigger: 'Is it open source?',
-                        content: <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)', lineHeight: 1.6 }}>Yes! Synu is MIT licensed and free to use in personal and commercial projects.</p>,
+                        content: <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)', lineHeight: 1.6 }}>Yes! Tokis is MIT licensed and free to use in personal and commercial projects.</p>,
                       },
                       {
                         value: 'a3',
                         trigger: 'Does it support dark mode?',
-                        content: <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)', lineHeight: 1.6 }}>Absolutely. Dark mode is baked in via CSS variables — instant switching, no flicker, system preference support.</p>,
+                        content: <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)', lineHeight: 1.6 }}>Absolutely. Dark mode is baked in via CSS variables — instant switching, no flicker, system preference support.</p>,
                       },
                     ]}
                   />
@@ -658,14 +658,14 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
 
                 {/* Tabs */}
                 <Stack gap={2} style={{ width: '100%', maxWidth: 420 }}>
-                  <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Tabs
                   </p>
                   <Tabs
                     tabs={[
-                      { value: 'tab1', label: 'Overview', content: <p style={{ margin: 'var(--synu-spacing-4) 0', fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>Tab content for Overview panel.</p> },
-                      { value: 'tab2', label: 'Settings', content: <p style={{ margin: 'var(--synu-spacing-4) 0', fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>Tab content for Settings panel.</p> },
-                      { value: 'tab3', label: 'Advanced', content: <p style={{ margin: 'var(--synu-spacing-4) 0', fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)' }}>Tab content for Advanced panel.</p> },
+                      { value: 'tab1', label: 'Overview', content: <p style={{ margin: 'var(--tokis-spacing-4) 0', fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>Tab content for Overview panel.</p> },
+                      { value: 'tab2', label: 'Settings', content: <p style={{ margin: 'var(--tokis-spacing-4) 0', fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>Tab content for Settings panel.</p> },
+                      { value: 'tab3', label: 'Advanced', content: <p style={{ margin: 'var(--tokis-spacing-4) 0', fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)' }}>Tab content for Advanced panel.</p> },
                     ]}
                   />
                 </Stack>
@@ -687,7 +687,7 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
               </div>
 
               <div className="playground__control-group">
-                <p style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', margin: 0, lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', margin: 0, lineHeight: 1.6 }}>
                   The Accordion and Tabs above are fully interactive — click to expand/collapse or switch tabs.
                 </p>
               </div>
@@ -700,10 +700,10 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
           <div className="playground__section">
             <div className="playground__preview">
               <div className="playground__preview-canvas">
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--synu-spacing-8)', width: '100%', maxWidth: 480 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--tokis-spacing-8)', width: '100%', maxWidth: 480 }}>
                   {/* OTP */}
                   <Stack gap={3}>
-                    <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                       OTP Input
                     </p>
                     <OtpInput
@@ -731,12 +731,12 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
                       </ButtonRoot>
                     </Stack>
                     {otpError && (
-                      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-color-error)' }}>
+                      <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-color-error)' }}>
                         Please enter all 6 digits.
                       </p>
                     )}
                     {otpValue.length > 0 && (
-                      <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontFamily: 'var(--synu-font-family-mono)' }}>
+                      <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', fontFamily: 'var(--tokis-font-family-mono)' }}>
                         Current: {otpValue} ({otpValue.length}/6)
                       </p>
                     )}
@@ -744,7 +744,7 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
 
                   {/* File Drop Zone */}
                   <Stack gap={3}>
-                    <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                       File Drop Zone
                     </p>
                     <FileDropZone
@@ -763,7 +763,7 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
 
                   {/* Color-coded badges showcase */}
                   <Stack gap={3}>
-                    <p style={{ margin: 0, fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                       Badge Gallery
                     </p>
                     <Stack direction="row" gap={2} wrap>
@@ -793,7 +793,7 @@ add({ variant: 'success', title: 'Done!', message: '...' });`;
 
               <div className="playground__control-group">
                 <label className="playground__control-label">What's here</label>
-                <ul style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-secondary)', lineHeight: 2, margin: 0, paddingLeft: 16 }}>
+                <ul style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-secondary)', lineHeight: 2, margin: 0, paddingLeft: 16 }}>
                   <li><strong>OTP Input</strong> — 6-digit code entry with paste support</li>
                   <li><strong>File Drop Zone</strong> — drag & drop or click to upload</li>
                   <li><strong>Badge Gallery</strong> — all variants including dot mode</li>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Badge, Stack } from '@synu/react';
+import { Badge, Stack } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -92,19 +92,19 @@ export function BadgePage() {
           <Stack direction="row" gap={3} align="center">
             <Stack gap={1} style={{ alignItems: 'center' }}>
               <Badge dot variant="success" />
-              <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>Online</span>
+              <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>Online</span>
             </Stack>
             <Stack gap={1} style={{ alignItems: 'center' }}>
               <Badge dot variant="warning" />
-              <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>Away</span>
+              <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>Away</span>
             </Stack>
             <Stack gap={1} style={{ alignItems: 'center' }}>
               <Badge dot variant="error" />
-              <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>Busy</span>
+              <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>Busy</span>
             </Stack>
             <Stack gap={1} style={{ alignItems: 'center' }}>
               <Badge dot />
-              <span style={{ fontSize: 'var(--synu-font-size-xs)', color: 'var(--synu-text-tertiary)' }}>Offline</span>
+              <span style={{ fontSize: 'var(--tokis-font-size-xs)', color: 'var(--tokis-text-tertiary)' }}>Offline</span>
             </Stack>
           </Stack>
         </ComponentPreview>

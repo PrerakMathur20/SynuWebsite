@@ -6,7 +6,7 @@ import {
   TextField,
   Alert,
   Badge,
-} from '@synu/react';
+} from '@tokis/react';
 import { ComponentPreview, DemoControl } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -91,7 +91,7 @@ export function DialogPage() {
               </Stack>
             }
           >
-            <p style={{ margin: 0, color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>
+            <p style={{ margin: 0, color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>
               Are you sure you want to proceed? This will permanently delete the selected items.
             </p>
           </Dialog>
@@ -235,7 +235,7 @@ export function DialogPage() {
               </ButtonRoot>
             }
           >
-            <p style={{ margin: 0, color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>
+            <p style={{ margin: 0, color: 'var(--tokis-text-secondary)', fontSize: 'var(--tokis-font-size-sm)' }}>
               This dialog has the <strong>{size}</strong> size applied. Resize your window to see how it adapts on smaller viewports.
             </p>
           </Dialog>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContextMenu } from '@synu/react';
+import { ContextMenu } from '@tokis/react';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -120,8 +120,8 @@ export function ContextMenuPage() {
                   width: '100%',
                   maxWidth: 480,
                   height: 160,
-                  border: '2px dashed var(--synu-color-border)',
-                  borderRadius: 'var(--synu-radius-lg)',
+                  border: '2px dashed var(--tokis-color-border)',
+                  borderRadius: 'var(--tokis-radius-lg)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -129,9 +129,9 @@ export function ContextMenuPage() {
                   gap: 6,
                   cursor: 'context-menu',
                   userSelect: 'none',
-                  color: 'var(--synu-text-tertiary)',
-                  fontSize: 'var(--synu-font-size-sm)',
-                  background: 'var(--synu-color-surface)',
+                  color: 'var(--tokis-text-tertiary)',
+                  fontSize: 'var(--tokis-font-size-sm)',
+                  background: 'var(--tokis-color-surface)',
                 }}
               >
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" style={{ opacity: 0.4 }}>
@@ -139,22 +139,22 @@ export function ContextMenuPage() {
                   <path d="M7 10h6M10 7v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
                 <span>Right-click zone</span>
-                <span style={{ fontSize: 'var(--synu-font-size-xs)', opacity: 0.7 }}>Right-click or long-press to open the menu</span>
+                <span style={{ fontSize: 'var(--tokis-font-size-xs)', opacity: 0.7 }}>Right-click or long-press to open the menu</span>
               </div>
             </ContextMenu>
 
             {lastAction && (
               <div
                 style={{
-                  fontSize: 'var(--synu-font-size-sm)',
-                  color: 'var(--synu-text-secondary)',
+                  fontSize: 'var(--tokis-font-size-sm)',
+                  color: 'var(--tokis-text-secondary)',
                   padding: '6px 14px',
-                  borderRadius: 'var(--synu-radius-full)',
-                  background: 'var(--synu-color-surface)',
-                  border: '1px solid var(--synu-color-border)',
+                  borderRadius: 'var(--tokis-radius-full)',
+                  background: 'var(--tokis-color-surface)',
+                  border: '1px solid var(--tokis-color-border)',
                 }}
               >
-                Last action: <strong style={{ color: 'var(--synu-text-primary)' }}>{lastAction}</strong>
+                Last action: <strong style={{ color: 'var(--tokis-text-primary)' }}>{lastAction}</strong>
               </div>
             )}
           </div>

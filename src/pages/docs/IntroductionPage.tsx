@@ -6,7 +6,7 @@ import {
   ButtonRoot, ButtonLabel,
   Stack,
   Card, CardBody,
-} from '@synu/react';
+} from '@tokis/react';
 import { CodeBlock } from '../../components/CodeBlock';
 
 export function IntroductionPage() {
@@ -16,20 +16,20 @@ export function IntroductionPage() {
         <p className="doc-page__eyebrow">Getting Started</p>
         <h1 className="doc-page__title">Introduction</h1>
         <p className="doc-page__desc">
-          Synu is a performance-first, token-native UI design system for React.
+          Tokis is a performance-first, token-native UI design system for React.
           It ships zero runtime CSS, is accessible by default, and is built for
           SaaS products and enterprise applications.
         </p>
       </header>
 
       <Alert variant="info" title="Early release">
-        Synu v0.1.0 is in active development. APIs may change between minor versions.
+        Tokis v0.1.0 is in active development. APIs may change between minor versions.
       </Alert>
 
-      <div className="doc-section" style={{ marginTop: 'var(--synu-spacing-10)' }}>
+      <div className="doc-section" style={{ marginTop: 'var(--tokis-spacing-10)' }}>
         <h2 className="doc-section__title">Core Principles</h2>
         <p className="doc-section__desc">
-          Every design decision in Synu stems from these foundational ideas.
+          Every design decision in Tokis stems from these foundational ideas.
         </p>
 
         <Stack gap={3}>
@@ -64,18 +64,18 @@ export function IntroductionPage() {
                 <Stack direction="row" justify="space-between" align="flex-start" gap={4}>
                   <div>
                     <h3 style={{
-                      margin: '0 0 var(--synu-spacing-2)',
-                      fontSize: 'var(--synu-font-size-md)',
-                      fontWeight: 'var(--synu-font-weight-semibold)',
-                      color: 'var(--synu-text-primary)',
+                      margin: '0 0 var(--tokis-spacing-2)',
+                      fontSize: 'var(--tokis-font-size-md)',
+                      fontWeight: 'var(--tokis-font-weight-semibold)',
+                      color: 'var(--tokis-text-primary)',
                     }}>
                       {p.title}
                     </h3>
                     <p style={{
                       margin: 0,
-                      fontSize: 'var(--synu-font-size-sm)',
-                      color: 'var(--synu-text-secondary)',
-                      lineHeight: 'var(--synu-line-height-relaxed)',
+                      fontSize: 'var(--tokis-font-size-sm)',
+                      color: 'var(--tokis-text-secondary)',
+                      lineHeight: 'var(--tokis-line-height-relaxed)',
                     }}>
                       {p.desc}
                     </p>
@@ -91,21 +91,21 @@ export function IntroductionPage() {
       <div className="doc-section">
         <h2 className="doc-section__title">Package Structure</h2>
         <p className="doc-section__desc">
-          Synu is organized as a monorepo with clearly separated concerns.
+          Tokis is organized as a monorepo with clearly separated concerns.
         </p>
         <CodeBlock
           language="bash"
-          code={`@synu/react    # React components, hooks, and context
-@synu/theme    # Precompiled CSS (variables, reset, component styles)
-@synu/tokens   # Design token definitions (TypeScript + JSON)
-@synu/core     # Headless primitives (state machines, a11y, focus)`}
+          code={`@tokis/react    # React components, hooks, and context
+@tokis/theme    # Precompiled CSS (variables, reset, component styles)
+@tokis/tokens   # Design token definitions (TypeScript + JSON)
+@tokis/core     # Headless primitives (state machines, a11y, focus)`}
         />
       </div>
 
       <div className="doc-section">
         <h2 className="doc-section__title">Design System Philosophy</h2>
         <p className="doc-section__desc">
-          Synu believes in composition over configuration.
+          Tokis believes in composition over configuration.
         </p>
         <CodeBlock
           language="tsx"
@@ -130,7 +130,7 @@ export function IntroductionPage() {
         />
       </div>
 
-      <Stack direction="row" gap={3} style={{ marginTop: 'var(--synu-spacing-8)' }}>
+      <Stack direction="row" gap={3} style={{ marginTop: 'var(--tokis-spacing-8)' }}>
         <NavButton to="/docs/installation" variant="primary">
           <ButtonLabel>Installation →</ButtonLabel>
         </NavButton>

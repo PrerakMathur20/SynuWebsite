@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Select, Stack } from '@synu/react';
+import { Select, Stack } from '@tokis/react';
 import { ComponentPreview, DemoControl, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 

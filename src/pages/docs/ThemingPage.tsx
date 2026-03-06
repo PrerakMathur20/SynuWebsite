@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Badge, ButtonRoot, ButtonLabel, Stack, Card, CardBody, CardTitle, CardDescription, Switch, useTheme } from '@synu/react';
+import { Alert, Badge, ButtonRoot, ButtonLabel, Stack, Card, CardBody, CardTitle, CardDescription, Switch, useTheme } from '@tokis/react';
 import { CodeBlock } from '../../components/CodeBlock';
 import { ComponentPreview } from '../../components/ComponentPreview';
 
@@ -22,7 +22,7 @@ export function ThemingPage() {
         <p className="doc-page__eyebrow">Getting Started</p>
         <h1 className="doc-page__title">Theming</h1>
         <p className="doc-page__desc">
-          Synu uses CSS custom properties (variables) for all theming. Light and dark mode
+          Tokis uses CSS custom properties (variables) for all theming. Light and dark mode
           are built-in. You can override any token to match your brand.
         </p>
       </header>
@@ -37,21 +37,21 @@ export function ThemingPage() {
         </p>
         <CodeBlock
           language="css"
-          filename="@synu/theme variables.css (simplified)"
+          filename="@tokis/theme variables.css (simplified)"
           code={`:root {
-  --synu-color-primary: #0066ff;
-  --synu-color-background: #ffffff;
-  --synu-color-surface: #f8f9fa;
-  --synu-text-primary: #0f172a;
-  --synu-text-secondary: #475569;
+  --tokis-color-primary: #0066ff;
+  --tokis-color-background: #ffffff;
+  --tokis-color-surface: #f8f9fa;
+  --tokis-text-primary: #0f172a;
+  --tokis-text-secondary: #475569;
 }
 
 [data-theme="dark"] {
-  --synu-color-primary: #3b82f6;
-  --synu-color-background: #0f172a;
-  --synu-color-surface: #1e293b;
-  --synu-text-primary: #f1f5f9;
-  --synu-text-secondary: #94a3b8;
+  --tokis-color-primary: #3b82f6;
+  --tokis-color-background: #0f172a;
+  --tokis-color-surface: #1e293b;
+  --tokis-text-primary: #f1f5f9;
+  --tokis-text-secondary: #94a3b8;
 }`}
         />
       </div>
@@ -62,7 +62,7 @@ export function ThemingPage() {
           Use the <code className="inline-code">useTheme()</code> hook to read and change the theme.
         </p>
         <ComponentPreview
-          code={`import { useTheme, Switch, Badge, Stack } from '@synu/react';
+          code={`import { useTheme, Switch, Badge, Stack } from '@tokis/react';
 
 function ThemeToggle() {
   const { mode, toggle, setMode } = useTheme();
@@ -94,27 +94,27 @@ function ThemeToggle() {
         <CodeBlock
           language="css"
           filename="src/styles/brand.css"
-          code={`/* Brand override — must come AFTER @synu/theme import */
+          code={`/* Brand override — must come AFTER @tokis/theme import */
 :root {
   /* Change primary color to your brand color */
-  --synu-color-primary: #7c3aed;
-  --synu-color-primary-hover: #6d28d9;
-  --synu-color-primary-active: #5b21b6;
-  --synu-color-primary-subtle: #ede9fe;
+  --tokis-color-primary: #7c3aed;
+  --tokis-color-primary-hover: #6d28d9;
+  --tokis-color-primary-active: #5b21b6;
+  --tokis-color-primary-subtle: #ede9fe;
 
   /* Round everything up */
-  --synu-radius-sm: 6px;
-  --synu-radius-md: 8px;
-  --synu-radius-lg: 12px;
-  --synu-radius-xl: 16px;
+  --tokis-radius-sm: 6px;
+  --tokis-radius-md: 8px;
+  --tokis-radius-lg: 12px;
+  --tokis-radius-xl: 16px;
 
   /* Custom font */
-  --synu-font-family: 'Inter', system-ui, sans-serif;
+  --tokis-font-family: 'Inter', system-ui, sans-serif;
 }
 
 [data-theme="dark"] {
-  --synu-color-primary: #a78bfa;
-  --synu-color-primary-subtle: #2e1065;
+  --tokis-color-primary: #a78bfa;
+  --tokis-color-primary-subtle: #2e1065;
 }`}
         />
       </div>
@@ -128,63 +128,63 @@ function ThemeToggle() {
             {
               category: 'Colors',
               tokens: [
-                '--synu-color-primary',
-                '--synu-color-secondary',
-                '--synu-color-background',
-                '--synu-color-surface',
-                '--synu-color-surface-raised',
-                '--synu-color-border',
-                '--synu-color-error',
-                '--synu-color-warning',
-                '--synu-color-success',
-                '--synu-color-info',
+                '--tokis-color-primary',
+                '--tokis-color-secondary',
+                '--tokis-color-background',
+                '--tokis-color-surface',
+                '--tokis-color-surface-raised',
+                '--tokis-color-border',
+                '--tokis-color-error',
+                '--tokis-color-warning',
+                '--tokis-color-success',
+                '--tokis-color-info',
               ],
             },
             {
               category: 'Text',
               tokens: [
-                '--synu-text-primary',
-                '--synu-text-secondary',
-                '--synu-text-tertiary',
-                '--synu-text-disabled',
-                '--synu-text-inverse',
-                '--synu-text-link',
-                '--synu-text-error',
+                '--tokis-text-primary',
+                '--tokis-text-secondary',
+                '--tokis-text-tertiary',
+                '--tokis-text-disabled',
+                '--tokis-text-inverse',
+                '--tokis-text-link',
+                '--tokis-text-error',
               ],
             },
             {
               category: 'Spacing',
               tokens: [
-                '--synu-spacing-1 (4px)',
-                '--synu-spacing-2 (8px)',
-                '--synu-spacing-3 (12px)',
-                '--synu-spacing-4 (16px)',
-                '--synu-spacing-6 (24px)',
-                '--synu-spacing-8 (32px)',
-                '--synu-spacing-12 (48px)',
+                '--tokis-spacing-1 (4px)',
+                '--tokis-spacing-2 (8px)',
+                '--tokis-spacing-3 (12px)',
+                '--tokis-spacing-4 (16px)',
+                '--tokis-spacing-6 (24px)',
+                '--tokis-spacing-8 (32px)',
+                '--tokis-spacing-12 (48px)',
               ],
             },
             {
               category: 'Border Radius',
               tokens: [
-                '--synu-radius-sm (4px)',
-                '--synu-radius-md (6px)',
-                '--synu-radius-lg (8px)',
-                '--synu-radius-xl (12px)',
-                '--synu-radius-2xl (16px)',
-                '--synu-radius-full (9999px)',
+                '--tokis-radius-sm (4px)',
+                '--tokis-radius-md (6px)',
+                '--tokis-radius-lg (8px)',
+                '--tokis-radius-xl (12px)',
+                '--tokis-radius-2xl (16px)',
+                '--tokis-radius-full (9999px)',
               ],
             },
           ].map((group) => (
             <Card key={group.category}>
               <CardBody>
-                <CardTitle style={{ marginBottom: 'var(--synu-spacing-3)' }}>
+                <CardTitle style={{ marginBottom: 'var(--tokis-spacing-3)' }}>
                   {group.category}
                 </CardTitle>
                 <div style={{
                   display: 'flex',
                   flexWrap: 'wrap',
-                  gap: 'var(--synu-spacing-2)',
+                  gap: 'var(--tokis-spacing-2)',
                 }}>
                   {group.tokens.map((t) => (
                     <code key={t} className="inline-code" style={{ fontSize: '0.75rem' }}>

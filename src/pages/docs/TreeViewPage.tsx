@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TreeView } from '@synu/react';
+import { TreeView } from '@tokis/react';
 import { ComponentPreview, DemoToggle } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 

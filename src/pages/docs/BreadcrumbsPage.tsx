@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumbs, Stack } from '@synu/react';
+import { Breadcrumbs, Stack } from '@tokis/react';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -63,12 +63,12 @@ export function BreadcrumbsPage() {
     separator="→"
     items={[
       { label: 'Projects', href: '/' },
-      { label: 'Synu Design', href: '/' },
+      { label: 'Tokis Design', href: '/' },
       { label: 'Components' },
     ]}
   />
   <Breadcrumbs
-    separator={<span style={{ color: 'var(--synu-color-primary)' }}>·</span>}
+    separator={<span style={{ color: 'var(--tokis-color-primary)' }}>·</span>}
     items={[
       { label: 'Home', href: '/' },
       { label: 'Blog', href: '/' },
@@ -91,12 +91,12 @@ export function BreadcrumbsPage() {
               separator="→"
               items={[
                 { label: 'Projects', href: '/' },
-                { label: 'Synu Design', href: '/' },
+                { label: 'Tokis Design', href: '/' },
                 { label: 'Components' },
               ]}
             />
             <Breadcrumbs
-              separator={<span style={{ color: 'var(--synu-color-primary)' }}>·</span>}
+              separator={<span style={{ color: 'var(--tokis-color-primary)' }}>·</span>}
               items={[
                 { label: 'Home', href: '/' },
                 { label: 'Blog', href: '/' },

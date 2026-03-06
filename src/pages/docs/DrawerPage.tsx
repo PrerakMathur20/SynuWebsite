@@ -7,7 +7,7 @@ import {
   Select,
   Badge,
   Checkbox,
-} from '@synu/react';
+} from '@tokis/react';
 import { ComponentPreview, DemoControl } from '../../components/ComponentPreview';
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
@@ -226,7 +226,7 @@ export function DrawerPage() {
               </ButtonRoot>
             }
           >
-            <p style={{ margin: 0, fontSize: 'var(--synu-font-size-sm)', color: 'var(--synu-text-secondary)', lineHeight: 1.6 }}>
+            <p style={{ margin: 0, fontSize: 'var(--tokis-font-size-sm)', color: 'var(--tokis-text-secondary)', lineHeight: 1.6 }}>
               This drawer slides in from the <strong>{side}</strong> edge. You can dismiss it by clicking the
               backdrop, pressing Escape, or using the close button.
             </p>
