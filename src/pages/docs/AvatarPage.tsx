@@ -12,7 +12,7 @@ const avatarProps: PropDef[] = [
 ];
 
 const avatarGroupProps: PropDef[] = [
-  { name: 'max', type: 'number', default: '5', description: 'Maximum avatars to show before overflow count.' },
+  { name: 'max', type: 'number', description: 'Maximum avatars to show before overflow count. When omitted, all avatars are shown.' },
   { name: 'size', type: "'xs' | 'sm' | 'md' | 'lg' | 'xl'", default: "'md'", description: 'Applied to all child avatars.' },
 ];
 

@@ -6,9 +6,12 @@ import { PropsTable, PropDef } from '../../components/PropsTable';
 const popoverProps: PropDef[] = [
   { name: 'trigger', type: 'ReactElement', required: true, description: 'Element that opens the popover on click.' },
   { name: 'content', type: 'ReactNode', required: true, description: 'Content displayed inside the popover panel.' },
-  { name: 'title', type: 'string', description: 'Optional title shown at the top of the popover.' },
-  { name: 'placement', type: "'top' | 'bottom' | 'left' | 'right'", default: "'bottom'", description: 'Preferred placement relative to the trigger.' },
-  { name: 'closeOnOutside', type: 'boolean', default: 'true', description: 'Close when clicking outside the popover.' },
+  { name: 'title', type: 'ReactNode', description: 'Optional title shown at the top of the popover.' },
+  { name: 'placement', type: "'top' | 'bottom' | 'left' | 'right' | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end'", default: "'bottom-start'", description: 'Preferred placement relative to the trigger.' },
+  { name: 'open', type: 'boolean', description: 'Controlled open state. When provided, the popover becomes fully controlled.' },
+  { name: 'defaultOpen', type: 'boolean', default: 'false', description: 'Initial open state for uncontrolled usage.' },
+  { name: 'onOpenChange', type: '(open: boolean) => void', description: 'Called when the popover opens or closes.' },
+  { name: 'closeOnClickOutside', type: 'boolean', default: 'true', description: 'Close when clicking outside the popover.' },
   { name: 'closeOnEsc', type: 'boolean', default: 'true', description: 'Close when pressing Escape.' },
 ];
 

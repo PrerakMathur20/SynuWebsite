@@ -4,8 +4,8 @@ import { ComponentPreview, DemoControl } from '../../components/ComponentPreview
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
 const hoverCardProps: PropDef[] = [
-  { name: 'trigger', type: 'ReactNode', required: true, description: 'The element that the hover card anchors to.' },
-  { name: 'children', type: 'ReactNode', required: true, description: 'Content displayed inside the hover card panel.' },
+  { name: 'trigger', type: 'ReactElement', required: true, description: 'The element that the hover card anchors to. Must accept ref and event handlers.' },
+  { name: 'content', type: 'ReactNode', required: true, description: 'Content displayed inside the hover card panel.' },
   { name: 'openDelay', type: 'number', default: '300', description: 'Delay in ms before the card opens after hover.' },
   { name: 'closeDelay', type: 'number', default: '150', description: 'Delay in ms before the card closes after leaving.' },
   { name: 'placement', type: "'top' | 'bottom' | 'left' | 'right'", default: "'bottom'", description: 'Preferred placement of the card relative to the trigger.' },
@@ -44,22 +44,23 @@ export function HoverCardPage() {
       @sarah_chen
     </a>
   }
->
-  <div style={{ display: 'flex', flexDirection: 'column', gap: 12, minWidth: 240 }}>
-    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-      <div style={{ /* avatar */ }} />
-      <div>
-        <div>Sarah Chen</div>
-        <div>@sarah_chen</div>
+  content={
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, minWidth: 240 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <div style={{ /* avatar */ }} />
+        <div>
+          <div>Sarah Chen</div>
+          <div>@sarah_chen</div>
+        </div>
+      </div>
+      <p>Product designer & open-source contributor. Building beautiful UIs one pixel at a time.</p>
+      <div style={{ display: 'flex', gap: 20 }}>
+        <span><strong>1.2k</strong> Followers</span>
+        <span><strong>348</strong> Following</span>
       </div>
     </div>
-    <p>Product designer & open-source contributor. Building beautiful UIs one pixel at a time.</p>
-    <div style={{ display: 'flex', gap: 20 }}>
-      <span><strong>1.2k</strong> Followers</span>
-      <span><strong>348</strong> Following</span>
-    </div>
-  </div>
-</HoverCard>`}
+  }
+/>`}
           controls={
             <>
               <DemoControl

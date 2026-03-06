@@ -5,7 +5,7 @@ import { PropsTable, PropDef } from '../../components/PropsTable';
 
 const commandPaletteProps: PropDef[] = [
   { name: 'open', type: 'boolean', required: true, description: 'Whether the command palette is currently open.' },
-  { name: 'onOpenChange', type: '(open: boolean) => void', required: true, description: 'Called when the open state should change (close on Escape, backdrop click, or selection).' },
+  { name: 'onClose', type: '() => void', required: true, description: 'Called when the palette should close (Escape, backdrop click, or item selection).' },
   { name: 'items', type: 'CommandItem[]', required: true, description: 'Array of command items available in the palette.' },
   { name: 'placeholder', type: 'string', description: 'Placeholder text shown in the search input.' },
   { name: 'className', type: 'string', description: 'Additional class name applied to the palette container.' },
@@ -16,9 +16,9 @@ const commandItemProps: PropDef[] = [
   { name: 'label', type: 'string', required: true, description: 'Display name shown in the list.' },
   { name: 'description', type: 'string', description: 'Optional secondary text shown below the label.' },
   { name: 'shortcut', type: 'string[]', description: 'Array of key strings displayed as a keyboard shortcut hint.' },
-  { name: 'group', type: 'string', description: 'Group name. Items with the same group are listed together under a heading.' },
+  { name: 'category', type: 'string', description: 'Category name. Items with the same category are listed together under a heading.' },
   { name: 'icon', type: 'ReactNode', description: 'Icon element displayed before the label.' },
-  { name: 'onSelect', type: '() => void', description: 'Called when this item is selected by click or keyboard Enter.' },
+  { name: 'onSelect', type: '() => void', required: true, description: 'Called when this item is selected by click or keyboard Enter.' },
 ];
 
 const DashboardIcon = () => (
@@ -206,7 +206,7 @@ useEffect(() => {
 
 <CommandPalette
   open={open}
-  onOpenChange={setOpen}
+  onClose={() => setOpen(false)}
   placeholder="Type a command or search…"
   items={[
     {

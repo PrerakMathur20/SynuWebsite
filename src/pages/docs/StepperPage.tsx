@@ -4,8 +4,8 @@ import { ComponentPreview, DemoControl } from '../../components/ComponentPreview
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
 const stepperProps: PropDef[] = [
-  { name: 'steps', type: 'StepDef[]', required: true, description: 'Array of step definitions to render.' },
-  { name: 'current', type: 'number', description: 'Zero-based index of the active step. Auto-derives status if step.status is not set.' },
+  { name: 'steps', type: 'Step[]', required: true, description: 'Array of step definitions to render.' },
+  { name: 'current', type: 'number', required: true, description: 'Zero-based index of the active step. Auto-derives status if step.status is not set.' },
   { name: 'orientation', type: "'horizontal' | 'vertical'", default: "'horizontal'", description: 'Layout direction of the stepper.' },
   { name: 'className', type: 'string', description: 'Additional CSS class name(s) applied to the root element.' },
 ];
@@ -188,7 +188,7 @@ export function StepperPage() {
         <PropsTable props={stepperProps} />
       </div>
       <div className="doc-section">
-        <h2 className="doc-section__title">Props — StepDef</h2>
+        <h2 className="doc-section__title">Props — Step</h2>
         <PropsTable props={stepDefProps} />
       </div>
     </>

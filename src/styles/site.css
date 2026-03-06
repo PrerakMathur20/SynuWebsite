@@ -2732,7 +2732,6 @@ body {
 
 /* Dotted sections (hero, showcase, code use grid lines instead) */
 .lpv3-marquee-strip,
-.lpv3-stats,
 .lpv3-features,
 .lpv3-cta {
   background-image: radial-gradient(circle, var(--lpv3-dot) 1.5px, transparent 1.5px);

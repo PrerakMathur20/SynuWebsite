@@ -4,8 +4,8 @@ import { ComponentPreview, DemoControl, DemoToggle } from '../../components/Comp
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
 const toggleButtonProps: PropDef[] = [
-  { name: 'pressed', type: 'boolean', description: 'Controlled pressed state.' },
-  { name: 'onChange', type: '(pressed: boolean) => void', description: 'Called when the pressed state changes.' },
+  { name: 'pressed', type: 'boolean', required: true, description: 'Controlled pressed state.' },
+  { name: 'onChange', type: '(pressed: boolean) => void', required: true, description: 'Called when the pressed state changes.' },
   { name: 'size', type: "'sm' | 'md' | 'lg'", default: "'md'", description: 'Size variant controlling height and padding.' },
   { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the toggle.' },
   { name: 'children', type: 'ReactNode', required: true, description: 'Content of the toggle button (label, icon, or both).' },

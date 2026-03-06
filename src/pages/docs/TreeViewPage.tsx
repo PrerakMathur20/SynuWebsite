@@ -4,18 +4,18 @@ import { ComponentPreview, DemoToggle } from '../../components/ComponentPreview'
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
 const treeViewProps: PropDef[] = [
-  { name: 'nodes', type: 'TreeNode[]', required: true, description: 'The tree data to render. Each node may have nested children.' },
+  { name: 'data', type: 'TreeNode[]', required: true, description: 'The tree data to render. Each node may have nested children.' },
   { name: 'selected', type: 'string[]', description: 'Controlled array of selected node IDs.' },
   { name: 'expanded', type: 'string[]', description: 'Controlled array of expanded (open) node IDs.' },
-  { name: 'onSelect', type: '(ids: string[]) => void', description: 'Called when the selection changes.' },
-  { name: 'onExpand', type: '(ids: string[]) => void', description: 'Called when a node is expanded or collapsed.' },
+  { name: 'onSelect', type: '(id: string) => void', description: 'Called with the node ID when a node is selected.' },
+  { name: 'onExpand', type: '(id: string) => void', description: 'Called with the node ID when a node is expanded or collapsed.' },
   { name: 'multiSelect', type: 'boolean', default: 'false', description: 'When true, allows selecting multiple nodes simultaneously.' },
   { name: 'className', type: 'string', description: 'Additional CSS class name(s) applied to the root element.' },
 ];
 
 const treeNodeProps: PropDef[] = [
   { name: 'id', type: 'string', required: true, description: 'Unique identifier for the node, used in selected/expanded arrays.' },
-  { name: 'label', type: 'ReactNode', required: true, description: 'Content rendered as the node label.' },
+  { name: 'label', type: 'string', required: true, description: 'Text rendered as the node label.' },
   { name: 'children', type: 'TreeNode[]', description: 'Nested child nodes. Makes this node a branch (expandable).' },
   { name: 'disabled', type: 'boolean', description: 'When true, the node cannot be selected or expanded.' },
   { name: 'icon', type: 'ReactNode', description: 'Custom icon shown before the label.' },
@@ -84,7 +84,7 @@ export function TreeViewPage() {
 const [expanded, setExpanded] = useState(['src', 'components']);
 
 <TreeView
-  nodes={[
+  data={[
     {
       id: 'src',
       label: 'src',
@@ -123,8 +123,8 @@ const [expanded, setExpanded] = useState(['src', 'components']);
   ]}
   selected={selected}
   expanded={expanded}
-  onSelect={setSelected}
-  onExpand={setExpanded}
+  onSelect={(id) => setSelected(prev => prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id])}
+  onExpand={(id) => setExpanded(prev => prev.includes(id) ? prev.filter(e => e !== id) : [...prev, id])}
   multiSelect={${multiSelect}}
 />`}
           controls={

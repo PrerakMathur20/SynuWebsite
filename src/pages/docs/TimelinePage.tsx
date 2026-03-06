@@ -9,10 +9,10 @@ const timelineProps: PropDef[] = [
 ];
 
 const timelineItemProps: PropDef[] = [
-  { name: 'id', type: 'string', description: 'Optional unique key; falls back to array index.' },
-  { name: 'title', type: 'ReactNode', required: true, description: 'Primary label for the event.' },
+  { name: 'id', type: 'string', required: true, description: 'Unique identifier used as the React key for each item.' },
+  { name: 'title', type: 'string', required: true, description: 'Primary label for the event.' },
   { name: 'description', type: 'ReactNode', description: 'Supporting text shown below the title.' },
-  { name: 'date', type: 'ReactNode', description: 'Timestamp or date string displayed alongside the item.' },
+  { name: 'date', type: 'string', description: 'Timestamp or date string displayed alongside the item.' },
   { name: 'icon', type: 'ReactNode', description: 'Custom icon node rendered inside the timeline dot.' },
   { name: 'variant', type: "'default' | 'success' | 'error' | 'warning' | 'info'", default: "'default'", description: 'Controls the color of the timeline dot and icon.' },
 ];

@@ -4,10 +4,11 @@ import { ComponentPreview, DemoControl } from '../../components/ComponentPreview
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
 const dropdownProps: PropDef[] = [
-  { name: 'trigger', type: 'ReactNode', required: true, description: 'Element that opens the dropdown on click.' },
+  { name: 'trigger', type: 'ReactElement', required: true, description: 'Element that opens the dropdown on click.' },
   { name: 'children', type: 'ReactNode', required: true, description: 'Content displayed inside the dropdown panel.' },
   { name: 'placement', type: "'bottom-start' | 'bottom-end' | 'top-start' | 'top-end'", default: "'bottom-start'", description: 'Preferred placement of the panel relative to the trigger.' },
   { name: 'open', type: 'boolean', description: 'Controlled open state. Use with onOpenChange for fully controlled behavior.' },
+  { name: 'defaultOpen', type: 'boolean', default: 'false', description: 'Initial open state for uncontrolled usage.' },
   { name: 'onOpenChange', type: '(open: boolean) => void', description: 'Called when the open state should change.' },
   { name: 'className', type: 'string', description: 'Additional class name applied to the dropdown panel.' },
 ];

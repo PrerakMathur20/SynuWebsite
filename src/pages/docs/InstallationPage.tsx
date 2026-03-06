@@ -20,8 +20,7 @@ export function InstallationPage() {
         <div className="gs-step__content">
           <h2 className="gs-step__title">Install packages</h2>
           <p style={{ margin: '0 0 var(--synu-spacing-4)', color: 'var(--synu-text-secondary)', fontSize: 'var(--synu-font-size-sm)' }}>
-            Install the React adapter and the default theme. The peer dependency{' '}
-            <code className="inline-code">xstate</code> is required by the button state machine.
+            Install the React adapter and the default theme.
           </p>
           <Tabs
             variant="pills"
@@ -33,7 +32,7 @@ export function InstallationPage() {
                   <div style={{ marginTop: 'var(--synu-spacing-3)' }}>
                     <CodeBlock
                       language="bash"
-                      code={`npm install @synu/react @synu/theme xstate`}
+                      code={`npm install @synu/react @synu/theme`}
                     />
                   </div>
                 ),
@@ -45,7 +44,7 @@ export function InstallationPage() {
                   <div style={{ marginTop: 'var(--synu-spacing-3)' }}>
                     <CodeBlock
                       language="bash"
-                      code={`pnpm add @synu/react @synu/theme xstate`}
+                      code={`pnpm add @synu/react @synu/theme`}
                     />
                   </div>
                 ),
@@ -57,7 +56,7 @@ export function InstallationPage() {
                   <div style={{ marginTop: 'var(--synu-spacing-3)' }}>
                     <CodeBlock
                       language="bash"
-                      code={`yarn add @synu/react @synu/theme xstate`}
+                      code={`yarn add @synu/react @synu/theme`}
                     />
                   </div>
                 ),

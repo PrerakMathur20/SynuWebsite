@@ -14,8 +14,9 @@ const virtualizedListProps: PropDef[] = [
   { name: 'items', type: 'T[]', required: true, description: 'The full array of items to virtualize.' },
   { name: 'itemHeight', type: 'number', required: true, description: 'Fixed height in pixels for every row. All rows must share the same height.' },
   { name: 'renderItem', type: '(item: T, index: number) => React.ReactNode', required: true, description: 'Render function called only for visible rows plus overscan.' },
-  { name: 'height', type: 'number', default: '400', description: 'Visible viewport height of the list container in pixels.' },
+  { name: 'height', type: 'number', required: true, description: 'Visible viewport height of the list container in pixels.' },
   { name: 'overscan', type: 'number', default: '3', description: 'Number of extra rows to render above and below the visible window to reduce flicker during fast scrolling.' },
+  { name: 'getItemKey', type: '(item: T, index: number) => string | number', description: 'Custom key extractor for list items. Falls back to index if not provided.' },
   { name: 'className', type: 'string', description: 'Additional CSS class applied to the outer container.' },
 ];
 

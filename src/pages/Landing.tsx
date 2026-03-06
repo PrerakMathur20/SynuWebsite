@@ -786,7 +786,7 @@ export function Landing() {
         <div className="site-footer__inner">
           <div className="site-footer__brand">
             <div className="site-navbar__logo-mark" aria-hidden="true">Sy</div>
-            <span className="site-footer__copy">© 2025 Synu — MIT License</span>
+            <span className="site-footer__copy">© 2026 Synu — MIT License</span>
           </div>
           <nav className="site-footer__links" aria-label="Footer navigation">
             <a href="#" className="site-footer__link">GitHub</a>

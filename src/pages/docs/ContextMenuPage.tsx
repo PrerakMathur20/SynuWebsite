@@ -5,17 +5,17 @@ import { PropsTable, PropDef } from '../../components/PropsTable';
 
 const contextMenuProps: PropDef[] = [
   { name: 'items', type: 'ContextMenuItem[]', required: true, description: 'Array of menu items, separators, and labels.' },
-  { name: 'children', type: 'ReactNode', required: true, description: 'The trigger area. Right-clicking this element opens the menu.' },
+  { name: 'children', type: 'ReactElement', required: true, description: 'The trigger area. Right-clicking this element opens the menu.' },
   { name: 'className', type: 'string', description: 'Additional class name applied to the trigger wrapper.' },
 ];
 
 const contextMenuItemProps: PropDef[] = [
   { name: 'type', type: "'item' | 'separator' | 'label'", required: true, description: 'The kind of menu entry.' },
   { name: 'label', type: 'string', description: 'Display text. Required for item and label types.' },
-  { name: 'shortcut', type: 'string', description: 'Keyboard shortcut hint displayed on the right side of the item.' },
-  { name: 'disabled', type: 'boolean', description: 'Prevents interaction with this item.' },
-  { name: 'onClick', type: '() => void', description: 'Handler called when the item is selected.' },
   { name: 'icon', type: 'ReactNode', description: 'Icon element displayed before the label.' },
+  { name: 'onClick', type: '() => void', description: 'Handler called when the item is selected.' },
+  { name: 'disabled', type: 'boolean', description: 'Prevents interaction with this item.' },
+  { name: 'destructive', type: 'boolean', description: 'Applies destructive (red) styling for dangerous actions like delete.' },
 ];
 
 const CopyIcon = () => (
@@ -64,9 +64,9 @@ export function ContextMenuPage() {
 
   const items = [
     { type: 'label' as const, label: 'File' },
-    { type: 'item' as const, label: 'Copy', shortcut: '⌘C', icon: <CopyIcon />, onClick: () => setLastAction('Copy') },
-    { type: 'item' as const, label: 'Cut', shortcut: '⌘X', icon: <CutIcon />, onClick: () => setLastAction('Cut') },
-    { type: 'item' as const, label: 'Paste', shortcut: '⌘V', icon: <PasteIcon />, onClick: () => setLastAction('Paste') },
+    { type: 'item' as const, label: 'Copy', icon: <CopyIcon />, onClick: () => setLastAction('Copy') },
+    { type: 'item' as const, label: 'Cut', icon: <CutIcon />, onClick: () => setLastAction('Cut') },
+    { type: 'item' as const, label: 'Paste', icon: <PasteIcon />, onClick: () => setLastAction('Paste') },
     { type: 'separator' as const },
     { type: 'label' as const, label: 'Actions' },
     { type: 'item' as const, label: 'Rename', icon: <RenameIcon />, onClick: () => setLastAction('Rename') },
@@ -97,9 +97,9 @@ export function ContextMenuPage() {
           code={`<ContextMenu
   items={[
     { type: 'label', label: 'File' },
-    { type: 'item', label: 'Copy', shortcut: '⌘C', icon: <CopyIcon />, onClick: () => {} },
-    { type: 'item', label: 'Cut', shortcut: '⌘X', icon: <CutIcon />, onClick: () => {} },
-    { type: 'item', label: 'Paste', shortcut: '⌘V', icon: <PasteIcon />, onClick: () => {} },
+    { type: 'item', label: 'Copy', icon: <CopyIcon />, onClick: () => {} },
+    { type: 'item', label: 'Cut', icon: <CutIcon />, onClick: () => {} },
+    { type: 'item', label: 'Paste', icon: <PasteIcon />, onClick: () => {} },
     { type: 'separator' },
     { type: 'label', label: 'Actions' },
     { type: 'item', label: 'Rename', icon: <RenameIcon />, onClick: () => {} },

@@ -5,9 +5,9 @@ import { PropsTable, PropDef } from '../../components/PropsTable';
 
 const statisticProps: PropDef[] = [
   { name: 'label', type: 'string', required: true, description: 'Descriptive label shown below or above the value.' },
-  { name: 'value', type: 'ReactNode', required: true, description: 'The primary numeric or text value to display prominently.' },
-  { name: 'prefix', type: 'ReactNode', description: 'Content rendered before the value (e.g. currency symbol).' },
-  { name: 'suffix', type: 'ReactNode', description: 'Content rendered after the value (e.g. unit, percentage sign).' },
+  { name: 'value', type: 'string | number', required: true, description: 'The primary numeric or text value to display prominently.' },
+  { name: 'prefix', type: 'string', description: 'Content rendered before the value (e.g. currency symbol).' },
+  { name: 'suffix', type: 'string', description: 'Content rendered after the value (e.g. unit, percentage sign).' },
   { name: 'trend', type: "'up' | 'down' | 'neutral'", description: 'Direction of the trend indicator arrow.' },
   { name: 'trendValue', type: 'string', description: 'Text label for the trend (e.g. "+12.5%").' },
   { name: 'description', type: 'string', description: 'Secondary supporting text below the trend.' },

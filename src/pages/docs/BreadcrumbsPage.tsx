@@ -6,6 +6,7 @@ import { PropsTable, PropDef } from '../../components/PropsTable';
 const breadcrumbsProps: PropDef[] = [
   { name: 'items', type: 'BreadcrumbItem[]', required: true, description: 'Array of {label, href?}. The last item without href is the current page.' },
   { name: 'separator', type: 'ReactNode', default: "'/'", description: 'Custom separator between items.' },
+  { name: 'maxItems', type: 'number', description: 'Maximum number of items to display. When the count exceeds this, intermediate items are replaced with an ellipsis.' },
   { name: 'className', type: 'string', description: 'Additional CSS class.' },
 ];
 

@@ -7,7 +7,7 @@ type SortDir = 'asc' | 'desc' | false;
 
 const tableProps: PropDef[] = [
   { name: 'striped', type: 'boolean', default: 'false', description: 'Alternates row background for better readability.' },
-  { name: 'container', type: 'boolean', default: 'false', description: 'Wraps in a scrollable container div.' },
+  { name: 'container', type: 'boolean', default: 'true', description: 'Wraps in a scrollable container div.' },
 ];
 
 const users = [

@@ -8,6 +8,7 @@ const chipProps: PropDef[] = [
   { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables interaction.' },
   { name: 'onClick', type: '() => void', description: 'Makes the chip interactive (clickable).' },
   { name: 'onDelete', type: '() => void', description: 'Renders a delete button inside the chip.' },
+  { name: 'icon', type: 'ReactNode', description: 'Optional leading icon rendered before the label.' },
   { name: 'children', type: 'ReactNode', required: true, description: 'Chip label text.' },
 ];
 

@@ -15,7 +15,8 @@ const barChartProps: PropDef[] = [
 const lineChartProps: PropDef[] = [
   { name: 'labels', type: 'string[]', required: true, description: 'Labels for each data point along the x-axis.' },
   { name: 'datasets', type: 'LineChartDataset[]', required: true, description: 'One or more datasets rendered as lines.' },
-  { name: 'height', type: 'number', default: '240', description: 'Height of the chart canvas in pixels.' },
+  { name: 'height', type: 'number', default: '200', description: 'Height of the chart canvas in pixels.' },
+  { name: 'smooth', type: 'boolean', default: 'true', description: 'Renders lines with cubic bezier smoothing.' },
   { name: 'animated', type: 'boolean', default: 'true', description: 'Draws the line with a path animation on mount.' },
   { name: 'className', type: 'string', description: 'Additional CSS class applied to the chart wrapper.' },
 ];
@@ -24,8 +25,6 @@ const lineDatasetProps: PropDef[] = [
   { name: 'label', type: 'string', required: true, description: 'Dataset name shown in the legend.' },
   { name: 'data', type: 'number[]', required: true, description: 'Array of numeric values, one per label.' },
   { name: 'color', type: 'string', description: 'Stroke color. Falls back to the theme primary color.' },
-  { name: 'smooth', type: 'boolean', default: 'false', description: 'Renders the line with cubic bezier smoothing.' },
-  { name: 'area', type: 'boolean', default: 'false', description: 'Fills the area beneath the line.' },
 ];
 
 const pieChartProps: PropDef[] = [
@@ -40,9 +39,10 @@ const pieChartProps: PropDef[] = [
 const sparklineProps: PropDef[] = [
   { name: 'data', type: 'number[]', required: true, description: 'Array of numeric values to plot.' },
   { name: 'type', type: "'line' | 'bar' | 'area'", default: "'line'", description: 'Visual style of the sparkline.' },
-  { name: 'color', type: 'string', description: 'Stroke or fill color. Falls back to the theme primary color.' },
-  { name: 'width', type: 'number', default: '120', description: 'Width of the sparkline in pixels.' },
-  { name: 'height', type: 'number', default: '40', description: 'Height of the sparkline in pixels.' },
+  { name: 'color', type: 'string', default: "'var(--synu-color-primary)'", description: 'Stroke or fill color. Falls back to the theme primary color.' },
+  { name: 'width', type: 'number', default: '80', description: 'Width of the sparkline in pixels.' },
+  { name: 'height', type: 'number', default: '24', description: 'Height of the sparkline in pixels.' },
+  { name: 'className', type: 'string', description: 'Additional CSS class applied to the sparkline.' },
 ];
 
 const barData = [
@@ -60,8 +60,6 @@ const lineDatasets = [
     label: 'Daily Active Users',
     data: [1840, 2210, 1990, 2540, 2980, 2650, 3100],
     color: 'var(--synu-color-primary)',
-    smooth: true,
-    area: true,
   },
 ];
 
@@ -144,10 +142,9 @@ export function ChartsPage() {
       label: 'Daily Active Users',
       data: [1840, 2210, 1990, 2540, 2980, 2650, 3100],
       color: 'var(--synu-color-primary)',
-      smooth: true,
-      area: true,
     },
   ]}
+  smooth
   height={240}
 />`}
         >

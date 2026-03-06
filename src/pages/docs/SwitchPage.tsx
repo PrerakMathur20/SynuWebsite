@@ -4,7 +4,7 @@ import { ComponentPreview, DemoControl, DemoToggle } from '../../components/Comp
 import { PropsTable, PropDef } from '../../components/PropsTable';
 
 const switchProps: PropDef[] = [
-  { name: 'label', type: 'string', description: 'Visible label to the right of the switch.' },
+  { name: 'label', type: 'ReactNode', description: 'Visible label to the right of the switch.' },
   { name: 'description', type: 'string', description: 'Supporting text below the label.' },
   { name: 'checked', type: 'boolean', description: 'Controlled on/off state.' },
   { name: 'defaultChecked', type: 'boolean', default: 'false', description: 'Initial state (uncontrolled).' },

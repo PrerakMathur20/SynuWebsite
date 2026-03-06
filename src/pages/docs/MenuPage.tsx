@@ -7,17 +7,18 @@ const menuProps: PropDef[] = [
   { name: 'trigger', type: 'ReactElement', required: true, description: 'Element that opens the menu on click.' },
   { name: 'items', type: 'MenuItem[]', required: true, description: 'Array of menu items, separators, and labels.' },
   { name: 'placement', type: "'bottom-start' | 'bottom-end' | 'top-start' | 'top-end'", default: "'bottom-start'", description: 'Preferred placement relative to the trigger.' },
-  { name: 'closeOnSelect', type: 'boolean', default: 'true', description: 'Close the menu when an item is selected.' },
+  { name: 'className', type: 'string', description: 'Additional class name applied to the menu panel.' },
 ];
 
 const menuItemProps: PropDef[] = [
-  { name: 'type', type: "'item' | 'separator' | 'label'", required: true, description: 'The kind of menu entry.' },
-  { name: 'label', type: 'string', description: 'Display text. Required for item and label types.' },
+  { name: 'type', type: "'item' | 'separator' | 'label'", description: 'The kind of menu entry. Defaults to item if omitted.' },
+  { name: 'label', type: 'ReactNode', description: 'Display text. Required for item and label types.' },
   { name: 'onClick', type: '() => void', description: 'Handler called when the item is selected.' },
   { name: 'shortcut', type: 'string', description: 'Keyboard shortcut hint displayed on the right.' },
   { name: 'destructive', type: 'boolean', description: 'Applies destructive (red) styling.' },
   { name: 'disabled', type: 'boolean', description: 'Prevents interaction.' },
   { name: 'icon', type: 'ReactNode', description: 'Icon displayed before the label.' },
+  { name: 'items', type: 'MenuItem[]', description: 'Nested sub-menu items. Renders as a submenu on hover.' },
 ];
 
 const DotsIcon = () => (

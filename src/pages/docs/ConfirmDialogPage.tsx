@@ -5,13 +5,12 @@ import { PropsTable, PropDef } from '../../components/PropsTable';
 
 const confirmDialogProps: PropDef[] = [
   { name: 'open', type: 'boolean', required: true, description: 'Controls the visibility of the dialog.' },
-  { name: 'onOpenChange', type: '(open: boolean) => void', required: true, description: 'Called when the dialog should open or close.' },
+  { name: 'onClose', type: '() => void', required: true, description: 'Called when the dialog should close (cancel button, backdrop click, or Escape key).' },
+  { name: 'onConfirm', type: '() => void', required: true, description: 'Called when the user clicks the confirm button.' },
   { name: 'title', type: 'string', required: true, description: 'The dialog heading.' },
   { name: 'description', type: 'string', description: 'Supporting text shown below the title.' },
   { name: 'confirmLabel', type: 'string', default: "'Confirm'", description: 'Label for the confirm button.' },
   { name: 'cancelLabel', type: 'string', default: "'Cancel'", description: 'Label for the cancel button.' },
-  { name: 'onConfirm', type: '() => void', required: true, description: 'Called when the user clicks the confirm button.' },
-  { name: 'onCancel', type: '() => void', description: 'Called when the user clicks the cancel button or closes the dialog.' },
   { name: 'destructive', type: 'boolean', default: 'false', description: 'Renders the confirm button with a destructive (error) color.' },
   { name: 'loading', type: 'boolean', default: 'false', description: 'Shows a spinner on the confirm button and disables both actions.' },
 ];
@@ -78,8 +77,7 @@ function handleConfirm() {
   title="${destructive ? 'Delete item?' : 'Confirm action'}"
   description="${destructive ? 'This will permanently delete the item and cannot be undone.' : 'Are you sure you want to proceed with this action?'}"
   confirmLabel="${destructive ? 'Delete' : 'Confirm'}"
-  onConfirm={handleConfirm}
-  onCancel={() => setOpen(false)}${destructive ? '\n  destructive' : ''}
+  onConfirm={handleConfirm}${destructive ? '\n  destructive' : ''}
   loading={loading}
 />`}
           controls={

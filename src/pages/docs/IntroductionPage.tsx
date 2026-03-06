@@ -111,12 +111,12 @@ export function IntroductionPage() {
           language="tsx"
           filename="Preferred Pattern"
           code={`// ✅ Composition — explicit, composable, no prop explosion
-<Button.Root variant="primary" size="lg">
-  <Button.Icon aria-hidden>
+<ButtonRoot variant="primary" size="lg">
+  <ButtonIcon aria-hidden>
     <SaveIcon />
-  </Button.Icon>
-  <Button.Label>Save changes</Button.Label>
-</Button.Root>
+  </ButtonIcon>
+  <ButtonLabel>Save changes</ButtonLabel>
+</ButtonRoot>
 
 // ❌ Monolithic — implicit, hard to extend, brittle
 <Button
