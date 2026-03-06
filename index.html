@@ -10,6 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <script>
+      // GitHub Pages SPA: restore redirected path
+      (function () {
+        var redirect = sessionStorage.getItem('spa_redirect');
+        if (redirect) {
+          sessionStorage.removeItem('spa_redirect');
+          var base = window.location.pathname.split('/').slice(0, 2).join('/');
+          window.history.replaceState(null, '', base + '/' + redirect);
+        }
+      })();
+    </script>
+    <script>
       // Prevent FOUC — apply theme before first paint
       (function () {
         try {

@@ -110,7 +110,7 @@ export function SiteNavbar() {
             </Tooltip>
 
             <a
-              href="https://github.com/tokisdesign/tokis"
+              href="https://github.com/PrerakMathur20/TokisLib"
               className="site-theme-toggle"
               aria-label="View on GitHub"
               target="_blank"
@@ -175,7 +175,7 @@ export function SiteNavbar() {
             <span>{mode === 'light' ? 'Dark mode' : 'Light mode'}</span>
           </button>
           <a
-            href="https://github.com/tokisdesign/tokis"
+            href="https://github.com/PrerakMathur20/TokisLib"
             className="mobile-nav__github"
             target="_blank"
             rel="noopener noreferrer"

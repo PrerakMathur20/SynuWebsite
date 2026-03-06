@@ -197,7 +197,7 @@ import { Link } from 'react-router-dom';
       <>
         <p>Contributions are welcome! The best ways to help:</p>
         <ul>
-          <li>Report bugs via <a href="https://github.com/tokisdesign/tokis/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a></li>
+          <li>Report bugs via <a href="https://github.com/PrerakMathur20/TokisLib/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a></li>
           <li>Suggest new components or API improvements</li>
           <li>Submit PRs for bug fixes or documentation improvements</li>
           <li>Help test accessibility with assistive technologies</li>

@@ -95,7 +95,7 @@ import { InfiniteScrollPage } from './pages/docs/InfiniteScrollPage';
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <ScrollToTop />
         <Routes>
           {/* Landing & top-level */}

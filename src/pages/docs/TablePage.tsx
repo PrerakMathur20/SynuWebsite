@@ -11,11 +11,11 @@ const tableProps: PropDef[] = [
 ];
 
 const users = [
-  { id: 1, name: 'Jordan Lee', email: 'jordan@tokis.dev', role: 'Admin', status: 'Active', joined: 'Jan 12, 2025' },
-  { id: 2, name: 'Alex Kim', email: 'alex@tokis.dev', role: 'Editor', status: 'Active', joined: 'Feb 3, 2025' },
-  { id: 3, name: 'Sam Park', email: 'sam@tokis.dev', role: 'Viewer', status: 'Pending', joined: 'Feb 28, 2025' },
-  { id: 4, name: 'Casey Morgan', email: 'casey@tokis.dev', role: 'Editor', status: 'Inactive', joined: 'Mar 1, 2025' },
-  { id: 5, name: 'Riley Chen', email: 'riley@tokis.dev', role: 'Admin', status: 'Active', joined: 'Mar 4, 2025' },
+  { id: 1, name: 'Jordan Lee', email: 'jordan@example.com', role: 'Admin', status: 'Active', joined: 'Jan 12, 2025' },
+  { id: 2, name: 'Alex Kim', email: 'alex@example.com', role: 'Editor', status: 'Active', joined: 'Feb 3, 2025' },
+  { id: 3, name: 'Sam Park', email: 'sam@example.com', role: 'Viewer', status: 'Pending', joined: 'Feb 28, 2025' },
+  { id: 4, name: 'Casey Morgan', email: 'casey@example.com', role: 'Editor', status: 'Inactive', joined: 'Mar 1, 2025' },
+  { id: 5, name: 'Riley Chen', email: 'riley@example.com', role: 'Admin', status: 'Active', joined: 'Mar 4, 2025' },
 ];
 
 const statusVariant = (s: string): 'success' | 'warning' | 'default' =>

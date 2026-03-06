@@ -600,7 +600,7 @@ export function Landing() {
 
           {/* Left: headline */}
           <div className="lpv3-hero__left">
-            <a href="https://github.com" className="lpv3-pill" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/PrerakMathur20/TokisLib" className="lpv3-pill" target="_blank" rel="noopener noreferrer">
               <span className="lpv3-pill__dot" />
               Open Source · v0.1.0 · MIT
               <svg width="9" height="9" viewBox="0 0 9 9" fill="none" aria-hidden="true" style={{ marginLeft: 3, opacity: 0.45 }}>
